@@ -14,7 +14,7 @@
 	:global(p) {
 		color: #fff;
 		font-family: 'Roboto', sans-serif;
-		font-size: larger;
+		font-size: large;
 		word-spacing: 0.1rem;
 		line-height: 1.5rem;
 	}
@@ -27,7 +27,7 @@
 	}
 	nav a {
 		color: #000;
-		font-size: 1.4rem;
+		font-size: larger;
 		margin-right: 2rem;
 		text-decoration: none;
 	}
