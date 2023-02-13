@@ -111,7 +111,10 @@
 		padding-left: 10px;
 	}
 	img#avatar {
+		margin-left: 10px;
 		border-radius: 50%;
+		min-width: 60px;
+		min-height: 60px;
 		max-height: 100%;
 		max-width: 100%;
 		height: auto;
