@@ -88,7 +88,12 @@ function create_fragment(ctx) {
       t3 = claim_space(div3_nodes);
       div1 = claim_element(div3_nodes, "DIV", { class: true });
       var div1_nodes = children(div1);
-      img0 = claim_element(div1_nodes, "IMG", { src: true, alt: true, height: true });
+      img0 = claim_element(div1_nodes, "IMG", {
+        id: true,
+        src: true,
+        alt: true,
+        class: true
+      });
       div1_nodes.forEach(detach);
       t4 = claim_space(div3_nodes);
       p0 = claim_element(div3_nodes, "P", { id: true, class: true });
@@ -134,31 +139,32 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(h1, "class", "svelte-1mr55p3");
-      attr(h2, "class", "svelte-1mr55p3");
-      attr(div0, "class", "nameContainer svelte-1mr55p3");
+      attr(h1, "class", "svelte-oxunom");
+      attr(h2, "class", "svelte-oxunom");
+      attr(div0, "class", "nameContainer svelte-oxunom");
+      attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "https://us.123rf.com/450wm/happyvector071/happyvector0711904/happyvector071190415714/happyvector071190415714.jpg?ver=6"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Avatar template");
-      attr(img0, "height", "150px");
-      attr(div1, "class", "imageContainer svelte-1mr55p3");
+      attr(img0, "class", "svelte-oxunom");
+      attr(div1, "class", "imageContainer svelte-oxunom");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-1mr55p3");
-      attr(img1, "class", "socialImg svelte-1mr55p3");
+      attr(p0, "class", "svelte-oxunom");
+      attr(img1, "class", "socialImg svelte-oxunom");
       if (!src_url_equal(img1.src, img1_src_value = "https://cdn-icons-png.flaticon.com/512/25/25231.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(img1, "height", "50px");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-1mr55p3");
+      attr(img2, "class", "socialImg svelte-oxunom");
       if (!src_url_equal(img2.src, img2_src_value = "https://cdn-icons-png.flaticon.com/512/174/174857.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(img2, "height", "50px");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div2, "class", "footerContainer svelte-1mr55p3");
-      attr(div3, "class", "infoBoxContainer svelte-1mr55p3");
-      attr(div4, "class", "fullscreenContainer svelte-1mr55p3");
+      attr(div2, "class", "footerContainer svelte-oxunom");
+      attr(div3, "class", "infoBoxContainer svelte-oxunom");
+      attr(div4, "class", "fullscreenContainer svelte-oxunom");
     },
     m(target, anchor) {
       insert_hydration(target, div4, anchor);

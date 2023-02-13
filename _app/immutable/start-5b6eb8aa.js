@@ -902,7 +902,7 @@ const matchers = {};
 const nodes = [
   () => __vitePreload(() => import("./chunks/0-c4f6bdae.js"), true ? ["./chunks/0-c4f6bdae.js","./components/pages/_layout.svelte-34566c4e.js","./chunks/index-7668a465.js","./assets/_layout-adb63e48.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/1-77c63101.js"), true ? ["./chunks/1-77c63101.js","./components/error.svelte-55aa6405.js","./chunks/index-7668a465.js","./chunks/singletons-ffd44c0a.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-88fd3e20.js"), true ? ["./chunks/2-88fd3e20.js","./components/pages/_page.svelte-84743c07.js","./chunks/index-7668a465.js","./assets/_page-85a67b1f.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-cb1ec510.js"), true ? ["./chunks/2-cb1ec510.js","./components/pages/_page.svelte-a860e182.js","./chunks/index-7668a465.js","./assets/_page-d67731b1.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/3-0a0b3d87.js"), true ? ["./chunks/3-0a0b3d87.js","./components/pages/about/_page.svelte-47a8e99c.js","./chunks/index-7668a465.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/4-78da32bf.js"), true ? ["./chunks/4-78da32bf.js","./components/pages/projects/_page.svelte-005d271d.js","./chunks/index-7668a465.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/5-902c43f7.js"), true ? ["./chunks/5-902c43f7.js","./components/pages/skills/_page.svelte-535815d7.js","./chunks/index-7668a465.js"] : void 0, import.meta.url)
