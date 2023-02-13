@@ -7,9 +7,9 @@
 
 		<div class="imageContainer">
 			<img
+				id="avatar"
 				src="https://us.123rf.com/450wm/happyvector071/happyvector0711904/happyvector071190415714/happyvector071190415714.jpg?ver=6"
 				alt="Avatar template"
-				height="150px"
 			/>
 		</div>
 
@@ -92,7 +92,9 @@
 	.imageContainer {
 		grid-area: avatar;
 		justify-self: end;
-		flex-grow: 0;
+		max-height: 160px;
+		min-height: 80px;
+		height: auto;
 	}
 	.nameContainer {
 		display: flex;
@@ -107,6 +109,13 @@
 	}
 	img.socialImg {
 		padding-left: 10px;
+	}
+	img#avatar {
+		border-radius: 50%;
+		max-height: 100%;
+		max-width: 100%;
+		height: auto;
+		width: auto;
 	}
 	#contentText {
 		grid-area: content;
