@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, E as append_hydration, C as noop } from "../../../chunks/index-7668a465.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, E as append_hydration, C as noop } from "../../../chunks/index-a013620f.js";
 function create_fragment(ctx) {
   let h1;
   let t0;
@@ -8,7 +8,7 @@ function create_fragment(ctx) {
   return {
     c() {
       h1 = element("h1");
-      t0 = text("About me");
+      t0 = text("Projects");
       t1 = space();
       p = element("p");
       t2 = text("TODO...");
@@ -16,7 +16,7 @@ function create_fragment(ctx) {
     l(nodes) {
       h1 = claim_element(nodes, "H1", {});
       var h1_nodes = children(h1);
-      t0 = claim_text(h1_nodes, "About me");
+      t0 = claim_text(h1_nodes, "Projects");
       h1_nodes.forEach(detach);
       t1 = claim_space(nodes);
       p = claim_element(nodes, "P", {});

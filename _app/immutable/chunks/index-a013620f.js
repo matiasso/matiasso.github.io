@@ -185,6 +185,12 @@ function detach(node) {
     node.parentNode.removeChild(node);
   }
 }
+function destroy_each(iterations, detaching) {
+  for (let i = 0; i < iterations.length; i += 1) {
+    if (iterations[i])
+      iterations[i].d(detaching);
+  }
+}
 function element(name) {
   return document.createElement(name);
 }
@@ -196,6 +202,10 @@ function space() {
 }
 function empty() {
   return text("");
+}
+function listen(node, event, handler, options) {
+  node.addEventListener(event, handler, options);
+  return () => node.removeEventListener(event, handler, options);
 }
 function attr(node, attribute, value) {
   if (value == null)
@@ -430,6 +440,7 @@ function transition_out(block, local, detach2, callback) {
     callback();
   }
 }
+const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
 function create_component(block) {
   block && block.c();
 }
@@ -561,7 +572,11 @@ export {
   get_all_dirty_from_scope as G,
   get_slot_changes as H,
   component_subscribe as I,
-  src_url_equal as J,
+  add_render_callback as J,
+  src_url_equal as K,
+  listen as L,
+  destroy_each as M,
+  globals as N,
   SvelteComponent as S,
   space as a,
   insert_hydration as b,
