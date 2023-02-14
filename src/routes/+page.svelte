@@ -67,11 +67,7 @@
 		</div>
 
 		<div class="imageContainer">
-			<img
-				id="avatar"
-				src="https://us.123rf.com/450wm/happyvector071/happyvector0711904/happyvector071190415714/happyvector071190415714.jpg?ver=6"
-				alt="Avatar template"
-			/>
+			<img id="avatar" src="/profile_avatar.jpg" alt="Avatar template" />
 		</div>
 
 		<p id="contentText">
