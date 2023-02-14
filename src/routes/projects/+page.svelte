@@ -1,2 +1,2 @@
-<h1>Projects</h1>
-<p>TODO...</p>
+<h1 style="color: black">Projects</h1>
+<p style="color: black">TODO...</p>

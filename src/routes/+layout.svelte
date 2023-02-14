@@ -18,6 +18,10 @@
 		word-spacing: 0.1rem;
 		line-height: 1.5rem;
 	}
+	:global(h1, h2, h3) {
+		color: #fff;
+		font-family: 'Roboto', sans-serif;
+	}
 	nav {
 		display: flex;
 		justify-content: flex-end;

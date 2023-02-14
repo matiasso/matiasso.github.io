@@ -98,20 +98,10 @@
 		<div class="footerContainer">
 			<p>You can find me here:</p>
 			<a href="https://github.com/matiasso">
-				<img
-					class="socialImg"
-					src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-					alt="Github logo"
-					height="50px"
-				/>
+				<img class="socialImg" src="/github_logo.png" alt="Github logo" height="50px" />
 			</a>
 			<a href="https://www.linkedin.com/in/matias-sodersved/">
-				<img
-					class="socialImg"
-					src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-					alt="LinkedIn logo"
-					height="50px"
-				/>
+				<img class="socialImg" src="/linkedin_logo.png" alt="LinkedIn logo" height="50px" />
 			</a>
 		</div>
 	</div>
@@ -124,8 +114,8 @@
 		align-items: center;
 		min-height: 95vh;
 		height: auto;
-		width: '100%';
-		background: #303041; /* TODO: Add animated background later*/
+		width: 100%;
+		background: #303041;
 	}
 	.infoBoxContainer {
 		display: grid;
@@ -176,10 +166,6 @@
 	}
 	#contentText {
 		grid-area: content;
-	}
-	h1,
-	h2 {
-		color: #fff;
 	}
 
 	@keyframes -global-up-down {
