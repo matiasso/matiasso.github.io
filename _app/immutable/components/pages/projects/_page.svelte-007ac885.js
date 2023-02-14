@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, E as append_hydration, C as noop } from "../../../chunks/index-a013620f.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, p as set_style, b as insert_hydration, E as append_hydration, C as noop } from "../../../chunks/index-a013620f.js";
 function create_fragment(ctx) {
   let h1;
   let t0;
@@ -12,17 +12,23 @@ function create_fragment(ctx) {
       t1 = space();
       p = element("p");
       t2 = text("TODO...");
+      this.h();
     },
     l(nodes) {
-      h1 = claim_element(nodes, "H1", {});
+      h1 = claim_element(nodes, "H1", { style: true });
       var h1_nodes = children(h1);
       t0 = claim_text(h1_nodes, "Projects");
       h1_nodes.forEach(detach);
       t1 = claim_space(nodes);
-      p = claim_element(nodes, "P", {});
+      p = claim_element(nodes, "P", { style: true });
       var p_nodes = children(p);
       t2 = claim_text(p_nodes, "TODO...");
       p_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      set_style(h1, "color", "black");
+      set_style(p, "color", "black");
     },
     m(target, anchor) {
       insert_hydration(target, h1, anchor);

@@ -82,15 +82,18 @@ function create_fragment(ctx) {
   let br2;
   let br3;
   let t8;
+  let br4;
+  let br5;
   let t9;
+  let t10;
   let div3;
   let p1;
-  let t10;
   let t11;
+  let t12;
   let a0;
   let img1;
   let img1_src_value;
-  let t12;
+  let t13;
   let a1;
   let img2;
   let img2_src_value;
@@ -128,21 +131,24 @@ function create_fragment(ctx) {
       img0 = element("img");
       t5 = space();
       p0 = element("p");
-      t6 = text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare suscipit lectus,\n			vitae pharetra massa. Aenean ligula eros, sagittis a molestie a, lobortis id quam. Fusce\n			rhoncus dolor in tempor pulvinar. Fusce in ipsum vestibulum, venenatis orci nec, auctor ante.\n			Ut nisl quam, tristique ut feugiat non, commodo ac felis. Mauris vulputate molestie massa ac\n			auctor. Etiam semper finibus felis, nec luctus nunc facilisis nec. Vivamus tristique arcu quis\n			tincidunt sollicitudin. Aliquam dignissim, justo in malesuada mollis, lacus libero eleifend\n			velit, in convallis elit tortor et leo. Maecenas efficitur erat urna, eget cursus enim\n			interdum ac. Donec quam purus, maximus ut viverra quis, bibendum non leo. Cras vulputate diam\n			in volutpat finibus. Curabitur vehicula varius risus, sit amet elementum arcu tempor\n			facilisis. Fusce fermentum malesuada leo. Duis id auctor justo, ac sodales nulla. Donec neque\n			ante, aliquet vitae erat quis, placerat imperdiet risus.\n			");
+      t6 = text("I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
       br0 = element("br");
       br1 = element("br");
-      t7 = text("\n			Suspendisse volutpat sagittis urna, sed sagittis velit venenatis a. Praesent aliquam orci non finibus\n			auctor. Maecenas quis turpis vulputate, luctus ligula sed, rhoncus quam. Aliquam erat volutpat.\n			Maecenas id orci blandit, interdum enim eu, elementum purus. Nullam varius nisi venenatis, dignissim\n			ipsum ac, molestie nulla. Nulla lacinia orci ut tincidunt vestibulum. Proin fermentum placerat\n			posuere. Morbi mattis a diam quis faucibus.\n			");
+      t7 = text("\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
       br2 = element("br");
       br3 = element("br");
-      t8 = text("\n			Etiam interdum placerat dolor nec iaculis. Aenean dapibus finibus nibh eu placerat. Sed finibus\n			metus vitae orci semper, et consectetur dui hendrerit. Maecenas consequat augue ante, ut scelerisque\n			leo ornare vitae. Praesent sit amet magna dictum, tempus est ac, vulputate ipsum. Proin congue\n			mattis consectetur. Ut aliquet ante ex, sed sodales tellus lacinia consequat. Quisque iaculis,\n			augue sed auctor aliquam, erat quam ultricies ligula, eu convallis ipsum sapien id tellus. Donec\n			elementum consectetur libero, sed tempor orci. Curabitur bibendum mi ex, quis vulputate ligula\n			pharetra et. Morbi semper tortor ac dui malesuada pretium at vitae erat. Nulla quis nulla dui.\n			Duis ac augue nec nisl suscipit tempor.");
-      t9 = space();
+      t8 = text("\n			One of my core strengths is my ability to work with Git and collaborate effectively with team members.\n			I understand that each team member brings their unique skill set and perspective to the table,\n			and it is crucial to consider everyone's input while working on a project. I believe that being\n			transparent, communicating effectively, and ensuring equal participation from all members of the\n			team is the key to successful collaboration.\n			");
+      br4 = element("br");
+      br5 = element("br");
+      t9 = text("\n			I'm interested in exploring new frameworks and technologies and continuously strive to expand my\n			knowledge in the field. I strongly believe that technology has the power to bring positive change\n			to the world, and I hope to contribute to this through my work.");
+      t10 = space();
       div3 = element("div");
       p1 = element("p");
-      t10 = text("You can find me here:");
-      t11 = space();
+      t11 = text("You can find me here:");
+      t12 = space();
       a0 = element("a");
       img1 = element("img");
-      t12 = space();
+      t13 = space();
       a1 = element("a");
       img2 = element("img");
       this.h();
@@ -161,12 +167,12 @@ function create_fragment(ctx) {
       var div4_nodes = children(div4);
       div1 = claim_element(div4_nodes, "DIV", { class: true });
       var div1_nodes = children(div1);
-      h1 = claim_element(div1_nodes, "H1", { class: true });
+      h1 = claim_element(div1_nodes, "H1", {});
       var h1_nodes = children(h1);
       t1 = claim_text(h1_nodes, "Matias Södersved");
       h1_nodes.forEach(detach);
       t2 = claim_space(div1_nodes);
-      h2 = claim_element(div1_nodes, "H2", { class: true });
+      h2 = claim_element(div1_nodes, "H2", {});
       var h2_nodes = children(h2);
       t3 = claim_text(h2_nodes, "Student from Aalto-University");
       h2_nodes.forEach(detach);
@@ -184,22 +190,25 @@ function create_fragment(ctx) {
       t5 = claim_space(div4_nodes);
       p0 = claim_element(div4_nodes, "P", { id: true, class: true });
       var p0_nodes = children(p0);
-      t6 = claim_text(p0_nodes, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare suscipit lectus,\n			vitae pharetra massa. Aenean ligula eros, sagittis a molestie a, lobortis id quam. Fusce\n			rhoncus dolor in tempor pulvinar. Fusce in ipsum vestibulum, venenatis orci nec, auctor ante.\n			Ut nisl quam, tristique ut feugiat non, commodo ac felis. Mauris vulputate molestie massa ac\n			auctor. Etiam semper finibus felis, nec luctus nunc facilisis nec. Vivamus tristique arcu quis\n			tincidunt sollicitudin. Aliquam dignissim, justo in malesuada mollis, lacus libero eleifend\n			velit, in convallis elit tortor et leo. Maecenas efficitur erat urna, eget cursus enim\n			interdum ac. Donec quam purus, maximus ut viverra quis, bibendum non leo. Cras vulputate diam\n			in volutpat finibus. Curabitur vehicula varius risus, sit amet elementum arcu tempor\n			facilisis. Fusce fermentum malesuada leo. Duis id auctor justo, ac sodales nulla. Donec neque\n			ante, aliquet vitae erat quis, placerat imperdiet risus.\n			");
+      t6 = claim_text(p0_nodes, "I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
       br0 = claim_element(p0_nodes, "BR", {});
       br1 = claim_element(p0_nodes, "BR", {});
-      t7 = claim_text(p0_nodes, "\n			Suspendisse volutpat sagittis urna, sed sagittis velit venenatis a. Praesent aliquam orci non finibus\n			auctor. Maecenas quis turpis vulputate, luctus ligula sed, rhoncus quam. Aliquam erat volutpat.\n			Maecenas id orci blandit, interdum enim eu, elementum purus. Nullam varius nisi venenatis, dignissim\n			ipsum ac, molestie nulla. Nulla lacinia orci ut tincidunt vestibulum. Proin fermentum placerat\n			posuere. Morbi mattis a diam quis faucibus.\n			");
+      t7 = claim_text(p0_nodes, "\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
       br2 = claim_element(p0_nodes, "BR", {});
       br3 = claim_element(p0_nodes, "BR", {});
-      t8 = claim_text(p0_nodes, "\n			Etiam interdum placerat dolor nec iaculis. Aenean dapibus finibus nibh eu placerat. Sed finibus\n			metus vitae orci semper, et consectetur dui hendrerit. Maecenas consequat augue ante, ut scelerisque\n			leo ornare vitae. Praesent sit amet magna dictum, tempus est ac, vulputate ipsum. Proin congue\n			mattis consectetur. Ut aliquet ante ex, sed sodales tellus lacinia consequat. Quisque iaculis,\n			augue sed auctor aliquam, erat quam ultricies ligula, eu convallis ipsum sapien id tellus. Donec\n			elementum consectetur libero, sed tempor orci. Curabitur bibendum mi ex, quis vulputate ligula\n			pharetra et. Morbi semper tortor ac dui malesuada pretium at vitae erat. Nulla quis nulla dui.\n			Duis ac augue nec nisl suscipit tempor.");
+      t8 = claim_text(p0_nodes, "\n			One of my core strengths is my ability to work with Git and collaborate effectively with team members.\n			I understand that each team member brings their unique skill set and perspective to the table,\n			and it is crucial to consider everyone's input while working on a project. I believe that being\n			transparent, communicating effectively, and ensuring equal participation from all members of the\n			team is the key to successful collaboration.\n			");
+      br4 = claim_element(p0_nodes, "BR", {});
+      br5 = claim_element(p0_nodes, "BR", {});
+      t9 = claim_text(p0_nodes, "\n			I'm interested in exploring new frameworks and technologies and continuously strive to expand my\n			knowledge in the field. I strongly believe that technology has the power to bring positive change\n			to the world, and I hope to contribute to this through my work.");
       p0_nodes.forEach(detach);
-      t9 = claim_space(div4_nodes);
+      t10 = claim_space(div4_nodes);
       div3 = claim_element(div4_nodes, "DIV", { class: true });
       var div3_nodes = children(div3);
       p1 = claim_element(div3_nodes, "P", {});
       var p1_nodes = children(p1);
-      t10 = claim_text(p1_nodes, "You can find me here:");
+      t11 = claim_text(p1_nodes, "You can find me here:");
       p1_nodes.forEach(detach);
-      t11 = claim_space(div3_nodes);
+      t12 = claim_space(div3_nodes);
       a0 = claim_element(div3_nodes, "A", { href: true });
       var a0_nodes = children(a0);
       img1 = claim_element(a0_nodes, "IMG", {
@@ -209,7 +218,7 @@ function create_fragment(ctx) {
         height: true
       });
       a0_nodes.forEach(detach);
-      t12 = claim_space(div3_nodes);
+      t13 = claim_space(div3_nodes);
       a1 = claim_element(div3_nodes, "A", { href: true });
       var a1_nodes = children(a1);
       img2 = claim_element(a1_nodes, "IMG", {
@@ -228,32 +237,30 @@ function create_fragment(ctx) {
       attr(div0, "class", "ballContainer");
       attr(div0, "style", div0_style_value = `position: absolute; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none`);
-      attr(h1, "class", "svelte-1nq51e0");
-      attr(h2, "class", "svelte-1nq51e0");
-      attr(div1, "class", "nameContainer svelte-1nq51e0");
+      attr(div1, "class", "nameContainer svelte-m3wq87");
       attr(img0, "id", "avatar");
-      if (!src_url_equal(img0.src, img0_src_value = "https://us.123rf.com/450wm/happyvector071/happyvector0711904/happyvector071190415714/happyvector071190415714.jpg?ver=6"))
+      if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Avatar template");
-      attr(img0, "class", "svelte-1nq51e0");
-      attr(div2, "class", "imageContainer svelte-1nq51e0");
+      attr(img0, "class", "svelte-m3wq87");
+      attr(div2, "class", "imageContainer svelte-m3wq87");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-1nq51e0");
-      attr(img1, "class", "socialImg svelte-1nq51e0");
-      if (!src_url_equal(img1.src, img1_src_value = "https://cdn-icons-png.flaticon.com/512/25/25231.png"))
+      attr(p0, "class", "svelte-m3wq87");
+      attr(img1, "class", "socialImg svelte-m3wq87");
+      if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(img1, "height", "50px");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-1nq51e0");
-      if (!src_url_equal(img2.src, img2_src_value = "https://cdn-icons-png.flaticon.com/512/174/174857.png"))
+      attr(img2, "class", "socialImg svelte-m3wq87");
+      if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(img2, "height", "50px");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-1nq51e0");
-      attr(div4, "class", "infoBoxContainer svelte-1nq51e0");
-      attr(div5, "class", "fullscreenContainer svelte-1nq51e0");
+      attr(div3, "class", "footerContainer svelte-m3wq87");
+      attr(div4, "class", "infoBoxContainer svelte-m3wq87");
+      attr(div5, "class", "fullscreenContainer svelte-m3wq87");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -281,14 +288,17 @@ function create_fragment(ctx) {
       append_hydration(p0, br2);
       append_hydration(p0, br3);
       append_hydration(p0, t8);
-      append_hydration(div4, t9);
+      append_hydration(p0, br4);
+      append_hydration(p0, br5);
+      append_hydration(p0, t9);
+      append_hydration(div4, t10);
       append_hydration(div4, div3);
       append_hydration(div3, p1);
-      append_hydration(p1, t10);
-      append_hydration(div3, t11);
+      append_hydration(p1, t11);
+      append_hydration(div3, t12);
       append_hydration(div3, a0);
       append_hydration(a0, img1);
-      append_hydration(div3, t12);
+      append_hydration(div3, t13);
       append_hydration(div3, a1);
       append_hydration(a1, img2);
       if (!mounted) {

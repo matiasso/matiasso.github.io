@@ -75,14 +75,14 @@ function create_fragment(ctx) {
     },
     h() {
       attr(a0, "href", "/");
-      attr(a0, "class", "svelte-tanrki");
+      attr(a0, "class", "svelte-18zoo8s");
       attr(a1, "href", "/about");
-      attr(a1, "class", "svelte-tanrki");
+      attr(a1, "class", "svelte-18zoo8s");
       attr(a2, "href", "/skills");
-      attr(a2, "class", "svelte-tanrki");
+      attr(a2, "class", "svelte-18zoo8s");
       attr(a3, "href", "/projects");
-      attr(a3, "class", "svelte-tanrki");
-      attr(nav, "class", "svelte-tanrki");
+      attr(a3, "class", "svelte-18zoo8s");
+      attr(nav, "class", "svelte-18zoo8s");
     },
     m(target, anchor) {
       insert_hydration(target, nav, anchor);
