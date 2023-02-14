@@ -107,6 +107,30 @@
 		border-radius: 50%;
 		object-fit: contain;
 	}
+	.skillImg:hover {
+		border: 2px solid rgb(173, 255, 126);
+		animation: wiggle 0.4s 2;
+	}
+	@keyframes wiggle {
+		0% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(5deg);
+			scale: calc(1.2);
+		}
+		50% {
+			transform: rotate(0deg);
+			scale: calc(1);
+		}
+		75% {
+			transform: rotate(-5deg);
+			scale: calc(1.2);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
 	h1 {
 		margin: 1rem;
 	}
