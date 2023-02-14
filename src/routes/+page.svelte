@@ -1,3 +1,36 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	const getRandomColor = () => {
+		const letters = '0123456789ABCDEF';
+		let color = '#';
+		for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * letters.length)];
+		}
+		// Then we add the alpha, but we want it to be above 0.5
+		color += Math.floor(128 + Math.random() * 128).toString(16);
+		return color;
+	};
+
+	export const balls = [...Array(30).keys()].map((i) => ({
+		id: i,
+		color: getRandomColor(),
+		size: 10 + Math.random() * 50,
+		location: {
+			x: 8 + Math.random() * 84,
+			y: 8 + Math.random() * 84
+		}
+	}));
+</script>
+
+{#each balls as ball}
+	<div
+		class="ball"
+		style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
+			position: absolute; top: ${ball.location.y}%; left: ${ball.location.x}%;
+			border-radius:50%; filter: blur(1.7vmax); animation: up-down 15s infinite;`}
+	/>
+{/each}
 <div class="fullscreenContainer">
 	<div class="infoBoxContainer">
 		<div class="nameContainer">
@@ -126,5 +159,18 @@
 	h1,
 	h2 {
 		color: #fff;
+	}
+
+	@keyframes -global-up-down {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			transform: scale(3);
+			opacity: 0.3;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 </style>
