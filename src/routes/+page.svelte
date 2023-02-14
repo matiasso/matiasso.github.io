@@ -1,36 +1,64 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	// A function that returns a random color in hex format
 	const getRandomColor = () => {
 		const letters = '0123456789ABCDEF';
 		let color = '#';
 		for (let i = 0; i < 6; i++) {
 			color += letters[Math.floor(Math.random() * letters.length)];
 		}
-		// Then we add the alpha, but we want it to be above 0.5
-		color += Math.floor(128 + Math.random() * 128).toString(16);
 		return color;
 	};
 
-	export const balls = [...Array(30).keys()].map((i) => ({
+	export var balls = [...Array(10).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
-		size: 10 + Math.random() * 50,
+		size: 40 + Math.random() * 100,
 		location: {
-			x: 8 + Math.random() * 84,
-			y: 8 + Math.random() * 84
+			x: 0,
+			y: 0
 		}
 	}));
+
+	// A function that re-positions and re-colors the balls
+	function randomizeBallLocationsAndColors() {
+		for (var i = 0; i < balls.length; i++) {
+			balls[i].color = getRandomColor();
+			balls[i].location.x = Math.random() * window.innerWidth;
+			balls[i].location.y = Math.random() * window.innerHeight;
+		}
+	}
+
+	const animationDuration = 15;
+	let scrollY = 0;
+	onMount(() => {
+		// Call the randomization after mounting
+		randomizeBallLocationsAndColors();
+		// Call the randomization after every animation interval
+		const interval = setInterval(() => {
+			randomizeBallLocationsAndColors();
+		}, animationDuration * 1000);
+		//If a function is returned from onMount, it will be called when the component is unmounted.
+		return () => clearInterval(interval);
+	});
 </script>
 
-{#each balls as ball}
-	<div
-		class="ball"
-		style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
-			position: absolute; top: ${ball.location.y}%; left: ${ball.location.x}%;
-			border-radius:50%; filter: blur(1.7vmax); animation: up-down 15s infinite;`}
-	/>
-{/each}
+<svelte:window bind:scrollY />
+
+<div
+	class="ballContainer"
+	style={`position: absolute; top: ${scrollY}px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none`}
+>
+	{#each balls as ball}
+		<div
+			class="ball"
+			style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
+			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
+			border-radius:50%; filter: blur(1.5vmax); animation: up-down ${animationDuration}s infinite;`}
+		/>
+	{/each}
+</div>
 <div class="fullscreenContainer">
 	<div class="infoBoxContainer">
 		<div class="nameContainer">
@@ -103,7 +131,7 @@
 		align-items: center;
 		min-height: 95vh;
 		height: auto;
-		width: 100vw;
+		width: '100%';
 		background: #303041; /* TODO: Add animated background later*/
 	}
 	.infoBoxContainer {
@@ -163,14 +191,14 @@
 
 	@keyframes -global-up-down {
 		0% {
-			opacity: 1;
+			opacity: 0;
 		}
 		50% {
-			transform: scale(3);
-			opacity: 0.3;
+			transform: scale(5);
+			opacity: 0.25;
 		}
 		100% {
-			opacity: 1;
+			opacity: 0;
 		}
 	}
 </style>
