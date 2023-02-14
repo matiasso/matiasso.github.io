@@ -75,32 +75,29 @@
 		</div>
 
 		<p id="contentText">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare suscipit lectus,
-			vitae pharetra massa. Aenean ligula eros, sagittis a molestie a, lobortis id quam. Fusce
-			rhoncus dolor in tempor pulvinar. Fusce in ipsum vestibulum, venenatis orci nec, auctor ante.
-			Ut nisl quam, tristique ut feugiat non, commodo ac felis. Mauris vulputate molestie massa ac
-			auctor. Etiam semper finibus felis, nec luctus nunc facilisis nec. Vivamus tristique arcu quis
-			tincidunt sollicitudin. Aliquam dignissim, justo in malesuada mollis, lacus libero eleifend
-			velit, in convallis elit tortor et leo. Maecenas efficitur erat urna, eget cursus enim
-			interdum ac. Donec quam purus, maximus ut viverra quis, bibendum non leo. Cras vulputate diam
-			in volutpat finibus. Curabitur vehicula varius risus, sit amet elementum arcu tempor
-			facilisis. Fusce fermentum malesuada leo. Duis id auctor justo, ac sodales nulla. Donec neque
-			ante, aliquet vitae erat quis, placerat imperdiet risus.
+			I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and
+			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
+			possibilities that technology has to offer. During my studies, I have developed a good
+			understanding of programming languages such as Python, Scala, Typescript and C++, which has
+			enabled me to take on projects ranging from simple web applications to more-complex
+			algorithms.
 			<br /><br />
-			Suspendisse volutpat sagittis urna, sed sagittis velit venenatis a. Praesent aliquam orci non finibus
-			auctor. Maecenas quis turpis vulputate, luctus ligula sed, rhoncus quam. Aliquam erat volutpat.
-			Maecenas id orci blandit, interdum enim eu, elementum purus. Nullam varius nisi venenatis, dignissim
-			ipsum ac, molestie nulla. Nulla lacinia orci ut tincidunt vestibulum. Proin fermentum placerat
-			posuere. Morbi mattis a diam quis faucibus.
+			As a part of my academic journey, I have had the opportunity to work on exciting projects such
+			as the implementation of a tool for calibration technicians at Beamex. The project involved using
+			React Native to develop an android-based application for calibration technicians to perform their
+			work more efficiently. The experience allowed me to understand the significance of solving real-world
+			problems and the importance of collaboration in the process. I learned how to work as a team and
+			contribute towards a common goal.
 			<br /><br />
-			Etiam interdum placerat dolor nec iaculis. Aenean dapibus finibus nibh eu placerat. Sed finibus
-			metus vitae orci semper, et consectetur dui hendrerit. Maecenas consequat augue ante, ut scelerisque
-			leo ornare vitae. Praesent sit amet magna dictum, tempus est ac, vulputate ipsum. Proin congue
-			mattis consectetur. Ut aliquet ante ex, sed sodales tellus lacinia consequat. Quisque iaculis,
-			augue sed auctor aliquam, erat quam ultricies ligula, eu convallis ipsum sapien id tellus. Donec
-			elementum consectetur libero, sed tempor orci. Curabitur bibendum mi ex, quis vulputate ligula
-			pharetra et. Morbi semper tortor ac dui malesuada pretium at vitae erat. Nulla quis nulla dui.
-			Duis ac augue nec nisl suscipit tempor.
+			One of my core strengths is my ability to work with Git and collaborate effectively with team members.
+			I understand that each team member brings their unique skill set and perspective to the table,
+			and it is crucial to consider everyone's input while working on a project. I believe that being
+			transparent, communicating effectively, and ensuring equal participation from all members of the
+			team is the key to successful collaboration.
+			<br /><br />
+			I'm interested in exploring new frameworks and technologies and continuously strive to expand my
+			knowledge in the field. I strongly believe that technology has the power to bring positive change
+			to the world, and I hope to contribute to this through my work.
 		</p>
 		<div class="footerContainer">
 			<p>You can find me here:</p>
