@@ -902,10 +902,10 @@ const matchers = {};
 const nodes = [
   () => __vitePreload(() => import("./chunks/0-dc9e9b27.js"), true ? ["./chunks/0-dc9e9b27.js","./components/pages/_layout.svelte-ab323c61.js","./chunks/index-046539a1.js","./assets/_layout-097f40e1.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/1-274afc70.js"), true ? ["./chunks/1-274afc70.js","./components/error.svelte-1cb7715c.js","./chunks/index-046539a1.js","./chunks/singletons-28c5ad7c.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-edd53cdd.js"), true ? ["./chunks/2-edd53cdd.js","./components/pages/_page.svelte-c760a700.js","./chunks/index-046539a1.js","./assets/_page-4c159275.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-42c2c426.js"), true ? ["./chunks/2-42c2c426.js","./components/pages/_page.svelte-8494f29b.js","./chunks/index-046539a1.js","./assets/_page-b56b5393.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/3-9bd10982.js"), true ? ["./chunks/3-9bd10982.js","./components/pages/about/_page.svelte-bda64cdd.js","./chunks/index-046539a1.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/4-730317fb.js"), true ? ["./chunks/4-730317fb.js","./components/pages/projects/_page.svelte-53918477.js","./chunks/index-046539a1.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/5-e7e43168.js"), true ? ["./chunks/5-e7e43168.js","./components/pages/skills/_page.svelte-dfafdc3c.js","./chunks/index-046539a1.js","./assets/_page-72f7f253.css"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/5-5bd4d0c4.js"), true ? ["./chunks/5-5bd4d0c4.js","./components/pages/skills/_page.svelte-f199f037.js","./chunks/index-046539a1.js","./assets/_page-8312629e.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {

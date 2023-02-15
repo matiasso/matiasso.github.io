@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, O as append_hydration, u as set_data, C as noop, n as attr, X as destroy_each, Y as getContext, W as src_url_equal, F as listen } from "../../../chunks/index-046539a1.js";
-function create_fragment$1(ctx) {
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, O as append_hydration, u as set_data, C as noop, n as attr, W as src_url_equal, F as listen, Y as getContext, f as transition_in, d as check_outros, t as transition_out, X as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, g as group_outros } from "../../../chunks/index-046539a1.js";
+function create_fragment$2(ctx) {
   let h1;
   let t0;
   let t1;
@@ -73,7 +73,7 @@ function create_fragment$1(ctx) {
     }
   };
 }
-function instance$1($$self, $$props, $$invalidate) {
+function instance$2($$self, $$props, $$invalidate) {
   let { title = "Skill title" } = $$props;
   let { description = "Skill description" } = $$props;
   $$self.$$set = ($$props2) => {
@@ -84,292 +84,248 @@ function instance$1($$self, $$props, $$invalidate) {
   };
   return [title, description];
 }
-class Skill_popup extends SvelteComponent {
+class SkillPopup extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1, create_fragment$1, safe_not_equal, { title: 0, description: 1 });
+    init(this, options, instance$2, create_fragment$2, safe_not_equal, { title: 0, description: 1 });
+  }
+}
+const skillInfoContainer_svelte_svelte_type_style_lang = "";
+function create_fragment$1(ctx) {
+  let div;
+  let button;
+  let img;
+  let img_src_value;
+  let img_alt_value;
+  let t0;
+  let p;
+  let t1_value = (
+    /*skill*/
+    ctx[0].name + ""
+  );
+  let t1;
+  let mounted;
+  let dispose;
+  return {
+    c() {
+      div = element("div");
+      button = element("button");
+      img = element("img");
+      t0 = space();
+      p = element("p");
+      t1 = text(t1_value);
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      var div_nodes = children(div);
+      button = claim_element(div_nodes, "BUTTON", { class: true });
+      var button_nodes = children(button);
+      img = claim_element(button_nodes, "IMG", { class: true, src: true, alt: true });
+      button_nodes.forEach(detach);
+      t0 = claim_space(div_nodes);
+      p = claim_element(div_nodes, "P", {});
+      var p_nodes = children(p);
+      t1 = claim_text(p_nodes, t1_value);
+      p_nodes.forEach(detach);
+      div_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(img, "class", "skillImgIcon svelte-ynjc5g");
+      if (!src_url_equal(img.src, img_src_value = /*skill*/
+      ctx[0].img))
+        attr(img, "src", img_src_value);
+      attr(img, "alt", img_alt_value = /*skill*/
+      ctx[0].alt);
+      attr(button, "class", "skillImgHolder svelte-ynjc5g");
+      attr(div, "class", "skillContainer svelte-ynjc5g");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      append_hydration(div, button);
+      append_hydration(button, img);
+      append_hydration(div, t0);
+      append_hydration(div, p);
+      append_hydration(p, t1);
+      if (!mounted) {
+        dispose = listen(
+          button,
+          "click",
+          /*click_handler*/
+          ctx[2]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*skill*/
+      1 && !src_url_equal(img.src, img_src_value = /*skill*/
+      ctx2[0].img)) {
+        attr(img, "src", img_src_value);
+      }
+      if (dirty & /*skill*/
+      1 && img_alt_value !== (img_alt_value = /*skill*/
+      ctx2[0].alt)) {
+        attr(img, "alt", img_alt_value);
+      }
+      if (dirty & /*skill*/
+      1 && t1_value !== (t1_value = /*skill*/
+      ctx2[0].name + ""))
+        set_data(t1, t1_value);
+    },
+    i: noop,
+    o: noop,
+    d(detaching) {
+      if (detaching)
+        detach(div);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+function instance$1($$self, $$props, $$invalidate) {
+  const { open } = getContext("simple-modal");
+  const openModal = (props) => {
+    open(SkillPopup, props);
+  };
+  let { skill = {
+    name: "Skill name",
+    img: "/skills/skill_logo.png",
+    alt: "Skill logo",
+    description: "Skill description"
+  } } = $$props;
+  const click_handler = () => openModal({
+    title: `About ${skill.name}`,
+    description: `${skill.description}`
+  });
+  $$self.$$set = ($$props2) => {
+    if ("skill" in $$props2)
+      $$invalidate(0, skill = $$props2.skill);
+  };
+  return [skill, openModal, click_handler];
+}
+class SkillInfoContainer extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1, create_fragment$1, safe_not_equal, { skill: 0 });
   }
 }
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[6] = list[i];
+  child_ctx[1] = list[i];
   return child_ctx;
 }
 function get_each_context_1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[6] = list[i];
+  child_ctx[1] = list[i];
   return child_ctx;
 }
 function get_each_context_2(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[6] = list[i];
+  child_ctx[1] = list[i];
   return child_ctx;
 }
 function create_each_block_2(ctx) {
-  let div;
-  let button;
-  let img;
-  let img_src_value;
-  let t0;
-  let p;
-  let t1_value = (
+  let skilltypecontainer;
+  let current;
+  skilltypecontainer = new SkillInfoContainer({ props: { skill: (
     /*skill*/
-    ctx[6].name + ""
-  );
-  let t1;
-  let t2;
-  let mounted;
-  let dispose;
-  function click_handler() {
-    return (
-      /*click_handler*/
-      ctx[2](
-        /*skill*/
-        ctx[6]
-      )
-    );
-  }
+    ctx[1]
+  ) } });
   return {
     c() {
-      div = element("div");
-      button = element("button");
-      img = element("img");
-      t0 = space();
-      p = element("p");
-      t1 = text(t1_value);
-      t2 = space();
-      this.h();
+      create_component(skilltypecontainer.$$.fragment);
     },
     l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div);
-      button = claim_element(div_nodes, "BUTTON", { class: true });
-      var button_nodes = children(button);
-      img = claim_element(button_nodes, "IMG", { class: true, src: true, alt: true });
-      button_nodes.forEach(detach);
-      t0 = claim_space(div_nodes);
-      p = claim_element(div_nodes, "P", {});
-      var p_nodes = children(p);
-      t1 = claim_text(p_nodes, t1_value);
-      p_nodes.forEach(detach);
-      t2 = claim_space(div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(img, "class", "skillImgIcon svelte-1bmaujf");
-      if (!src_url_equal(img.src, img_src_value = /*skill*/
-      ctx[6].img))
-        attr(img, "src", img_src_value);
-      attr(
-        img,
-        "alt",
-        /*skill*/
-        ctx[6].alt
-      );
-      attr(button, "class", "skillImgHolder svelte-1bmaujf");
-      attr(div, "class", "skillContainer svelte-1bmaujf");
+      claim_component(skilltypecontainer.$$.fragment, nodes);
     },
     m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      append_hydration(div, button);
-      append_hydration(button, img);
-      append_hydration(div, t0);
-      append_hydration(div, p);
-      append_hydration(p, t1);
-      append_hydration(div, t2);
-      if (!mounted) {
-        dispose = listen(button, "click", click_handler);
-        mounted = true;
-      }
+      mount_component(skilltypecontainer, target, anchor);
+      current = true;
     },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
+    p: noop,
+    i(local) {
+      if (current)
+        return;
+      transition_in(skilltypecontainer.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(skilltypecontainer.$$.fragment, local);
+      current = false;
     },
     d(detaching) {
-      if (detaching)
-        detach(div);
-      mounted = false;
-      dispose();
+      destroy_component(skilltypecontainer, detaching);
     }
   };
 }
 function create_each_block_1(ctx) {
-  let div;
-  let button;
-  let img;
-  let img_src_value;
-  let t0;
-  let p;
-  let t1_value = (
+  let skilltypecontainer;
+  let current;
+  skilltypecontainer = new SkillInfoContainer({ props: { skill: (
     /*skill*/
-    ctx[6].name + ""
-  );
-  let t1;
-  let t2;
-  let mounted;
-  let dispose;
-  function click_handler_1() {
-    return (
-      /*click_handler_1*/
-      ctx[3](
-        /*skill*/
-        ctx[6]
-      )
-    );
-  }
+    ctx[1]
+  ) } });
   return {
     c() {
-      div = element("div");
-      button = element("button");
-      img = element("img");
-      t0 = space();
-      p = element("p");
-      t1 = text(t1_value);
-      t2 = space();
-      this.h();
+      create_component(skilltypecontainer.$$.fragment);
     },
     l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div);
-      button = claim_element(div_nodes, "BUTTON", { class: true });
-      var button_nodes = children(button);
-      img = claim_element(button_nodes, "IMG", { class: true, src: true, alt: true });
-      button_nodes.forEach(detach);
-      t0 = claim_space(div_nodes);
-      p = claim_element(div_nodes, "P", {});
-      var p_nodes = children(p);
-      t1 = claim_text(p_nodes, t1_value);
-      p_nodes.forEach(detach);
-      t2 = claim_space(div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(img, "class", "skillImgIcon svelte-1bmaujf");
-      if (!src_url_equal(img.src, img_src_value = /*skill*/
-      ctx[6].img))
-        attr(img, "src", img_src_value);
-      attr(
-        img,
-        "alt",
-        /*skill*/
-        ctx[6].alt
-      );
-      attr(button, "class", "skillImgHolder svelte-1bmaujf");
-      attr(div, "class", "skillContainer svelte-1bmaujf");
+      claim_component(skilltypecontainer.$$.fragment, nodes);
     },
     m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      append_hydration(div, button);
-      append_hydration(button, img);
-      append_hydration(div, t0);
-      append_hydration(div, p);
-      append_hydration(p, t1);
-      append_hydration(div, t2);
-      if (!mounted) {
-        dispose = listen(button, "click", click_handler_1);
-        mounted = true;
-      }
+      mount_component(skilltypecontainer, target, anchor);
+      current = true;
     },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
+    p: noop,
+    i(local) {
+      if (current)
+        return;
+      transition_in(skilltypecontainer.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(skilltypecontainer.$$.fragment, local);
+      current = false;
     },
     d(detaching) {
-      if (detaching)
-        detach(div);
-      mounted = false;
-      dispose();
+      destroy_component(skilltypecontainer, detaching);
     }
   };
 }
 function create_each_block(ctx) {
-  let div;
-  let button;
-  let img;
-  let img_src_value;
-  let t0;
-  let p;
-  let t1_value = (
+  let skilltypecontainer;
+  let current;
+  skilltypecontainer = new SkillInfoContainer({ props: { skill: (
     /*skill*/
-    ctx[6].name + ""
-  );
-  let t1;
-  let t2;
-  let mounted;
-  let dispose;
-  function click_handler_2() {
-    return (
-      /*click_handler_2*/
-      ctx[4](
-        /*skill*/
-        ctx[6]
-      )
-    );
-  }
+    ctx[1]
+  ) } });
   return {
     c() {
-      div = element("div");
-      button = element("button");
-      img = element("img");
-      t0 = space();
-      p = element("p");
-      t1 = text(t1_value);
-      t2 = space();
-      this.h();
+      create_component(skilltypecontainer.$$.fragment);
     },
     l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div);
-      button = claim_element(div_nodes, "BUTTON", { class: true });
-      var button_nodes = children(button);
-      img = claim_element(button_nodes, "IMG", { class: true, src: true, alt: true });
-      button_nodes.forEach(detach);
-      t0 = claim_space(div_nodes);
-      p = claim_element(div_nodes, "P", {});
-      var p_nodes = children(p);
-      t1 = claim_text(p_nodes, t1_value);
-      p_nodes.forEach(detach);
-      t2 = claim_space(div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(img, "class", "skillImgIcon svelte-1bmaujf");
-      if (!src_url_equal(img.src, img_src_value = /*skill*/
-      ctx[6].img))
-        attr(img, "src", img_src_value);
-      attr(
-        img,
-        "alt",
-        /*skill*/
-        ctx[6].alt
-      );
-      attr(button, "class", "skillImgHolder svelte-1bmaujf");
-      attr(div, "class", "skillContainer svelte-1bmaujf");
+      claim_component(skilltypecontainer.$$.fragment, nodes);
     },
     m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      append_hydration(div, button);
-      append_hydration(button, img);
-      append_hydration(div, t0);
-      append_hydration(div, p);
-      append_hydration(p, t1);
-      append_hydration(div, t2);
-      if (!mounted) {
-        dispose = listen(button, "click", click_handler_2);
-        mounted = true;
-      }
+      mount_component(skilltypecontainer, target, anchor);
+      current = true;
     },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
+    p: noop,
+    i(local) {
+      if (current)
+        return;
+      transition_in(skilltypecontainer.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(skilltypecontainer.$$.fragment, local);
+      current = false;
     },
     d(detaching) {
-      if (detaching)
-        detach(div);
-      mounted = false;
-      dispose();
+      destroy_component(skilltypecontainer, detaching);
     }
   };
 }
@@ -389,30 +345,40 @@ function create_fragment(ctx) {
   let t6;
   let t7;
   let div2;
+  let current;
   let each_value_2 = (
     /*skills*/
-    ctx[1].programming
+    ctx[0].programming
   );
   let each_blocks_2 = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
     each_blocks_2[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
   }
+  const out = (i) => transition_out(each_blocks_2[i], 1, 1, () => {
+    each_blocks_2[i] = null;
+  });
   let each_value_1 = (
     /*skills*/
-    ctx[1].useful
+    ctx[0].useful
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
   }
+  const out_1 = (i) => transition_out(each_blocks_1[i], 1, 1, () => {
+    each_blocks_1[i] = null;
+  });
   let each_value = (
     /*skills*/
-    ctx[1].other
+    ctx[0].other
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
     each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
   }
+  const out_2 = (i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  });
   return {
     c() {
       div3 = element("div");
@@ -483,13 +449,13 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(h10, "class", "svelte-1bmaujf");
-      attr(div0, "class", "skillTypeContainer svelte-1bmaujf");
-      attr(h11, "class", "svelte-1bmaujf");
-      attr(div1, "class", "skillTypeContainer svelte-1bmaujf");
-      attr(h12, "class", "svelte-1bmaujf");
-      attr(div2, "class", "skillTypeContainer svelte-1bmaujf");
-      attr(div3, "class", "fullscreenContainer svelte-1bmaujf");
+      attr(h10, "class", "svelte-1q06u84");
+      attr(div0, "class", "skillTypeContainer svelte-1q06u84");
+      attr(h11, "class", "svelte-1q06u84");
+      attr(div1, "class", "skillTypeContainer svelte-1q06u84");
+      attr(h12, "class", "svelte-1q06u84");
+      attr(div2, "class", "skillTypeContainer svelte-1q06u84");
+      attr(div3, "class", "fullscreenContainer svelte-1q06u84");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -516,71 +482,108 @@ function create_fragment(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].m(div2, null);
       }
+      current = true;
     },
     p(ctx2, [dirty]) {
-      if (dirty & /*skills, openModal*/
-      3) {
+      if (dirty & /*skills*/
+      1) {
         each_value_2 = /*skills*/
-        ctx2[1].programming;
+        ctx2[0].programming;
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
           const child_ctx = get_each_context_2(ctx2, each_value_2, i);
           if (each_blocks_2[i]) {
             each_blocks_2[i].p(child_ctx, dirty);
+            transition_in(each_blocks_2[i], 1);
           } else {
             each_blocks_2[i] = create_each_block_2(child_ctx);
             each_blocks_2[i].c();
+            transition_in(each_blocks_2[i], 1);
             each_blocks_2[i].m(div0, null);
           }
         }
-        for (; i < each_blocks_2.length; i += 1) {
-          each_blocks_2[i].d(1);
+        group_outros();
+        for (i = each_value_2.length; i < each_blocks_2.length; i += 1) {
+          out(i);
         }
-        each_blocks_2.length = each_value_2.length;
+        check_outros();
       }
-      if (dirty & /*skills, openModal*/
-      3) {
+      if (dirty & /*skills*/
+      1) {
         each_value_1 = /*skills*/
-        ctx2[1].useful;
+        ctx2[0].useful;
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
           const child_ctx = get_each_context_1(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
+            transition_in(each_blocks_1[i], 1);
           } else {
             each_blocks_1[i] = create_each_block_1(child_ctx);
             each_blocks_1[i].c();
+            transition_in(each_blocks_1[i], 1);
             each_blocks_1[i].m(div1, null);
           }
         }
-        for (; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].d(1);
+        group_outros();
+        for (i = each_value_1.length; i < each_blocks_1.length; i += 1) {
+          out_1(i);
         }
-        each_blocks_1.length = each_value_1.length;
+        check_outros();
       }
-      if (dirty & /*skills, openModal*/
-      3) {
+      if (dirty & /*skills*/
+      1) {
         each_value = /*skills*/
-        ctx2[1].other;
+        ctx2[0].other;
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
           } else {
             each_blocks[i] = create_each_block(child_ctx);
             each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
             each_blocks[i].m(div2, null);
           }
         }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out_2(i);
         }
-        each_blocks.length = each_value.length;
+        check_outros();
       }
     },
-    i: noop,
-    o: noop,
+    i(local) {
+      if (current)
+        return;
+      for (let i = 0; i < each_value_2.length; i += 1) {
+        transition_in(each_blocks_2[i]);
+      }
+      for (let i = 0; i < each_value_1.length; i += 1) {
+        transition_in(each_blocks_1[i]);
+      }
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks_2 = each_blocks_2.filter(Boolean);
+      for (let i = 0; i < each_blocks_2.length; i += 1) {
+        transition_out(each_blocks_2[i]);
+      }
+      each_blocks_1 = each_blocks_1.filter(Boolean);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        transition_out(each_blocks_1[i]);
+      }
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
     d(detaching) {
       if (detaching)
         detach(div3);
@@ -591,10 +594,6 @@ function create_fragment(ctx) {
   };
 }
 function instance($$self) {
-  const { open } = getContext("simple-modal");
-  const openModal = (props) => {
-    open(Skill_popup, props);
-  };
   const skills = {
     programming: [
       {
@@ -609,13 +608,13 @@ function instance($$self) {
         img: "/skills/python_logo.png",
         alt: "Python logo",
         description: `Python was the first programming language that I learned back in 2018, and I have been using it for small everyday scripts since then. 
-					I have also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
+					I also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
       },
       {
         name: "Typescript",
         img: "/skills/typescript_logo.png",
         alt: "Typescript logo",
-        description: `TypeScript is quite new addition to my skills. I have completed the "Web Software Development" course at Aalto University (2021-2022), 
+        description: `TypeScript is quite new addition to my skills. I completed the "Web Software Development" course at Aalto University (2021-2022), 
 				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
 				This website is also in-fact built with Typescript (and SvelteKit).`
@@ -721,19 +720,7 @@ function instance($$self) {
       }
     ]
   };
-  const click_handler = (skill) => openModal({
-    title: `About ${skill.name}`,
-    description: `${skill.description}`
-  });
-  const click_handler_1 = (skill) => openModal({
-    title: `About ${skill.name}`,
-    description: `${skill.description}`
-  });
-  const click_handler_2 = (skill) => openModal({
-    title: `About ${skill.name}`,
-    description: `${skill.description}`
-  });
-  return [openModal, skills, click_handler, click_handler_1, click_handler_2];
+  return [skills];
 }
 class Page extends SvelteComponent {
   constructor(options) {

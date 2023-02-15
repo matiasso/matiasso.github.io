@@ -167,12 +167,12 @@ function create_fragment(ctx) {
       var div4_nodes = children(div4);
       div1 = claim_element(div4_nodes, "DIV", { class: true });
       var div1_nodes = children(div1);
-      h1 = claim_element(div1_nodes, "H1", {});
+      h1 = claim_element(div1_nodes, "H1", { class: true });
       var h1_nodes = children(h1);
       t1 = claim_text(h1_nodes, "Matias Södersved");
       h1_nodes.forEach(detach);
       t2 = claim_space(div1_nodes);
-      h2 = claim_element(div1_nodes, "H2", {});
+      h2 = claim_element(div1_nodes, "H2", { class: true });
       var h2_nodes = children(h2);
       t3 = claim_text(h2_nodes, "Student from Aalto University");
       h2_nodes.forEach(detach);
@@ -237,30 +237,32 @@ function create_fragment(ctx) {
       attr(div0, "class", "ballContainer");
       attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
-      attr(div1, "class", "nameContainer svelte-17874xa");
+      attr(h1, "class", "svelte-1j8kxu9");
+      attr(h2, "class", "svelte-1j8kxu9");
+      attr(div1, "class", "nameContainer svelte-1j8kxu9");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Avatar template");
-      attr(img0, "class", "svelte-17874xa");
-      attr(div2, "class", "imageContainer svelte-17874xa");
+      attr(img0, "class", "svelte-1j8kxu9");
+      attr(div2, "class", "imageContainer svelte-1j8kxu9");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-17874xa");
-      attr(img1, "class", "socialImg svelte-17874xa");
+      attr(p0, "class", "svelte-1j8kxu9");
+      attr(img1, "class", "socialImg svelte-1j8kxu9");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(img1, "height", "50px");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-17874xa");
+      attr(img2, "class", "socialImg svelte-1j8kxu9");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(img2, "height", "50px");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-17874xa");
-      attr(div4, "class", "infoBoxContainer svelte-17874xa");
-      attr(div5, "class", "fullscreenContainer svelte-17874xa");
+      attr(div3, "class", "footerContainer svelte-1j8kxu9");
+      attr(div4, "class", "infoBoxContainer svelte-1j8kxu9");
+      attr(div5, "class", "fullscreenContainer svelte-1j8kxu9");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
