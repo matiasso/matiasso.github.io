@@ -936,12 +936,12 @@ function instance$1($$self, $$props, $$invalidate) {
     if (Component && event.key === "Tab" && !state.disableFocusTrap) {
       const nodes = modalWindow.querySelectorAll("*");
       const tabbable = Array.from(nodes).filter(state.isTabbable).sort((a, b) => a.tabIndex - b.tabIndex);
-      let index = tabbable.indexOf(document.activeElement);
-      if (index === -1 && event.shiftKey)
-        index = 0;
-      index += tabbable.length + (event.shiftKey ? -1 : 1);
-      index %= tabbable.length;
-      tabbable[index].focus();
+      let index2 = tabbable.indexOf(document.activeElement);
+      if (index2 === -1 && event.shiftKey)
+        index2 = 0;
+      index2 += tabbable.length + (event.shiftKey ? -1 : 1);
+      index2 %= tabbable.length;
+      tabbable[index2].focus();
       event.preventDefault();
     }
   };
@@ -1173,6 +1173,8 @@ class Modal extends SvelteComponent {
     );
   }
 }
+const index$1 = "";
+const index = "";
 const _layout_svelte_svelte_type_style_lang = "";
 function create_default_slot(ctx) {
   let current;
@@ -1317,14 +1319,14 @@ function create_fragment(ctx) {
     },
     h() {
       attr(a0, "href", "/");
-      attr(a0, "class", "svelte-1asrvai");
+      attr(a0, "class", "svelte-pa4tw7");
       attr(a1, "href", "/about");
-      attr(a1, "class", "svelte-1asrvai");
+      attr(a1, "class", "svelte-pa4tw7");
       attr(a2, "href", "/skills");
-      attr(a2, "class", "svelte-1asrvai");
+      attr(a2, "class", "svelte-pa4tw7");
       attr(a3, "href", "/projects");
-      attr(a3, "class", "svelte-1asrvai");
-      attr(nav, "class", "svelte-1asrvai");
+      attr(a3, "class", "svelte-pa4tw7");
+      attr(nav, "class", "svelte-pa4tw7");
     },
     m(target, anchor) {
       insert_hydration(target, nav, anchor);
