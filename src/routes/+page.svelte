@@ -63,7 +63,7 @@
 	<div class="infoBoxContainer">
 		<div class="nameContainer">
 			<h1>Matias Södersved</h1>
-			<h2>Student from Aalto-University</h2>
+			<h2>Student from Aalto University</h2>
 		</div>
 
 		<div class="imageContainer">
@@ -71,7 +71,7 @@
 		</div>
 
 		<p id="contentText">
-			I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and
+			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
 			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
 			understanding of programming languages such as Python, Scala, Typescript and C++, which has
