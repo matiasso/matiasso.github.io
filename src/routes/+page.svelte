@@ -170,6 +170,14 @@
 	#contentText {
 		grid-area: content;
 	}
+	h1 {
+		font-size: 4rem;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 1.5rem;
+		margin: 0.5rem 0 1rem 0;
+	}
 
 	@keyframes -global-up-down {
 		0% {
