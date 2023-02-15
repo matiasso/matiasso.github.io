@@ -158,7 +158,7 @@ function create_each_block_2(ctx) {
       this.h();
     },
     h() {
-      attr(img, "class", "skillImgIcon svelte-1lbnnri");
+      attr(img, "class", "skillImgIcon svelte-1bmaujf");
       if (!src_url_equal(img.src, img_src_value = /*skill*/
       ctx[6].img))
         attr(img, "src", img_src_value);
@@ -168,8 +168,8 @@ function create_each_block_2(ctx) {
         /*skill*/
         ctx[6].alt
       );
-      attr(button, "class", "skillImgHolder svelte-1lbnnri");
-      attr(div, "class", "skillContainer svelte-1lbnnri");
+      attr(button, "class", "skillImgHolder svelte-1bmaujf");
+      attr(div, "class", "skillContainer svelte-1bmaujf");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -247,7 +247,7 @@ function create_each_block_1(ctx) {
       this.h();
     },
     h() {
-      attr(img, "class", "skillImgIcon svelte-1lbnnri");
+      attr(img, "class", "skillImgIcon svelte-1bmaujf");
       if (!src_url_equal(img.src, img_src_value = /*skill*/
       ctx[6].img))
         attr(img, "src", img_src_value);
@@ -257,8 +257,8 @@ function create_each_block_1(ctx) {
         /*skill*/
         ctx[6].alt
       );
-      attr(button, "class", "skillImgHolder svelte-1lbnnri");
-      attr(div, "class", "skillContainer svelte-1lbnnri");
+      attr(button, "class", "skillImgHolder svelte-1bmaujf");
+      attr(div, "class", "skillContainer svelte-1bmaujf");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -336,7 +336,7 @@ function create_each_block(ctx) {
       this.h();
     },
     h() {
-      attr(img, "class", "skillImgIcon svelte-1lbnnri");
+      attr(img, "class", "skillImgIcon svelte-1bmaujf");
       if (!src_url_equal(img.src, img_src_value = /*skill*/
       ctx[6].img))
         attr(img, "src", img_src_value);
@@ -346,8 +346,8 @@ function create_each_block(ctx) {
         /*skill*/
         ctx[6].alt
       );
-      attr(button, "class", "skillImgHolder svelte-1lbnnri");
-      attr(div, "class", "skillContainer svelte-1lbnnri");
+      attr(button, "class", "skillImgHolder svelte-1bmaujf");
+      attr(div, "class", "skillContainer svelte-1bmaujf");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -483,13 +483,13 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(h10, "class", "svelte-1lbnnri");
-      attr(div0, "class", "skillTypeContainer svelte-1lbnnri");
-      attr(h11, "class", "svelte-1lbnnri");
-      attr(div1, "class", "skillTypeContainer svelte-1lbnnri");
-      attr(h12, "class", "svelte-1lbnnri");
-      attr(div2, "class", "skillTypeContainer svelte-1lbnnri");
-      attr(div3, "class", "fullscreenContainer svelte-1lbnnri");
+      attr(h10, "class", "svelte-1bmaujf");
+      attr(div0, "class", "skillTypeContainer svelte-1bmaujf");
+      attr(h11, "class", "svelte-1bmaujf");
+      attr(div1, "class", "skillTypeContainer svelte-1bmaujf");
+      attr(h12, "class", "svelte-1bmaujf");
+      attr(div2, "class", "skillTypeContainer svelte-1bmaujf");
+      attr(div3, "class", "fullscreenContainer svelte-1bmaujf");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -601,30 +601,30 @@ function instance($$self) {
         name: "Scala",
         img: "/skills/scala_logo.png",
         alt: "Scala logo",
-        description: `Scala is maybe one of my strongest programming languages, because at Aalto-University 
-				most of the programming courses require you to write Scala code, so I have became quite familiar with it.`
+        description: `Scala is maybe one of my strongest programming languages, because at Aalto University 
+				most of the programming courses require you to write Scala code, so I have become quite familiar with it.`
       },
       {
         name: "Python",
         img: "/skills/python_logo.png",
         alt: "Python logo",
         description: `Python was the first programming language that I learned back in 2018, and I have been using it for small everyday scripts since then. 
-					I have also used it in the "Machine learning" course at Aalto-University, where we learned some basics of scikit-learn library.`
+					I have also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
       },
       {
         name: "Typescript",
         img: "/skills/typescript_logo.png",
         alt: "Typescript logo",
-        description: `TypeScript is quite new addition to my skills. I have completed the "Web Software Development" course at Aalto-University (2021-2022), 
-				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto-University (2022-2023). 
+        description: `TypeScript is quite new addition to my skills. I have completed the "Web Software Development" course at Aalto University (2021-2022), 
+				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
-				This website is also in-fact built with Typescript (and Svelte).`
+				This website is also in-fact built with Typescript (and SvelteKit).`
       },
       {
         name: "React",
         img: "/skills/react-native_logo.png",
         alt: "React logo",
-        description: `I got to know React and React Native during a "Software project" course at Aalto-University (2022-2023). 
+        description: `I got to know React and React Native during a "Software project" course at Aalto University (2022-2023). 
 				During that project we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.`
       },
       {
@@ -632,7 +632,7 @@ function instance($$self) {
         img: "/skills/svelte_logo.png",
         alt: "Svelte logo",
         description: `After learning React and React Native I decided to try something new, and heard about Svelte. 
-				This website is built with Svelte (and TypeScript). So far I'm still a beginner with Svelte, but I'm really enjoying it.`
+				This website is built with SvelteKit (and TypeScript). So far I'm still a beginner with Svelte, but I'm really enjoying it.`
       },
       {
         name: "R",
@@ -645,7 +645,7 @@ function instance($$self) {
         name: "C++",
         img: "/skills/cpp_logo.png",
         alt: "C++ logo",
-        description: `I have completed the "Basics of C++ course, which also included a group project, 
+        description: `I have completed the "Basics of C++" course, which also included a group project, 
 				in which we built a simple Tower Defense game.`
       }
     ],
@@ -655,14 +655,14 @@ function instance($$self) {
         img: "/skills/git_logo.png",
         alt: "Git logo",
         description: `I have used Git for version control in most of my personal projects. 
-				I have also used Git for version control during all the group projects at Aalto-University.`
+				I have also used Git during all the group projects at Aalto University.`
       },
       {
         name: "Figma",
         img: "/skills/figma_logo.svg",
         alt: "Figma logo",
         description: `Figma is a tool that I really love. I have used it for designing this website, 
-				and for sketching out some design visions during our group projects at Aalto-University.`
+				and for sketching out some design visions during our group projects at Aalto University.`
       },
       {
         name: "Gimp",
@@ -682,7 +682,7 @@ function instance($$self) {
         name: "SQL",
         img: "/skills/sql_logo.png",
         alt: "SQL logo",
-        description: `I have learned the basics of SQL during 2022, when I had "Databases" -course at Aalto-University. We had lots of exercises, 
+        description: `I have learned the basics of SQL during 2022, when I had "Databases" -course at Aalto University. We had lots of exercises, 
 				where we had to write SQL queries to fetch data from a database. I haven't had the opportunity to use SQL in any of my projects yet, but I have a few projects
 				in mind, in which I could use SQL.`
       },

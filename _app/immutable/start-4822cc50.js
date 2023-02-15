@@ -900,12 +900,12 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 };
 const matchers = {};
 const nodes = [
-  () => __vitePreload(() => import("./chunks/0-0e587d6b.js"), true ? ["./chunks/0-0e587d6b.js","./components/pages/_layout.svelte-f2725587.js","./chunks/index-046539a1.js","./assets/_layout-288e4727.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/0-395c3f93.js"), true ? ["./chunks/0-395c3f93.js","./components/pages/_layout.svelte-ffc66dfd.js","./chunks/index-046539a1.js","./assets/_layout-daf3e516.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/1-274afc70.js"), true ? ["./chunks/1-274afc70.js","./components/error.svelte-1cb7715c.js","./chunks/index-046539a1.js","./chunks/singletons-28c5ad7c.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-3afa3aaa.js"), true ? ["./chunks/2-3afa3aaa.js","./components/pages/_page.svelte-cbd27522.js","./chunks/index-046539a1.js","./assets/_page-0d19c646.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-edd53cdd.js"), true ? ["./chunks/2-edd53cdd.js","./components/pages/_page.svelte-c760a700.js","./chunks/index-046539a1.js","./assets/_page-4c159275.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/3-9bd10982.js"), true ? ["./chunks/3-9bd10982.js","./components/pages/about/_page.svelte-bda64cdd.js","./chunks/index-046539a1.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/4-730317fb.js"), true ? ["./chunks/4-730317fb.js","./components/pages/projects/_page.svelte-53918477.js","./chunks/index-046539a1.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/5-c0550a4b.js"), true ? ["./chunks/5-c0550a4b.js","./components/pages/skills/_page.svelte-b250fd07.js","./chunks/index-046539a1.js","./assets/_page-a2402027.css"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/5-e7e43168.js"), true ? ["./chunks/5-e7e43168.js","./components/pages/skills/_page.svelte-dfafdc3c.js","./chunks/index-046539a1.js","./assets/_page-72f7f253.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {

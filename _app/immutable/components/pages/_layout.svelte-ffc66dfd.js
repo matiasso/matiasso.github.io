@@ -1265,7 +1265,7 @@ function create_fragment(ctx) {
         boxShadow: "0 5px 5px 0 rgba(0, 0, 0, 0.15)",
         background: "#3D3A50"
       },
-      styleCloseButton: { background: "#f008" },
+      styleCloseButton: { background: "#f008", cursor: "pointer" },
       $$slots: { default: [create_default_slot] },
       $$scope: { ctx }
     }
@@ -1317,14 +1317,14 @@ function create_fragment(ctx) {
     },
     h() {
       attr(a0, "href", "/");
-      attr(a0, "class", "svelte-18zoo8s");
+      attr(a0, "class", "svelte-1asrvai");
       attr(a1, "href", "/about");
-      attr(a1, "class", "svelte-18zoo8s");
+      attr(a1, "class", "svelte-1asrvai");
       attr(a2, "href", "/skills");
-      attr(a2, "class", "svelte-18zoo8s");
+      attr(a2, "class", "svelte-1asrvai");
       attr(a3, "href", "/projects");
-      attr(a3, "class", "svelte-18zoo8s");
-      attr(nav, "class", "svelte-18zoo8s");
+      attr(a3, "class", "svelte-1asrvai");
+      attr(nav, "class", "svelte-1asrvai");
     },
     m(target, anchor) {
       insert_hydration(target, nav, anchor);

@@ -28,7 +28,7 @@ function create_each_block(ctx) {
 			position: absolute; top: ${/*ball*/
       ctx[5].location.y}px; left: ${/*ball*/
       ctx[5].location.x}px;
-			border-radius:50%; filter: blur(1.5vmax); animation: up-down ${animationDuration}s infinite;`);
+			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`);
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -42,7 +42,7 @@ function create_each_block(ctx) {
 			position: absolute; top: ${/*ball*/
       ctx2[5].location.y}px; left: ${/*ball*/
       ctx2[5].location.x}px;
-			border-radius:50%; filter: blur(1.5vmax); animation: up-down ${animationDuration}s infinite;`)) {
+			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`)) {
         attr(div, "style", div_style_value);
       }
     },
@@ -125,13 +125,13 @@ function create_fragment(ctx) {
       t1 = text("Matias Södersved");
       t2 = space();
       h2 = element("h2");
-      t3 = text("Student from Aalto-University");
+      t3 = text("Student from Aalto University");
       t4 = space();
       div2 = element("div");
       img0 = element("img");
       t5 = space();
       p0 = element("p");
-      t6 = text("I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
+      t6 = text("I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
       br0 = element("br");
       br1 = element("br");
       t7 = text("\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
@@ -174,7 +174,7 @@ function create_fragment(ctx) {
       t2 = claim_space(div1_nodes);
       h2 = claim_element(div1_nodes, "H2", {});
       var h2_nodes = children(h2);
-      t3 = claim_text(h2_nodes, "Student from Aalto-University");
+      t3 = claim_text(h2_nodes, "Student from Aalto University");
       h2_nodes.forEach(detach);
       div1_nodes.forEach(detach);
       t4 = claim_space(div4_nodes);
@@ -190,7 +190,7 @@ function create_fragment(ctx) {
       t5 = claim_space(div4_nodes);
       p0 = claim_element(div4_nodes, "P", { id: true, class: true });
       var p0_nodes = children(p0);
-      t6 = claim_text(p0_nodes, "I'm a 3rd year computer science student at Aalto-University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
+      t6 = claim_text(p0_nodes, "I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
       br0 = claim_element(p0_nodes, "BR", {});
       br1 = claim_element(p0_nodes, "BR", {});
       t7 = claim_text(p0_nodes, "\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
@@ -235,32 +235,32 @@ function create_fragment(ctx) {
     },
     h() {
       attr(div0, "class", "ballContainer");
-      attr(div0, "style", div0_style_value = `position: absolute; top: ${/*scrollY*/
-      ctx[1]}px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none`);
-      attr(div1, "class", "nameContainer svelte-m3wq87");
+      attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
+      ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
+      attr(div1, "class", "nameContainer svelte-17874xa");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Avatar template");
-      attr(img0, "class", "svelte-m3wq87");
-      attr(div2, "class", "imageContainer svelte-m3wq87");
+      attr(img0, "class", "svelte-17874xa");
+      attr(div2, "class", "imageContainer svelte-17874xa");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-m3wq87");
-      attr(img1, "class", "socialImg svelte-m3wq87");
+      attr(p0, "class", "svelte-17874xa");
+      attr(img1, "class", "socialImg svelte-17874xa");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(img1, "height", "50px");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-m3wq87");
+      attr(img2, "class", "socialImg svelte-17874xa");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(img2, "height", "50px");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-m3wq87");
-      attr(div4, "class", "infoBoxContainer svelte-m3wq87");
-      attr(div5, "class", "fullscreenContainer svelte-m3wq87");
+      attr(div3, "class", "footerContainer svelte-17874xa");
+      attr(div4, "class", "infoBoxContainer svelte-17874xa");
+      attr(div5, "class", "fullscreenContainer svelte-17874xa");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -344,8 +344,8 @@ function create_fragment(ctx) {
         each_blocks.length = each_value.length;
       }
       if (dirty & /*scrollY*/
-      2 && div0_style_value !== (div0_style_value = `position: absolute; top: ${/*scrollY*/
-      ctx2[1]}px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none`)) {
+      2 && div0_style_value !== (div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
+      ctx2[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`)) {
         attr(div0, "style", div0_style_value);
       }
     },
@@ -377,7 +377,7 @@ function instance($$self, $$props, $$invalidate) {
   let { balls = [...Array(10).keys()].map((i) => ({
     id: i,
     color: getRandomColor(),
-    size: 40 + Math.random() * 100,
+    size: 30 + Math.random() * 150,
     location: { x: 0, y: 0 }
   })) } = $$props;
   function randomizeBallLocationsAndColors() {
