@@ -26,7 +26,7 @@
 				img: '/skills/python_logo.png',
 				alt: 'Python logo',
 				description: `Python was the first programming language that I learned back in 2018, and I have been using it for small everyday scripts since then. 
-					I have also used it in the "Machine learning" course at Aalto University, where we learned some basics of scikit-learn library.`
+					I have also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
 			},
 			{
 				name: 'Typescript',
@@ -35,7 +35,7 @@
 				description: `TypeScript is quite new addition to my skills. I have completed the "Web Software Development" course at Aalto University (2021-2022), 
 				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
-				This website is also in-fact built with Typescript (and Svelte).`
+				This website is also in-fact built with Typescript (and SvelteKit).`
 			},
 			{
 				name: 'React',
@@ -49,7 +49,7 @@
 				img: '/skills/svelte_logo.png',
 				alt: 'Svelte logo',
 				description: `After learning React and React Native I decided to try something new, and heard about Svelte. 
-				This website is built with Svelte (and TypeScript). So far I'm still a beginner with Svelte, but I'm really enjoying it.`
+				This website is built with SvelteKit (and TypeScript). So far I'm still a beginner with Svelte, but I'm really enjoying it.`
 			},
 			{
 				name: 'R',
@@ -62,7 +62,7 @@
 				name: 'C++',
 				img: '/skills/cpp_logo.png',
 				alt: 'C++ logo',
-				description: `I have completed the "Basics of C++ course, which also included a group project, 
+				description: `I have completed the "Basics of C++" course, which also included a group project, 
 				in which we built a simple Tower Defense game.`
 			}
 		],
@@ -72,7 +72,7 @@
 				img: '/skills/git_logo.png',
 				alt: 'Git logo',
 				description: `I have used Git for version control in most of my personal projects. 
-				I have also used Git for version control during all the group projects at Aalto University.`
+				I have also used Git during all the group projects at Aalto University.`
 			},
 			{
 				name: 'Figma',

@@ -32,5 +32,9 @@
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@fontsource/abril-fatface": "^4.5.9",
+		"@fontsource/inter": "^4.5.15"
+	}
 }

@@ -11,10 +11,10 @@
 		return color;
 	};
 
-	export var balls = [...Array(15).keys()].map((i) => ({
+	export var balls = [...Array(10).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
-		size: 40 + Math.random() * 100,
+		size: 30 + Math.random() * 150,
 		location: {
 			x: 0,
 			y: 0
@@ -55,7 +55,7 @@
 			class="ball"
 			style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
-			border-radius:50%; filter: blur(0.5vmax); animation: up-down ${animationDuration}s infinite;`}
+			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}
 		/>
 	{/each}
 </div>
@@ -127,11 +127,10 @@
 			'header avatar'
 			'content avatar'
 			'footer footer';
-
-		background: rgba(61, 58, 80, 0.8);
+		background: rgba(61, 58, 80, 0.85);
 		border-radius: 16px;
-		box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.5);
-		backdrop-filter: blur(13px);
+		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(30px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid white;
 		padding: 1rem;
@@ -178,7 +177,7 @@
 		}
 		50% {
 			transform: scale(5);
-			opacity: 0.25;
+			opacity: 0.75;
 		}
 		100% {
 			opacity: 0;

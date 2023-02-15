@@ -27,14 +27,15 @@
 	}
 	:global(p) {
 		color: #fff;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Inter', sans-serif;
 		font-size: large;
 		word-spacing: 0.1rem;
 		line-height: 1.5rem;
 	}
 	:global(h1, h2, h3) {
 		color: #fff;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Abril Fatface', sans-serif;
+		font-weight: bold;
 	}
 	nav {
 		display: flex;
