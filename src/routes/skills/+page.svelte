@@ -19,7 +19,7 @@
 				img: '/skills/scala_logo.png',
 				alt: 'Scala logo',
 				description: `Scala is maybe one of my strongest programming languages, because at Aalto-University 
-				most of the programming courses require you to write Scala code, so I have became quite familiar with it.`
+				most of the programming courses require you to write Scala code, so I have become quite familiar with it.`
 			},
 			{
 				name: 'Python',
@@ -240,7 +240,7 @@
 	}
 	.skillImgHolder:hover {
 		border: 2px solid rgb(173, 255, 126);
-		animation: wiggle 0.4s 2;
+		animation: wiggle 0.35s 1;
 	}
 	.skillImgIcon {
 		max-height: 100%;

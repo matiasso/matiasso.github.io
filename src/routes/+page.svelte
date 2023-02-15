@@ -11,7 +11,7 @@
 		return color;
 	};
 
-	export var balls = [...Array(10).keys()].map((i) => ({
+	export var balls = [...Array(15).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
 		size: 40 + Math.random() * 100,
@@ -48,14 +48,14 @@
 
 <div
 	class="ballContainer"
-	style={`position: absolute; top: ${scrollY}px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none`}
+	style={`position: absolute; z-index: -1; background-color: #303041; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
 >
 	{#each balls as ball}
 		<div
 			class="ball"
 			style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
-			border-radius:50%; filter: blur(1.5vmax); animation: up-down ${animationDuration}s infinite;`}
+			border-radius:50%; filter: blur(0.5vmax); animation: up-down ${animationDuration}s infinite;`}
 		/>
 	{/each}
 </div>
@@ -115,7 +115,7 @@
 		min-height: 95vh;
 		height: auto;
 		width: 100%;
-		background: #303041;
+		background: none;
 	}
 	.infoBoxContainer {
 		display: grid;
@@ -125,20 +125,25 @@
 		grid-template-rows: 10rem auto 50px;
 		grid-template-areas:
 			'header avatar'
-			'content content'
+			'content avatar'
 			'footer footer';
 
-		background: #3d3a50;
+		background: rgba(61, 58, 80, 0.8);
+		border-radius: 16px;
+		box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(13px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid white;
 		padding: 1rem;
-		border-radius: 10px;
-		border: 1px solid #fff;
 	}
 	.imageContainer {
 		grid-area: avatar;
+		margin: 5px 5px 0px 10px;
 		justify-self: end;
 		max-height: 160px;
 		min-height: 80px;
 		height: auto;
+		align-self: start;
 	}
 	.nameContainer {
 		display: flex;
@@ -155,7 +160,6 @@
 		padding-left: 10px;
 	}
 	img#avatar {
-		margin-left: 10px;
 		border-radius: 50%;
 		min-width: 60px;
 		min-height: 60px;
