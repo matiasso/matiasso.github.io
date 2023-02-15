@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Modal from 'svelte-simple-modal';
-	// We import Modal here at root layout, so we can use it everywhere in the app
+	import '@fontsource/inter';
+	import '@fontsource/abril-fatface';
 </script>
 
 <nav>
@@ -24,6 +25,7 @@
 <style>
 	:global(body) {
 		margin: 0;
+		background-color: #303041;
 	}
 	:global(p) {
 		color: #fff;
@@ -35,7 +37,8 @@
 	:global(h1, h2, h3) {
 		color: #fff;
 		font-family: 'Abril Fatface', sans-serif;
-		font-weight: bold;
+		font-weight: normal;
+		letter-spacing: 0.1rem;
 	}
 	nav {
 		display: flex;
@@ -47,7 +50,8 @@
 	nav a {
 		color: #000;
 		font-size: larger;
-		margin-right: 2rem;
+		font-family: 'Inter', sans-serif;
+		margin-right: 1.5rem;
 		text-decoration: none;
 	}
 	nav a:hover {
