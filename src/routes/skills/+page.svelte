@@ -1,16 +1,5 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type Modal from 'svelte-simple-modal';
-	import SkillPopup from './skill-popup.svelte';
-
-	const { open }: Modal = getContext('simple-modal');
-	type popup_content = {
-		title: string;
-		description: string;
-	};
-	const openModal = (props: popup_content) => {
-		open(SkillPopup, props);
-	};
+	import SkilltypeContainer from './skillInfoContainer.svelte';
 
 	const skills = {
 		programming: [
@@ -144,58 +133,19 @@
 	<h1>Programming languages & frameworks</h1>
 	<div class="skillTypeContainer">
 		{#each skills.programming as skill}
-			<div class="skillContainer">
-				<button
-					class="skillImgHolder"
-					on:click={() =>
-						openModal({
-							title: `About ${skill.name}`,
-							description: `${skill.description}`
-						})}
-				>
-					<img class="skillImgIcon" src={skill.img} alt={skill.alt} />
-				</button>
-
-				<p>{skill.name}</p>
-			</div>
+			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
 	<h1>Useful skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.useful as skill}
-			<div class="skillContainer">
-				<button
-					class="skillImgHolder"
-					on:click={() =>
-						openModal({
-							title: `About ${skill.name}`,
-							description: `${skill.description}`
-						})}
-				>
-					<img class="skillImgIcon" src={skill.img} alt={skill.alt} />
-				</button>
-
-				<p>{skill.name}</p>
-			</div>
+			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
 	<h1>Other skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.other as skill}
-			<div class="skillContainer">
-				<button
-					class="skillImgHolder"
-					on:click={() =>
-						openModal({
-							title: `About ${skill.name}`,
-							description: `${skill.description}`
-						})}
-				>
-					<img class="skillImgIcon" src={skill.img} alt={skill.alt} />
-				</button>
-
-				<p>{skill.name}</p>
-			</div>
+			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
 </div>
@@ -219,54 +169,6 @@
 		align-items: center;
 		width: 80vw;
 		margin: 0.5rem;
-	}
-	.skillContainer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 10px;
-	}
-	.skillImgHolder {
-		background: none;
-		max-height: 15vh;
-		max-width: 30vw;
-		padding: 15%;
-		aspect-ratio: 1/1;
-		cursor: pointer;
-		border: 2px solid #fff;
-		border-radius: 50%;
-		object-fit: contain;
-	}
-	.skillImgHolder:hover {
-		border: 2px solid rgb(173, 255, 126);
-		animation: wiggle 0.35s 1;
-	}
-	.skillImgIcon {
-		max-height: 100%;
-		max-width: 100%;
-		aspect-ratio: 1/1;
-		object-fit: contain;
-	}
-	@keyframes wiggle {
-		0% {
-			transform: rotate(0deg);
-		}
-		25% {
-			transform: rotate(5deg);
-			scale: calc(1.2);
-		}
-		50% {
-			transform: rotate(0deg);
-			scale: calc(1);
-		}
-		75% {
-			transform: rotate(-5deg);
-			scale: calc(1.2);
-		}
-		100% {
-			transform: rotate(0deg);
-		}
 	}
 	h1 {
 		margin: 1rem;
