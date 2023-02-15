@@ -1,3 +1,8 @@
+<script lang="ts">
+	import Modal from 'svelte-simple-modal';
+	// We import Modal here at root layout, so we can use it everywhere in the app
+</script>
+
 <nav>
 	<a href="/">Home</a>
 	<a href="/about">About me</a>
@@ -5,7 +10,15 @@
 	<a href="/projects">Projects</a>
 </nav>
 
-<slot />
+<Modal
+	styleWindow={{
+		boxShadow: '0 5px 5px 0 rgba(0, 0, 0, 0.15)',
+		background: '#3D3A50'
+	}}
+	styleCloseButton={{
+		background: '#f008'
+	}}><slot /></Modal
+>
 
 <style>
 	:global(body) {
