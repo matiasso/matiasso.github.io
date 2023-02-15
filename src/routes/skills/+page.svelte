@@ -15,13 +15,13 @@
 				img: '/skills/python_logo.png',
 				alt: 'Python logo',
 				description: `Python was the first programming language that I learned back in 2018, and I have been using it for small everyday scripts since then. 
-					I have also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
+					I also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
 			},
 			{
 				name: 'Typescript',
 				img: '/skills/typescript_logo.png',
 				alt: 'Typescript logo',
-				description: `TypeScript is quite new addition to my skills. I have completed the "Web Software Development" course at Aalto University (2021-2022), 
+				description: `TypeScript is quite new addition to my skills. I completed the "Web Software Development" course at Aalto University (2021-2022), 
 				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
 				This website is also in-fact built with Typescript (and SvelteKit).`
@@ -171,6 +171,6 @@
 		margin: 0.5rem;
 	}
 	h1 {
-		margin: 1rem;
+		margin: 1rem 0 0 0;
 	}
 </style>
