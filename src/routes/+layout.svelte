@@ -68,7 +68,7 @@
 <Modal
 	styleWindow={{
 		boxShadow: '0 5px 5px 0 rgba(0, 0, 0, 0.15)',
-		background: '#3D3A50'
+		background: '#0EA2F6'
 	}}
 	styleCloseButton={{
 		background: '#f00D',

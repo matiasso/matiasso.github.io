@@ -32,6 +32,7 @@
 	>
 		<img
 			class="max-h-[100%] max-w-[100%] aspect-square object-contain drop-shadow-lg"
+			draggable="false"
 			src={skill.img}
 			alt={skill.alt}
 		/>
