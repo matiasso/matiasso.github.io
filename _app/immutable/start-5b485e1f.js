@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, e as empty, c as claim_space, b as insert_hydration, g as group_outros, t as transition_out, d as check_outros, f as transition_in, h as detach, j as afterUpdate, o as onMount, k as element, l as claim_element, m as children, n as attr, p as set_style, q as text, r as claim_text, u as set_data, v as binding_callbacks, w as construct_svelte_component, x as create_component, y as claim_component, z as mount_component, A as destroy_component, B as tick } from "./chunks/index-39b40c4e.js";
-import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, e as base, P as PRELOAD_PRIORITIES, h as init$1, j as set_assets, k as set_version } from "./chunks/singletons-ff3d7db3.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, e as empty, c as claim_space, b as insert_hydration, g as group_outros, t as transition_out, d as check_outros, f as transition_in, h as detach, j as afterUpdate, o as onMount, k as element, l as claim_element, m as children, n as attr, p as set_style, q as text, r as claim_text, u as set_data, v as binding_callbacks, w as construct_svelte_component, x as create_component, y as claim_component, z as mount_component, A as destroy_component, B as tick } from "./chunks/index-81d22fb2.js";
+import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, e as base, P as PRELOAD_PRIORITIES, h as init$1, j as set_assets, k as set_version } from "./chunks/singletons-30470eea.js";
 function normalize_path(path, trailing_slash) {
   if (path === "/" || trailing_slash === "ignore")
     return path;
@@ -900,19 +900,21 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 };
 const matchers = {};
 const nodes = [
-  () => __vitePreload(() => import("./chunks/0-0812bf48.js"), true ? ["./chunks/0-0812bf48.js","./components/pages/_layout.svelte-2643328c.js","./chunks/index-39b40c4e.js","./chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js","./assets/Indicator-587c320c.css","./chunks/index-8e750c65.js","./assets/_layout-222d1996.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/1-03beb301.js"), true ? ["./chunks/1-03beb301.js","./components/error.svelte-b7c41b56.js","./chunks/index-39b40c4e.js","./chunks/singletons-ff3d7db3.js","./chunks/index-036c6a64.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-3f1a7391.js"), true ? ["./chunks/2-3f1a7391.js","./components/pages/_page.svelte-1f3bd658.js","./chunks/index-39b40c4e.js","./chunks/index-036c6a64.js","./chunks/index-8e750c65.js","./assets/_page-f09ce21b.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/3-1f0ff4c7.js"), true ? ["./chunks/3-1f0ff4c7.js","./components/pages/about/_page.svelte-70322f1b.js","./chunks/index-39b40c4e.js","./chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js","./assets/Indicator-587c320c.css","./chunks/CloseButton-d19d00eb.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/4-37020fd5.js"), true ? ["./chunks/4-37020fd5.js","./components/pages/projects/_page.svelte-90dda0e8.js","./chunks/index-39b40c4e.js","./chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js","./assets/Indicator-587c320c.css","./chunks/Modal-839d8b29.js","./chunks/CloseButton-d19d00eb.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/5-afbba806.js"), true ? ["./chunks/5-afbba806.js","./components/pages/skills/_page.svelte-ccd852b2.js","./chunks/index-39b40c4e.js","./chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js","./assets/Indicator-587c320c.css","./chunks/Modal-839d8b29.js","./chunks/CloseButton-d19d00eb.js","./assets/_page-79a1b0d1.css"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/0-a2d38e9b.js"), true ? ["./chunks/0-a2d38e9b.js","./components/pages/_layout.svelte-a0806e48.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/index-1a7b297b.js","./assets/_layout-94d9b55a.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/1-57efcd4d.js"), true ? ["./chunks/1-57efcd4d.js","./components/error.svelte-c7a8c644.js","./chunks/index-81d22fb2.js","./chunks/stores-ec40dfac.js","./chunks/singletons-30470eea.js","./chunks/index-a62f8b0d.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-6923595c.js"), true ? ["./chunks/2-6923595c.js","./components/pages/_page.svelte-b8b10a91.js","./chunks/index-81d22fb2.js","./chunks/index-a62f8b0d.js","./chunks/index-1a7b297b.js","./assets/_page-f09ce21b.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/3-d4ced0d9.js"), true ? ["./chunks/3-d4ced0d9.js","./components/pages/about/_page.svelte-463b75bd.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/Alert-59c163cd.js","./chunks/CloseButton-3453f6ab.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/4-7289c9c7.js"), true ? ["./chunks/4-7289c9c7.js","./components/pages/projects/_page.svelte-ce102542.js","./chunks/index-81d22fb2.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/5-b587df66.js"), true ? ["./chunks/5-b587df66.js","./components/pages/projects/_project_/_page.svelte-fc90b3b6.js","./chunks/index-81d22fb2.js","./chunks/stores-ec40dfac.js","./chunks/singletons-30470eea.js","./chunks/index-a62f8b0d.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/Alert-59c163cd.js","./chunks/CloseButton-3453f6ab.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/6-d4b79228.js"), true ? ["./chunks/6-d4b79228.js","./components/pages/skills/_page.svelte-f6ee9956.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/CloseButton-3453f6ab.js","./assets/_page-0a52bf70.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
   "/": [2],
   "/about": [3],
   "/projects": [4],
-  "/skills": [5]
+  "/projects/[project]": [5],
+  "/skills": [6]
 };
 const hooks = {
   handleError: ({ error }) => {

@@ -1,6 +1,6 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, D as create_slot, E as assign, k as element, q as text, a as space, F as head_selector, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, G as set_attributes, H as append_hydration, b as insert_hydration, I as listen, J as update_slot_base, K as get_all_dirty_from_scope, L as get_slot_changes, M as get_spread_update, f as transition_in, t as transition_out, N as compute_rest_props, O as exclude_internal_props, P as svg_element, Q as claim_svg_element, C as noop, x as create_component, y as claim_component, z as mount_component, R as get_spread_object, A as destroy_component, T as getContext, u as set_data, U as bubble, V as set_svg_attributes, W as set_custom_element_data_map, X as run_all, e as empty, g as group_outros, d as check_outros, Y as add_render_callback, Z as create_bidirectional_transition, _ as is_function } from "../../chunks/index-39b40c4e.js";
-import { c as classNames, F as Frame } from "../../chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js";
-import { c as cubicOut, q as quintOut } from "../../chunks/index-8e750c65.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, D as create_slot, E as assign, k as element, q as text, a as space, F as head_selector, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, G as set_attributes, H as append_hydration, b as insert_hydration, I as listen, J as update_slot_base, K as get_all_dirty_from_scope, L as get_slot_changes, M as get_spread_update, f as transition_in, t as transition_out, N as compute_rest_props, O as exclude_internal_props, P as svg_element, Q as claim_svg_element, C as noop, x as create_component, y as claim_component, z as mount_component, R as get_spread_object, A as destroy_component, T as getContext, u as set_data, U as bubble, V as set_svg_attributes, W as set_custom_element_data_map, X as run_all, e as empty, g as group_outros, d as check_outros, Y as add_render_callback, Z as create_bidirectional_transition, _ as is_function } from "../../chunks/index-81d22fb2.js";
+import { c as classNames, F as Frame } from "../../chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js";
+import { c as cubicOut, q as quintOut } from "../../chunks/index-1a7b297b.js";
 const index$1 = "";
 const index = "";
 const app = "";
@@ -2656,6 +2656,7 @@ function create_fragment(ctx) {
   navbar = new Navbar({
     props: {
       color: "navbar",
+      navClass: "px-2 sm:px-4 w-full'",
       $$slots: {
         default: [
           create_default_slot,

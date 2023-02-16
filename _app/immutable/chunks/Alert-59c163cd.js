@@ -1,6 +1,6 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, E as assign, x as create_component, y as claim_component, z as mount_component, M as get_spread_update, R as get_spread_object, f as transition_in, t as transition_out, A as destroy_component, N as compute_rest_props, a9 as compute_slots, aa as createEventDispatcher, O as exclude_internal_props, U as bubble, D as create_slot, k as element, a as space, l as claim_element, m as children, c as claim_space, h as detach, ab as toggle_class, n as attr, b as insert_hydration, H as append_hydration, g as group_outros, d as check_outros, J as update_slot_base, K as get_all_dirty_from_scope, L as get_slot_changes, q as text, r as claim_text, C as noop } from "../../../chunks/index-39b40c4e.js";
-import { F as Frame, c as classNames } from "../../../chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js";
-import { C as CloseButton } from "../../../chunks/CloseButton-d19d00eb.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, E as assign, x as create_component, y as claim_component, z as mount_component, M as get_spread_update, R as get_spread_object, f as transition_in, t as transition_out, A as destroy_component, N as compute_rest_props, a9 as compute_slots, aa as createEventDispatcher, O as exclude_internal_props, U as bubble, D as create_slot, k as element, a as space, l as claim_element, m as children, c as claim_space, h as detach, ab as toggle_class, n as attr, b as insert_hydration, H as append_hydration, g as group_outros, d as check_outros, J as update_slot_base, K as get_all_dirty_from_scope, L as get_slot_changes } from "./index-81d22fb2.js";
+import { F as Frame, c as classNames } from "./Indicator.svelte_svelte_type_style_lang-efe892ff.js";
+import { C as CloseButton } from "./CloseButton-3453f6ab.js";
 const get_extra_slot_changes = (dirty) => ({});
 const get_extra_slot_context = (ctx) => ({});
 const get_icon_slot_changes = (dirty) => ({});
@@ -165,7 +165,7 @@ function create_if_block(ctx) {
     }
   };
 }
-function create_default_slot$1(ctx) {
+function create_default_slot(ctx) {
   let div1;
   let t0;
   let div0;
@@ -401,7 +401,7 @@ function create_default_slot$1(ctx) {
     }
   };
 }
-function create_fragment$1(ctx) {
+function create_fragment(ctx) {
   let frame;
   let current;
   const frame_spread_levels = [
@@ -414,7 +414,7 @@ function create_fragment$1(ctx) {
     { role: "alert" }
   ];
   let frame_props = {
-    $$slots: { default: [create_default_slot$1] },
+    $$slots: { default: [create_default_slot] },
     $$scope: { ctx }
   };
   for (let i = 0; i < frame_spread_levels.length; i += 1) {
@@ -547,107 +547,9 @@ function instance($$self, $$props, $$invalidate) {
 class Alert extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance, create_fragment$1, safe_not_equal, { dismissable: 0, accent: 5 });
-  }
-}
-function create_default_slot(ctx) {
-  let span;
-  let t0;
-  let t1;
-  return {
-    c() {
-      span = element("span");
-      t0 = text("Work in progress");
-      t1 = text(" Implementing this later!");
-      this.h();
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { class: true });
-      var span_nodes = children(span);
-      t0 = claim_text(span_nodes, "Work in progress");
-      span_nodes.forEach(detach);
-      t1 = claim_text(nodes, " Implementing this later!");
-      this.h();
-    },
-    h() {
-      attr(span, "class", "font-medium");
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-      append_hydration(span, t0);
-      insert_hydration(target, t1, anchor);
-    },
-    p: noop,
-    d(detaching) {
-      if (detaching)
-        detach(span);
-      if (detaching)
-        detach(t1);
-    }
-  };
-}
-function create_fragment(ctx) {
-  let div;
-  let alert;
-  let current;
-  alert = new Alert({
-    props: {
-      $$slots: { default: [create_default_slot] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      div = element("div");
-      create_component(alert.$$.fragment);
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div);
-      claim_component(alert.$$.fragment, div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "p-8");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      mount_component(alert, div, null);
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      const alert_changes = {};
-      if (dirty & /*$$scope*/
-      1) {
-        alert_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      alert.$set(alert_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(alert.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(alert.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching)
-        detach(div);
-      destroy_component(alert);
-    }
-  };
-}
-class Page extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, null, create_fragment, safe_not_equal, {});
+    init(this, options, instance, create_fragment, safe_not_equal, { dismissable: 0, accent: 5 });
   }
 }
 export {
-  Page as default
+  Alert as A
 };
