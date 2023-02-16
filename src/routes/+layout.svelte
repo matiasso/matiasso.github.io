@@ -8,7 +8,12 @@
 	import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar
+	let:hidden
+	let:toggle
+	navClass="bg-primary px-2 sm:px-3 py-1 w-full"
+	navDivClass="mx-auto flex flex-wrap justify-between"
+>
 	<NavBrand href="/">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +21,7 @@
 			viewBox="0 0 24 24"
 			stroke-width="1.5"
 			stroke="currentColor"
-			class="w-6 h-6 dark:text-white"
+			class="w-7 h-7"
 		>
 			<path
 				stroke-linecap="round"
@@ -25,7 +30,7 @@
 			/>
 		</svg>
 	</NavBrand>
-	<DarkMode />
+	<DarkMode class="" />
 	<NavHamburger on:click={toggle} />
 	<NavUl {hidden}>
 		<NavLi href="/about" active={true}>About</NavLi>

@@ -130,19 +130,19 @@
 </script>
 
 <div class="fullscreenContainer">
-	<h1>Programming languages & frameworks</h1>
+	<h1 class="text-black dark:text-white">Programming languages & frameworks</h1>
 	<div class="skillTypeContainer">
 		{#each skills.programming as skill}
 			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
-	<h1>Useful skills</h1>
+	<h1 class="text-black dark:text-white">Useful skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.useful as skill}
 			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
-	<h1>Other skills</h1>
+	<h1 class="text-black dark:text-white">Other skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.other as skill}
 			<SkilltypeContainer {skill} />
@@ -156,10 +156,9 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
-		min-height: 95vh;
+		min-height: 80vh;
 		height: auto;
 		width: 100%;
-		background: #303041; /* TODO: Add animated background later*/
 	}
 	.skillTypeContainer {
 		display: flex;
@@ -172,6 +171,6 @@
 	}
 	h1 {
 		margin: 1rem 0 0 0;
-		font-size: calc(12px + 1vw);
+		font-size: calc(14px + 1vw);
 	}
 </style>

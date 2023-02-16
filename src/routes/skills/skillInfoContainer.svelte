@@ -21,68 +21,21 @@
 	};
 </script>
 
-<div class="skillContainer">
+<div class="flex flex-col items-center justify-center p-2">
 	<button
-		class="skillImgHolder"
+		class="max-h-[15vh] max-w-[30vw] min-w-[40px] min-h-[40px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-400 hover:animate-wiggle"
 		on:click={() =>
 			openModal({
 				title: `About ${skill.name}`,
 				description: `${skill.description}`
 			})}
 	>
-		<img class="skillImgIcon" src={skill.img} alt={skill.alt} />
+		<img
+			class="max-h-[100%] max-w-[100%] aspect-square object-contain"
+			src={skill.img}
+			alt={skill.alt}
+		/>
 	</button>
 
-	<p>{skill.name}</p>
+	<p class="text-black dark:text-white p-3">{skill.name}</p>
 </div>
-
-<style>
-	.skillContainer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 10px;
-	}
-	.skillImgHolder {
-		background: none;
-		max-height: 15vh;
-		max-width: 30vw;
-		padding: 15%;
-		aspect-ratio: 1/1;
-		cursor: pointer;
-		border: 2px solid #fff;
-		border-radius: 50%;
-		object-fit: contain;
-	}
-	.skillImgHolder:hover {
-		border: 2px solid rgb(173, 255, 126);
-		animation: wiggle 0.35s 1;
-	}
-	.skillImgIcon {
-		max-height: 100%;
-		max-width: 100%;
-		aspect-ratio: 1/1;
-		object-fit: contain;
-	}
-	@keyframes wiggle {
-		0% {
-			transform: rotate(0deg);
-		}
-		25% {
-			transform: rotate(5deg);
-			scale: calc(1.2);
-		}
-		50% {
-			transform: rotate(0deg);
-			scale: calc(1);
-		}
-		75% {
-			transform: rotate(-5deg);
-			scale: calc(1.2);
-		}
-		100% {
-			transform: rotate(0deg);
-		}
-	}
-</style>
