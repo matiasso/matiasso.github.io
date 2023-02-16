@@ -227,30 +227,30 @@ function create_fragment(ctx) {
       attr(div0, "class", "ballContainer");
       attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
-      attr(h1, "class", "svelte-1frjgbq");
-      attr(h2, "class", "svelte-1frjgbq");
-      attr(div1, "class", "nameContainer svelte-1frjgbq");
+      attr(h1, "class", "svelte-ea3pnc");
+      attr(h2, "class", "svelte-ea3pnc");
+      attr(div1, "class", "nameContainer svelte-ea3pnc");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Profile");
-      attr(img0, "class", "svelte-1frjgbq");
-      attr(div2, "class", "imageContainer svelte-1frjgbq");
+      attr(img0, "class", "svelte-ea3pnc");
+      attr(div2, "class", "imageContainer svelte-ea3pnc");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-1frjgbq");
-      attr(img1, "class", "socialImg svelte-1frjgbq");
+      attr(p0, "class", "svelte-ea3pnc");
+      attr(img1, "class", "socialImg svelte-ea3pnc");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-1frjgbq");
+      attr(img2, "class", "socialImg svelte-ea3pnc");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-1frjgbq");
-      attr(div4, "class", "infoBoxContainer svelte-1frjgbq");
-      attr(div5, "class", "fullscreenContainer svelte-1frjgbq");
+      attr(div3, "class", "footerContainer svelte-ea3pnc");
+      attr(div4, "class", "infoBoxContainer svelte-ea3pnc");
+      attr(div5, "class", "fullscreenContainer svelte-ea3pnc");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
