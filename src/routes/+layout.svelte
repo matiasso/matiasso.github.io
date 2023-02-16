@@ -6,7 +6,7 @@
 	import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<Navbar let:hidden let:toggle color="navbar">
+<Navbar let:hidden let:toggle color="navbar" navClass="px-2 sm:px-4 w-full'">
 	<NavBrand href="/">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
