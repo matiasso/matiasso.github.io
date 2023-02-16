@@ -1,13 +1,16 @@
 <script lang="ts">
 	import '@fontsource/inter';
 	import '@fontsource/abril-fatface';
-	import '../app.css';
+	import '../app.postcss';
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import { DarkMode } from 'flowbite-svelte';
+	import { quintOut } from 'svelte/easing';
 </script>
 
+<!-- Create the navigation bar -->
 <Navbar let:hidden let:toggle color="navbar" navClass="px-2 sm:px-4 w-full'">
 	<NavBrand href="/">
+		<!-- The home icon SVG -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -22,7 +25,9 @@
 			/>
 		</svg>
 	</NavBrand>
+	<!-- Dark mode toggle -->
 	<DarkMode class="text-lg hover:bg-transparent dark:hover:bg-transparent">
+		<!-- Custom SVG for both, so its easy to customize their shape and size-->
 		<svelte:fragment slot="lightIcon">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +56,10 @@
 			>
 		</svelte:fragment>
 	</DarkMode>
+	<!-- Hamburger menu automatically becomes visible on mobile devices-->
 	<NavHamburger on:click={toggle} class="text-black dark:text-white" />
-	<NavUl {hidden}>
-		<NavLi class="text-black dark:text-white text-lg" href="/about">About</NavLi>
+	<NavUl {hidden} slideParams={{ delay: 100, duration: 300, easing: quintOut }}>
+		<NavLi class="text-black dark:text-white text-lg" href="/about">About me</NavLi>
 		<NavLi class="text-black dark:text-white text-lg" href="/skills">Skills</NavLi>
 		<NavLi class="text-black dark:text-white text-lg" href="/projects">Projects</NavLi>
 	</NavUl>

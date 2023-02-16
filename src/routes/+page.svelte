@@ -3,15 +3,18 @@
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 
+	// Tweening for the profile picture avatar
 	const imgRadius = tweened(50, {
 		duration: 1000,
 		easing: cubicOut
 	});
 
+	// A function that sets the rounding to 5%
 	const squareCorners = () => {
 		$imgRadius = 5;
 	};
 
+	// A function that sets the rounding to 50%
 	const roundCorners = () => {
 		$imgRadius = 50;
 	};
@@ -26,6 +29,8 @@
 		return color;
 	};
 
+	// An array of balls, which will be rendered on z-index -1
+	// Just a nice dynamic background effect
 	export var balls = [...Array(8).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
@@ -36,7 +41,7 @@
 		}
 	}));
 
-	// A function that re-positions and re-colors the balls
+	// A function that re-positions and re-colors the balls, this is called at every animation interval
 	function randomizeBallLocationsAndColors() {
 		for (var i = 0; i < balls.length; i++) {
 			balls[i].color = getRandomColor();
@@ -45,27 +50,31 @@
 		}
 	}
 
-	const animationDuration = 15;
+	// Bind the scroll also so we can keep the background balls in place
 	let scrollY = 0;
+	const animationDuration = 15;
 	onMount(() => {
 		// Call the randomization after mounting
 		randomizeBallLocationsAndColors();
+
 		// Call the randomization during every animation interval
 		const interval = setInterval(() => {
 			randomizeBallLocationsAndColors();
 		}, animationDuration * 1000);
-		//If a function is returned from onMount, it will be called when the component is unmounted.
+		// When the component is unmounted, clear the interval
 		return () => clearInterval(interval);
 	});
 </script>
 
 <svelte:window bind:scrollY />
 
+<!-- A Div containing the balls, it will have z-index: -1 so that it is rendered "below" the main window -->
 <div
 	class="bg-lightbg dark:bg-darkbg"
 	style={`position: absolute; z-index: -1; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
 >
 	{#each balls as ball}
+		<!-- Only render the balls if they dont have the initial value -1 anymore -->
 		{#if ball.location.x >= 0 && ball.location.y >= 0}
 			<div
 				class="ball"
@@ -77,10 +86,10 @@
 	{/each}
 </div>
 <div class="fullscreenContainer">
-	<div class="infoBoxContainer">
+	<div class="infoBoxContainer bg-white/70 dark:bg-[#3d3a50d9]">
 		<div class="nameContainer">
-			<h1 class="text-white">Matias Södersved</h1>
-			<h2 class="text-white">Student from Aalto University</h2>
+			<h1 class="text-gray-700 dark:text-white">Matias Södersved</h1>
+			<h2 class="text-gray-600 dark:text-white">Student from Aalto University</h2>
 		</div>
 
 		<div
@@ -98,7 +107,7 @@
 			/>
 		</div>
 
-		<p id="contentText" class="text-white">
+		<p id="contentText" class="text-black dark:text-white">
 			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
 			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
@@ -123,7 +132,7 @@
 			to the world, and I hope to contribute to this through my work.
 		</p>
 		<div class="footerContainer">
-			<p class="text-white">You can find me on:</p>
+			<p class="text-black dark:text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
 				<img class="socialImg" src="/github_logo.png" alt="Github logo" />
 			</a>
@@ -153,13 +162,11 @@
 			'header avatar'
 			'content avatar'
 			'footer footer';
-		background: rgba(61, 58, 80, 0.85);
 		border-radius: 16px;
 		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(30px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid white;
-		padding: 1rem;
+		-webkit-backdrop-filter: blur(30px);
+		padding: 1.2rem;
 	}
 	.imageContainer {
 		grid-area: avatar;
