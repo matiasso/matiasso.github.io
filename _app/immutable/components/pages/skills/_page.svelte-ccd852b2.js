@@ -1,101 +1,106 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, b as insert_hydration, O as append_hydration, u as set_data, C as noop, aa as src_url_equal, F as listen, a2 as getContext, f as transition_in, d as check_outros, t as transition_out, ab as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, g as group_outros } from "../../../chunks/index-129fd69a.js";
-const skillPopup_svelte_svelte_type_style_lang = "";
-function create_fragment$2(ctx) {
-  let h1;
-  let t0;
-  let t1;
+import { S as SvelteComponent, i as init, s as safe_not_equal, v as binding_callbacks, ac as bind, k as element, a as space, q as text, x as create_component, l as claim_element, m as children, h as detach, c as claim_space, r as claim_text, y as claim_component, n as attr, a5 as src_url_equal, b as insert_hydration, H as append_hydration, z as mount_component, I as listen, u as set_data, ad as add_flush_callback, f as transition_in, t as transition_out, A as destroy_component, d as check_outros, a6 as destroy_each, C as noop, g as group_outros } from "../../../chunks/index-39b40c4e.js";
+import "../../../chunks/Indicator.svelte_svelte_type_style_lang-ef2bbef9.js";
+import { M as Modal, B as Button } from "../../../chunks/Modal-839d8b29.js";
+function create_default_slot_1(ctx) {
   let p;
-  let t2;
+  let t_value = (
+    /*skill*/
+    ctx[0].description + ""
+  );
+  let t;
   return {
     c() {
-      h1 = element("h1");
-      t0 = text(
-        /*title*/
-        ctx[0]
-      );
-      t1 = space();
       p = element("p");
-      t2 = text(
-        /*description*/
-        ctx[1]
-      );
+      t = text(t_value);
       this.h();
     },
     l(nodes) {
-      h1 = claim_element(nodes, "H1", { class: true });
-      var h1_nodes = children(h1);
-      t0 = claim_text(
-        h1_nodes,
-        /*title*/
-        ctx[0]
-      );
-      h1_nodes.forEach(detach);
-      t1 = claim_space(nodes);
       p = claim_element(nodes, "P", { class: true });
       var p_nodes = children(p);
-      t2 = claim_text(
-        p_nodes,
-        /*description*/
-        ctx[1]
-      );
+      t = claim_text(p_nodes, t_value);
       p_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(h1, "class", "svelte-zqkr94");
-      attr(p, "class", "svelte-zqkr94");
+      attr(p, "class", "text-base text-lg leading-relaxed text-gray-500 dark:text-gray-400");
     },
     m(target, anchor) {
-      insert_hydration(target, h1, anchor);
-      append_hydration(h1, t0);
-      insert_hydration(target, t1, anchor);
       insert_hydration(target, p, anchor);
-      append_hydration(p, t2);
+      append_hydration(p, t);
     },
-    p(ctx2, [dirty]) {
-      if (dirty & /*title*/
-      1)
-        set_data(
-          t0,
-          /*title*/
-          ctx2[0]
-        );
-      if (dirty & /*description*/
-      2)
-        set_data(
-          t2,
-          /*description*/
-          ctx2[1]
-        );
+    p(ctx2, dirty) {
+      if (dirty & /*skill*/
+      1 && t_value !== (t_value = /*skill*/
+      ctx2[0].description + ""))
+        set_data(t, t_value);
     },
-    i: noop,
-    o: noop,
     d(detaching) {
-      if (detaching)
-        detach(h1);
-      if (detaching)
-        detach(t1);
       if (detaching)
         detach(p);
     }
   };
 }
-function instance$2($$self, $$props, $$invalidate) {
-  let { title = "Skill title" } = $$props;
-  let { description = "Skill description" } = $$props;
-  $$self.$$set = ($$props2) => {
-    if ("title" in $$props2)
-      $$invalidate(0, title = $$props2.title);
-    if ("description" in $$props2)
-      $$invalidate(1, description = $$props2.description);
+function create_default_slot(ctx) {
+  let t;
+  return {
+    c() {
+      t = text("Close");
+    },
+    l(nodes) {
+      t = claim_text(nodes, "Close");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t, anchor);
+    },
+    d(detaching) {
+      if (detaching)
+        detach(t);
+    }
   };
-  return [title, description];
 }
-class SkillPopup extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$2, create_fragment$2, safe_not_equal, { title: 0, description: 1 });
-  }
+function create_footer_slot(ctx) {
+  let button;
+  let current;
+  button = new Button({
+    props: {
+      class: "mx-auto",
+      $$slots: { default: [create_default_slot] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(button.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(button.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(button, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const button_changes = {};
+      if (dirty & /*$$scope*/
+      16) {
+        button_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      button.$set(button_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(button.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(button.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(button, detaching);
+    }
+  };
 }
 function create_fragment$1(ctx) {
   let div;
@@ -110,8 +115,34 @@ function create_fragment$1(ctx) {
     ctx[0].name + ""
   );
   let t1;
+  let t2;
+  let modal;
+  let updating_open;
+  let current;
   let mounted;
   let dispose;
+  function modal_open_binding(value) {
+    ctx[3](value);
+  }
+  let modal_props = {
+    title: `About ${/*skill*/
+    ctx[0].name}`,
+    autoclose: true,
+    $$slots: {
+      footer: [create_footer_slot],
+      default: [create_default_slot_1]
+    },
+    $$scope: { ctx }
+  };
+  if (
+    /*defaultModal*/
+    ctx[1] !== void 0
+  ) {
+    modal_props.open = /*defaultModal*/
+    ctx[1];
+  }
+  modal = new Modal({ props: modal_props });
+  binding_callbacks.push(() => bind(modal, "open", modal_open_binding));
   return {
     c() {
       div = element("div");
@@ -120,6 +151,8 @@ function create_fragment$1(ctx) {
       t0 = space();
       p = element("p");
       t1 = text(t1_value);
+      t2 = space();
+      create_component(modal.$$.fragment);
       this.h();
     },
     l(nodes) {
@@ -140,6 +173,8 @@ function create_fragment$1(ctx) {
       t1 = claim_text(p_nodes, t1_value);
       p_nodes.forEach(detach);
       div_nodes.forEach(detach);
+      t2 = claim_space(nodes);
+      claim_component(modal.$$.fragment, nodes);
       this.h();
     },
     h() {
@@ -161,6 +196,9 @@ function create_fragment$1(ctx) {
       append_hydration(div, t0);
       append_hydration(div, p);
       append_hydration(p, t1);
+      insert_hydration(target, t2, anchor);
+      mount_component(modal, target, anchor);
+      current = true;
       if (!mounted) {
         dispose = listen(
           button,
@@ -172,51 +210,79 @@ function create_fragment$1(ctx) {
       }
     },
     p(ctx2, [dirty]) {
-      if (dirty & /*skill*/
+      if (!current || dirty & /*skill*/
       1 && !src_url_equal(img.src, img_src_value = /*skill*/
       ctx2[0].img)) {
         attr(img, "src", img_src_value);
       }
-      if (dirty & /*skill*/
+      if (!current || dirty & /*skill*/
       1 && img_alt_value !== (img_alt_value = /*skill*/
       ctx2[0].alt)) {
         attr(img, "alt", img_alt_value);
       }
-      if (dirty & /*skill*/
-      1 && t1_value !== (t1_value = /*skill*/
+      if ((!current || dirty & /*skill*/
+      1) && t1_value !== (t1_value = /*skill*/
       ctx2[0].name + ""))
         set_data(t1, t1_value);
+      const modal_changes = {};
+      if (dirty & /*skill*/
+      1)
+        modal_changes.title = `About ${/*skill*/
+        ctx2[0].name}`;
+      if (dirty & /*$$scope, skill*/
+      17) {
+        modal_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (!updating_open && dirty & /*defaultModal*/
+      2) {
+        updating_open = true;
+        modal_changes.open = /*defaultModal*/
+        ctx2[1];
+        add_flush_callback(() => updating_open = false);
+      }
+      modal.$set(modal_changes);
     },
-    i: noop,
-    o: noop,
+    i(local) {
+      if (current)
+        return;
+      transition_in(modal.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(modal.$$.fragment, local);
+      current = false;
+    },
     d(detaching) {
       if (detaching)
         detach(div);
+      if (detaching)
+        detach(t2);
+      destroy_component(modal, detaching);
       mounted = false;
       dispose();
     }
   };
 }
 function instance$1($$self, $$props, $$invalidate) {
-  const { open } = getContext("simple-modal");
-  const openModal = (props) => {
-    open(SkillPopup, props);
-  };
+  let defaultModal = false;
   let { skill = {
     name: "Skill name",
     img: "/skills/skill_logo.png",
     alt: "Skill logo",
     description: "Skill description"
   } } = $$props;
-  const click_handler = () => openModal({
-    title: `About ${skill.name}`,
-    description: `${skill.description}`
-  });
+  const click_handler = () => {
+    $$invalidate(1, defaultModal = true);
+  };
+  function modal_open_binding(value) {
+    defaultModal = value;
+    $$invalidate(1, defaultModal);
+  }
   $$self.$$set = ($$props2) => {
     if ("skill" in $$props2)
       $$invalidate(0, skill = $$props2.skill);
   };
-  return [skill, openModal, click_handler];
+  return [skill, defaultModal, click_handler, modal_open_binding];
 }
 class SkillInfoContainer extends SvelteComponent {
   constructor(options) {

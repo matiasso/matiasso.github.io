@@ -108,9 +108,6 @@ function compute_slots(slots) {
   }
   return result;
 }
-function null_to_empty(value) {
-  return value == null ? "" : value;
-}
 function set_store_value(store, ret, value) {
   store.set(value);
   return ret;
@@ -290,6 +287,18 @@ function empty() {
 function listen(node, event, handler, options) {
   node.addEventListener(event, handler, options);
   return () => node.removeEventListener(event, handler, options);
+}
+function prevent_default(fn) {
+  return function(event) {
+    event.preventDefault();
+    return fn.call(this, event);
+  };
+}
+function stop_propagation(fn) {
+  return function(event) {
+    event.stopPropagation();
+    return fn.call(this, event);
+  };
 }
 function attr(node, attribute, value) {
   if (value == null)
@@ -539,9 +548,6 @@ function onMount(fn) {
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
 }
-function onDestroy(fn) {
-  get_current_component().$$.on_destroy.push(fn);
-}
 function createEventDispatcher() {
   const component = get_current_component();
   return (type, detail, { cancelable = false } = {}) => {
@@ -587,6 +593,9 @@ function tick() {
 }
 function add_render_callback(fn) {
   render_callbacks.push(fn);
+}
+function add_flush_callback(fn) {
+  flush_callbacks.push(fn);
 }
 const seen_callbacks = /* @__PURE__ */ new Set();
 let flushidx = 0;
@@ -824,6 +833,13 @@ function get_spread_update(levels, updates) {
 function get_spread_object(spread_props) {
   return typeof spread_props === "object" && spread_props !== null ? spread_props : {};
 }
+function bind(component, name, callback) {
+  const index = component.$$.props[name];
+  if (index !== void 0) {
+    component.$$.bound[index] = callback;
+    callback(component.$$.ctx[index]);
+  }
+}
 function create_component(block) {
   block && block.c();
 }
@@ -946,49 +962,51 @@ class SvelteComponent {
   }
 }
 export {
-  svg_element as $,
+  setContext as $,
   destroy_component as A,
   tick as B,
   noop as C,
-  identity as D,
-  create_slot as E,
-  listen as F,
-  update_slot_base as G,
-  get_all_dirty_from_scope as H,
-  get_slot_changes as I,
-  createEventDispatcher as J,
-  onDestroy as K,
-  globals as L,
-  null_to_empty as M,
-  toggle_class as N,
-  append_hydration as O,
-  is_function as P,
-  add_render_callback as Q,
-  create_bidirectional_transition as R,
+  create_slot as D,
+  assign as E,
+  head_selector as F,
+  set_attributes as G,
+  append_hydration as H,
+  listen as I,
+  update_slot_base as J,
+  get_all_dirty_from_scope as K,
+  get_slot_changes as L,
+  get_spread_update as M,
+  compute_rest_props as N,
+  exclude_internal_props as O,
+  svg_element as P,
+  claim_svg_element as Q,
+  get_spread_object as R,
   SvelteComponent as S,
-  run_all as T,
-  setContext as U,
-  assign as V,
-  head_selector as W,
-  set_attributes as X,
-  get_spread_update as Y,
-  compute_rest_props as Z,
-  exclude_internal_props as _,
+  getContext as T,
+  bubble as U,
+  set_svg_attributes as V,
+  set_custom_element_data_map as W,
+  run_all as X,
+  add_render_callback as Y,
+  create_bidirectional_transition as Z,
+  is_function as _,
   space as a,
-  claim_svg_element as a0,
-  get_spread_object as a1,
-  getContext as a2,
-  bubble as a3,
-  set_svg_attributes as a4,
-  set_custom_element_data_map as a5,
-  action_destroyer as a6,
-  component_subscribe as a7,
-  now as a8,
-  loop as a9,
-  src_url_equal as aa,
-  destroy_each as ab,
-  set_store_value as ac,
-  compute_slots as ad,
+  action_destroyer as a0,
+  component_subscribe as a1,
+  now as a2,
+  loop as a3,
+  identity as a4,
+  src_url_equal as a5,
+  destroy_each as a6,
+  globals as a7,
+  set_store_value as a8,
+  compute_slots as a9,
+  createEventDispatcher as aa,
+  toggle_class as ab,
+  bind as ac,
+  add_flush_callback as ad,
+  prevent_default as ae,
+  stop_propagation as af,
   insert_hydration as b,
   claim_space as c,
   check_outros as d,
