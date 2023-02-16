@@ -4,6 +4,6 @@
 
 <div class="p-8">
 	<Alert>
-		<span class="font-medium">Work in progress</span> Implementing this later!
+		<span class="font-medium">Work in progress</span> testing alerts...
 	</Alert>
 </div>
