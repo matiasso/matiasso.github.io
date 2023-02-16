@@ -15,8 +15,7 @@ const config = {
 				secondary: '#7192BE',
 				darkbg: '#303041',
 				lightbg: '#BFDCE5',
-				lightnavi: '#3E54AC',
-				darknavi: '#1E1E2F',
+				darker: '#1E1E2F',
 				black: colors.black,
 				white: colors.white
 			},
