@@ -16,8 +16,8 @@
 		color: getRandomColor(),
 		size: 30 + Math.random() * 150,
 		location: {
-			x: 0,
-			y: 0
+			x: -1,
+			y: -1
 		}
 	}));
 
@@ -35,7 +35,7 @@
 	onMount(() => {
 		// Call the randomization after mounting
 		randomizeBallLocationsAndColors();
-		// Call the randomization after every animation interval
+		// Call the randomization during every animation interval
 		const interval = setInterval(() => {
 			randomizeBallLocationsAndColors();
 		}, animationDuration * 1000);
@@ -51,12 +51,14 @@
 	style={`position: absolute; z-index: -1; background-color: #303041; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
 >
 	{#each balls as ball}
-		<div
-			class="ball"
-			style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
+		{#if ball.location.x >= 0 && ball.location.y >= 0}
+			<div
+				class="ball"
+				style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
 			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}
-		/>
+			/>
+		{/if}
 	{/each}
 </div>
 <div class="fullscreenContainer">
