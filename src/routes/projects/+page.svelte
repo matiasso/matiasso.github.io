@@ -14,7 +14,7 @@
 				<time class="block mb-2 text-md font-normal leading-none text-gray-400 dark:text-gray-500">
 					{date}
 				</time>
-				<p>{description}</p>
+				<p class="text-gray-900 dark:text-white">{description}</p>
 			</a>
 		</div>
 	{/each}
