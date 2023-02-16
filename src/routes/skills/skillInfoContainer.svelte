@@ -33,6 +33,6 @@
 		{skill.description}
 	</p>
 	<svelte:fragment slot="footer">
-		<Button class="mx-auto">Close</Button>
+		<Button class="mx-auto" gradient color="cyanToBlue">Close</Button>
 	</svelte:fragment>
 </Modal>

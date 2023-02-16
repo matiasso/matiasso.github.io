@@ -18,13 +18,13 @@
 					I also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
 			},
 			{
-				name: 'Typescript',
+				name: 'TypeScript',
 				img: '/skills/typescript_logo.png',
-				alt: 'Typescript logo',
+				alt: 'TypeScript logo',
 				description: `TypeScript is quite new addition to my skills. I completed the "Web Software Development" course at Aalto University (2021-2022), 
 				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
-				This website is also in-fact built with Typescript (and SvelteKit).`
+				This website is also in-fact built with TypeScript (and SvelteKit).`
 			},
 			{
 				name: 'React',
