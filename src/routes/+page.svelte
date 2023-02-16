@@ -67,7 +67,7 @@
 		</div>
 
 		<div class="imageContainer">
-			<img id="avatar" src="/profile_avatar.jpg" alt="Avatar template" />
+			<img id="avatar" src="/profile_avatar.jpg" alt="Profile" />
 		</div>
 
 		<p id="contentText">
@@ -96,12 +96,12 @@
 			to the world, and I hope to contribute to this through my work.
 		</p>
 		<div class="footerContainer">
-			<p>You can find me here:</p>
+			<p>You can find me on:</p>
 			<a href="https://github.com/matiasso">
-				<img class="socialImg" src="/github_logo.png" alt="Github logo" height="50px" />
+				<img class="socialImg" src="/github_logo.png" alt="Github logo" />
 			</a>
 			<a href="https://www.linkedin.com/in/matias-sodersved/">
-				<img class="socialImg" src="/linkedin_logo.png" alt="LinkedIn logo" height="50px" />
+				<img class="socialImg" src="/linkedin_logo.png" alt="LinkedIn logo" />
 			</a>
 		</div>
 	</div>
@@ -154,14 +154,17 @@
 		justify-self: end;
 		display: flex;
 		flex-direction: row;
+		align-items: center;
 	}
 	img.socialImg {
 		padding-left: 10px;
+		height: calc(30px + 1vw);
+		width: calc(30px + 1vw);
 	}
 	img#avatar {
 		border-radius: 50%;
-		min-width: 60px;
-		min-height: 60px;
+		min-width: 100px;
+		min-height: 100px;
 		max-height: 100%;
 		max-width: 100%;
 		height: auto;
@@ -171,11 +174,11 @@
 		grid-area: content;
 	}
 	h1 {
-		font-size: 4rem;
+		font-size: calc(16px + 3.5vw);
 		margin: 0px;
 	}
 	h2 {
-		font-size: 1.5rem;
+		font-size: calc(14px + 1.2vw);
 		margin: 0.5rem 0 1rem 0;
 	}
 
