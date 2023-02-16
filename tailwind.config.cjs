@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 const config = {
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -5,7 +7,12 @@ const config = {
 	],
 
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				darkbg: '#303041',
+				lightbg: colors.white
+			}
+		}
 	},
 
 	plugins: [require('flowbite/plugin')],
