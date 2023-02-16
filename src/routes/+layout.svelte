@@ -58,7 +58,7 @@
 		</svelte:fragment>
 	</DarkMode>
 	<NavHamburger on:click={toggle} class="text-white dark:text-gray-900" />
-	<NavUl {hidden} class="bg-[#1E1E2F] dark:bg-primary">
+	<NavUl {hidden} class="bg-[#1E1E2F] dark:bg-primary border-0">
 		<NavLi class="text-white dark:text-gray-900 text-lg" href="/about">About</NavLi>
 		<NavLi class="text-white dark:text-gray-900 text-lg" href="/skills">Skills</NavLi>
 		<NavLi class="text-white dark:text-gray-900 text-lg" href="/projects">Projects</NavLi>
