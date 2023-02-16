@@ -14,7 +14,7 @@ const config = {
 				primary: '#0EA2F6',
 				secondary: '#7192BE',
 				darkbg: '#303041',
-				lightbg: '#aaa',
+				lightbg: '#BFDCE5',
 				black: colors.black,
 				white: colors.white
 			},
