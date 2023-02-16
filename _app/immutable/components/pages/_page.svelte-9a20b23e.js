@@ -211,22 +211,12 @@ function create_fragment(ctx) {
       t12 = claim_space(div3_nodes);
       a0 = claim_element(div3_nodes, "A", { href: true });
       var a0_nodes = children(a0);
-      img1 = claim_element(a0_nodes, "IMG", {
-        class: true,
-        src: true,
-        alt: true,
-        height: true
-      });
+      img1 = claim_element(a0_nodes, "IMG", { class: true, src: true, alt: true });
       a0_nodes.forEach(detach);
       t13 = claim_space(div3_nodes);
       a1 = claim_element(div3_nodes, "A", { href: true });
       var a1_nodes = children(a1);
-      img2 = claim_element(a1_nodes, "IMG", {
-        class: true,
-        src: true,
-        alt: true,
-        height: true
-      });
+      img2 = claim_element(a1_nodes, "IMG", { class: true, src: true, alt: true });
       a1_nodes.forEach(detach);
       div3_nodes.forEach(detach);
       div4_nodes.forEach(detach);
@@ -237,32 +227,30 @@ function create_fragment(ctx) {
       attr(div0, "class", "ballContainer");
       attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
-      attr(h1, "class", "svelte-z4qf4l");
-      attr(h2, "class", "svelte-z4qf4l");
-      attr(div1, "class", "nameContainer svelte-z4qf4l");
+      attr(h1, "class", "svelte-1frjgbq");
+      attr(h2, "class", "svelte-1frjgbq");
+      attr(div1, "class", "nameContainer svelte-1frjgbq");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
-      attr(img0, "alt", "Avatar template");
-      attr(img0, "class", "svelte-z4qf4l");
-      attr(div2, "class", "imageContainer svelte-z4qf4l");
+      attr(img0, "alt", "Profile");
+      attr(img0, "class", "svelte-1frjgbq");
+      attr(div2, "class", "imageContainer svelte-1frjgbq");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-z4qf4l");
-      attr(img1, "class", "socialImg svelte-z4qf4l");
+      attr(p0, "class", "svelte-1frjgbq");
+      attr(img1, "class", "socialImg svelte-1frjgbq");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
-      attr(img1, "height", "50px");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-z4qf4l");
+      attr(img2, "class", "socialImg svelte-1frjgbq");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
-      attr(img2, "height", "50px");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-z4qf4l");
-      attr(div4, "class", "infoBoxContainer svelte-z4qf4l");
-      attr(div5, "class", "fullscreenContainer svelte-z4qf4l");
+      attr(div3, "class", "footerContainer svelte-1frjgbq");
+      attr(div4, "class", "infoBoxContainer svelte-1frjgbq");
+      attr(div5, "class", "fullscreenContainer svelte-1frjgbq");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
