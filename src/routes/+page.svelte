@@ -173,6 +173,15 @@
 	#contentText {
 		grid-area: content;
 	}
+	@media only screen and (max-width: 1000px) {
+		/* To target mobile phones and allow content to use more */
+		#contentText {
+			grid-column-end: 3;
+		}
+		.imageContainer {
+			grid-row-end: 2;
+		}
+	}
 	h1 {
 		font-size: calc(16px + 3.5vw);
 		margin: 0px;
