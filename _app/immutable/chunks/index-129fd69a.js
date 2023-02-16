@@ -86,8 +86,37 @@ function get_all_dirty_from_scope($$scope) {
   }
   return -1;
 }
+function exclude_internal_props(props) {
+  const result = {};
+  for (const k in props)
+    if (k[0] !== "$")
+      result[k] = props[k];
+  return result;
+}
+function compute_rest_props(props, keys) {
+  const rest = {};
+  keys = new Set(keys);
+  for (const k in props)
+    if (!keys.has(k) && k[0] !== "$")
+      rest[k] = props[k];
+  return rest;
+}
+function compute_slots(slots) {
+  const result = {};
+  for (const key in slots) {
+    result[key] = true;
+  }
+  return result;
+}
 function null_to_empty(value) {
   return value == null ? "" : value;
+}
+function set_store_value(store, ret, value) {
+  store.set(value);
+  return ret;
+}
+function action_destroyer(action_result) {
+  return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
 }
 const is_client = typeof window !== "undefined";
 let now = is_client ? () => window.performance.now() : () => Date.now();
@@ -246,6 +275,9 @@ function destroy_each(iterations, detaching) {
 function element(name) {
   return document.createElement(name);
 }
+function svg_element(name) {
+  return document.createElementNS("http://www.w3.org/2000/svg", name);
+}
 function text(data) {
   return document.createTextNode(data);
 }
@@ -264,6 +296,39 @@ function attr(node, attribute, value) {
     node.removeAttribute(attribute);
   else if (node.getAttribute(attribute) !== value)
     node.setAttribute(attribute, value);
+}
+function set_attributes(node, attributes) {
+  const descriptors = Object.getOwnPropertyDescriptors(node.__proto__);
+  for (const key in attributes) {
+    if (attributes[key] == null) {
+      node.removeAttribute(key);
+    } else if (key === "style") {
+      node.style.cssText = attributes[key];
+    } else if (key === "__value") {
+      node.value = node[key] = attributes[key];
+    } else if (descriptors[key] && descriptors[key].set) {
+      node[key] = attributes[key];
+    } else {
+      attr(node, key, attributes[key]);
+    }
+  }
+}
+function set_svg_attributes(node, attributes) {
+  for (const key in attributes) {
+    attr(node, key, attributes[key]);
+  }
+}
+function set_custom_element_data_map(node, data_map) {
+  Object.keys(data_map).forEach((key) => {
+    set_custom_element_data(node, key, data_map[key]);
+  });
+}
+function set_custom_element_data(node, prop, value) {
+  if (prop in node) {
+    node[prop] = typeof node[prop] === "boolean" && value === "" ? true : value;
+  } else {
+    attr(node, prop, value);
+  }
 }
 function children(element2) {
   return Array.from(element2.childNodes);
@@ -330,6 +395,9 @@ function claim_element_base(nodes, name, attributes, create_element) {
 function claim_element(nodes, name, attributes) {
   return claim_element_base(nodes, name, attributes, element);
 }
+function claim_svg_element(nodes, name, attributes) {
+  return claim_element_base(nodes, name, attributes, svg_element);
+}
 function claim_text(nodes, data) {
   return claim_node(
     nodes,
@@ -371,6 +439,25 @@ function custom_event(type, detail, { bubbles = false, cancelable = false } = {}
   const e = document.createEvent("CustomEvent");
   e.initCustomEvent(type, bubbles, cancelable, detail);
   return e;
+}
+function head_selector(nodeId, head) {
+  const result = [];
+  let started = 0;
+  for (const node of head.childNodes) {
+    if (node.nodeType === 8) {
+      const comment = node.textContent.trim();
+      if (comment === `HEAD_${nodeId}_END`) {
+        started -= 1;
+        result.push(node);
+      } else if (comment === `HEAD_${nodeId}_START`) {
+        started += 1;
+        result.push(node);
+      }
+    } else if (started > 0) {
+      result.push(node);
+    }
+  }
+  return result;
 }
 function construct_svelte_component(component, props) {
   return new component(props);
@@ -475,6 +562,12 @@ function setContext(key, context) {
 }
 function getContext(key) {
   return get_current_component().$$.context.get(key);
+}
+function bubble(component, event) {
+  const callbacks = component.$$.callbacks[event.type];
+  if (callbacks) {
+    callbacks.slice().forEach((fn) => fn.call(this, event));
+  }
 }
 const dirty_components = [];
 const binding_callbacks = [];
@@ -696,6 +789,41 @@ function create_bidirectional_transition(node, fn, params, intro) {
   };
 }
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
+function get_spread_update(levels, updates) {
+  const update2 = {};
+  const to_null_out = {};
+  const accounted_for = { $$scope: 1 };
+  let i = levels.length;
+  while (i--) {
+    const o = levels[i];
+    const n = updates[i];
+    if (n) {
+      for (const key in o) {
+        if (!(key in n))
+          to_null_out[key] = 1;
+      }
+      for (const key in n) {
+        if (!accounted_for[key]) {
+          update2[key] = n[key];
+          accounted_for[key] = 1;
+        }
+      }
+      levels[i] = n;
+    } else {
+      for (const key in o) {
+        accounted_for[key] = 1;
+      }
+    }
+  }
+  for (const key in to_null_out) {
+    if (!(key in update2))
+      update2[key] = void 0;
+  }
+  return update2;
+}
+function get_spread_object(spread_props) {
+  return typeof spread_props === "object" && spread_props !== null ? spread_props : {};
+}
 function create_component(block) {
   block && block.c();
 }
@@ -818,6 +946,7 @@ class SvelteComponent {
   }
 }
 export {
+  svg_element as $,
   destroy_component as A,
   tick as B,
   noop as C,
@@ -839,11 +968,27 @@ export {
   SvelteComponent as S,
   run_all as T,
   setContext as U,
-  component_subscribe as V,
-  src_url_equal as W,
-  destroy_each as X,
-  getContext as Y,
+  assign as V,
+  head_selector as W,
+  set_attributes as X,
+  get_spread_update as Y,
+  compute_rest_props as Z,
+  exclude_internal_props as _,
   space as a,
+  claim_svg_element as a0,
+  get_spread_object as a1,
+  getContext as a2,
+  bubble as a3,
+  set_svg_attributes as a4,
+  set_custom_element_data_map as a5,
+  action_destroyer as a6,
+  component_subscribe as a7,
+  now as a8,
+  loop as a9,
+  src_url_equal as aa,
+  destroy_each as ab,
+  set_store_value as ac,
+  compute_slots as ad,
   insert_hydration as b,
   claim_space as c,
   check_outros as d,

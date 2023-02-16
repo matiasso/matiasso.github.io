@@ -1,12 +1,110 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, Q as add_render_callback, k as element, a as space, q as text, l as claim_element, m as children, h as detach, c as claim_space, r as claim_text, n as attr, W as src_url_equal, b as insert_hydration, O as append_hydration, F as listen, C as noop, X as destroy_each, o as onMount, L as globals } from "../../chunks/index-046539a1.js";
+import { V as assign, a8 as now, a9 as loop, D as identity, S as SvelteComponent, i as init, s as safe_not_equal, Q as add_render_callback, k as element, a as space, q as text, l as claim_element, m as children, h as detach, c as claim_space, r as claim_text, n as attr, aa as src_url_equal, p as set_style, b as insert_hydration, O as append_hydration, F as listen, C as noop, ab as destroy_each, T as run_all, a7 as component_subscribe, o as onMount, L as globals, e as empty, ac as set_store_value } from "../../chunks/index-129fd69a.js";
+import { w as writable } from "../../chunks/index-3dfe866b.js";
+import { c as cubicOut } from "../../chunks/index-a0c6b294.js";
+function is_date(obj) {
+  return Object.prototype.toString.call(obj) === "[object Date]";
+}
+function get_interpolator(a, b) {
+  if (a === b || a !== a)
+    return () => a;
+  const type = typeof a;
+  if (type !== typeof b || Array.isArray(a) !== Array.isArray(b)) {
+    throw new Error("Cannot interpolate values of different type");
+  }
+  if (Array.isArray(a)) {
+    const arr = b.map((bi, i) => {
+      return get_interpolator(a[i], bi);
+    });
+    return (t) => arr.map((fn) => fn(t));
+  }
+  if (type === "object") {
+    if (!a || !b)
+      throw new Error("Object cannot be null");
+    if (is_date(a) && is_date(b)) {
+      a = a.getTime();
+      b = b.getTime();
+      const delta = b - a;
+      return (t) => new Date(a + t * delta);
+    }
+    const keys = Object.keys(b);
+    const interpolators = {};
+    keys.forEach((key) => {
+      interpolators[key] = get_interpolator(a[key], b[key]);
+    });
+    return (t) => {
+      const result = {};
+      keys.forEach((key) => {
+        result[key] = interpolators[key](t);
+      });
+      return result;
+    };
+  }
+  if (type === "number") {
+    const delta = b - a;
+    return (t) => a + t * delta;
+  }
+  throw new Error(`Cannot interpolate ${type} values`);
+}
+function tweened(value, defaults = {}) {
+  const store = writable(value);
+  let task;
+  let target_value = value;
+  function set(new_value, opts) {
+    if (value == null) {
+      store.set(value = new_value);
+      return Promise.resolve();
+    }
+    target_value = new_value;
+    let previous_task = task;
+    let started = false;
+    let { delay = 0, duration = 400, easing = identity, interpolate = get_interpolator } = assign(assign({}, defaults), opts);
+    if (duration === 0) {
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      store.set(value = target_value);
+      return Promise.resolve();
+    }
+    const start = now() + delay;
+    let fn;
+    task = loop((now2) => {
+      if (now2 < start)
+        return true;
+      if (!started) {
+        fn = interpolate(value, new_value);
+        if (typeof duration === "function")
+          duration = duration(value, new_value);
+        started = true;
+      }
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      const elapsed = now2 - start;
+      if (elapsed > duration) {
+        store.set(value = new_value);
+        return false;
+      }
+      store.set(value = fn(easing(elapsed / duration)));
+      return true;
+    });
+    return task.promise;
+  }
+  return {
+    set,
+    update: (fn, opts) => set(fn(target_value, value), opts),
+    subscribe: store.subscribe
+  };
+}
 const _page_svelte_svelte_type_style_lang = "";
 const { window: window_1 } = globals;
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[5] = list[i];
+  child_ctx[9] = list[i];
   return child_ctx;
 }
-function create_each_block(ctx) {
+function create_if_block(ctx) {
   let div;
   let div_style_value;
   return {
@@ -22,12 +120,12 @@ function create_each_block(ctx) {
     h() {
       attr(div, "class", "ball");
       attr(div, "style", div_style_value = `background: ${/*ball*/
-      ctx[5].color}; width: ${/*ball*/
-      ctx[5].size}px; height: ${/*ball*/
-      ctx[5].size}px; 
+      ctx[9].color}; width: ${/*ball*/
+      ctx[9].size}px; height: ${/*ball*/
+      ctx[9].size}px; 
 			position: absolute; top: ${/*ball*/
-      ctx[5].location.y}px; left: ${/*ball*/
-      ctx[5].location.x}px;
+      ctx[9].location.y}px; left: ${/*ball*/
+      ctx[9].location.x}px;
 			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`);
     },
     m(target, anchor) {
@@ -36,12 +134,12 @@ function create_each_block(ctx) {
     p(ctx2, dirty) {
       if (dirty & /*balls*/
       1 && div_style_value !== (div_style_value = `background: ${/*ball*/
-      ctx2[5].color}; width: ${/*ball*/
-      ctx2[5].size}px; height: ${/*ball*/
-      ctx2[5].size}px; 
+      ctx2[9].color}; width: ${/*ball*/
+      ctx2[9].size}px; height: ${/*ball*/
+      ctx2[9].size}px; 
 			position: absolute; top: ${/*ball*/
-      ctx2[5].location.y}px; left: ${/*ball*/
-      ctx2[5].location.x}px;
+      ctx2[9].location.y}px; left: ${/*ball*/
+      ctx2[9].location.x}px;
 			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`)) {
         attr(div, "style", div_style_value);
       }
@@ -49,6 +147,55 @@ function create_each_block(ctx) {
     d(detaching) {
       if (detaching)
         detach(div);
+    }
+  };
+}
+function create_each_block(ctx) {
+  let if_block_anchor;
+  let if_block = (
+    /*ball*/
+    ctx[9].location.x >= 0 && /*ball*/
+    ctx[9].location.y >= 0 && create_if_block(ctx)
+  );
+  return {
+    c() {
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+    },
+    p(ctx2, dirty) {
+      if (
+        /*ball*/
+        ctx2[9].location.x >= 0 && /*ball*/
+        ctx2[9].location.y >= 0
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block = create_if_block(ctx2);
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+    },
+    d(detaching) {
+      if (if_block)
+        if_block.d(detaching);
+      if (detaching)
+        detach(if_block_anchor);
     }
   };
 }
@@ -101,7 +248,7 @@ function create_fragment(ctx) {
   let dispose;
   add_render_callback(
     /*onwindowscroll*/
-    ctx[2]
+    ctx[6]
   );
   let each_value = (
     /*balls*/
@@ -131,7 +278,7 @@ function create_fragment(ctx) {
       img0 = element("img");
       t5 = space();
       p0 = element("p");
-      t6 = text("I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
+      t6 = text("I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala and TypeScript, which has enabled\n			me to take on projects ranging from simple web applications to more-complex algorithms.\n			");
       br0 = element("br");
       br1 = element("br");
       t7 = text("\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
@@ -184,13 +331,14 @@ function create_fragment(ctx) {
         id: true,
         src: true,
         alt: true,
+        style: true,
         class: true
       });
       div2_nodes.forEach(detach);
       t5 = claim_space(div4_nodes);
       p0 = claim_element(div4_nodes, "P", { id: true, class: true });
       var p0_nodes = children(p0);
-      t6 = claim_text(p0_nodes, "I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala, Typescript and C++, which has\n			enabled me to take on projects ranging from simple web applications to more-complex\n			algorithms.\n			");
+      t6 = claim_text(p0_nodes, "I'm a 3rd year computer science student at Aalto University, with minors in Data Science and\n			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless\n			possibilities that technology has to offer. During my studies, I have developed a good\n			understanding of programming languages such as Python, Scala and TypeScript, which has enabled\n			me to take on projects ranging from simple web applications to more-complex algorithms.\n			");
       br0 = claim_element(p0_nodes, "BR", {});
       br1 = claim_element(p0_nodes, "BR", {});
       t7 = claim_text(p0_nodes, "\n			As a part of my academic journey, I have had the opportunity to work on exciting projects such\n			as the implementation of a tool for calibration technicians at Beamex. The project involved using\n			React Native to develop an android-based application for calibration technicians to perform their\n			work more efficiently. The experience allowed me to understand the significance of solving real-world\n			problems and the importance of collaboration in the process. I learned how to work as a team and\n			contribute towards a common goal.\n			");
@@ -204,7 +352,7 @@ function create_fragment(ctx) {
       t10 = claim_space(div4_nodes);
       div3 = claim_element(div4_nodes, "DIV", { class: true });
       var div3_nodes = children(div3);
-      p1 = claim_element(div3_nodes, "P", {});
+      p1 = claim_element(div3_nodes, "P", { class: true });
       var p1_nodes = children(p1);
       t11 = claim_text(p1_nodes, "You can find me on:");
       p1_nodes.forEach(detach);
@@ -224,33 +372,40 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "ballContainer");
-      attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
+      attr(div0, "class", "bg-lightbg dark:bg-darkbg");
+      attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
-      attr(h1, "class", "svelte-ea3pnc");
-      attr(h2, "class", "svelte-ea3pnc");
-      attr(div1, "class", "nameContainer svelte-ea3pnc");
+      attr(h1, "class", "text-white svelte-2jmxpf");
+      attr(h2, "class", "text-white svelte-2jmxpf");
+      attr(div1, "class", "nameContainer svelte-2jmxpf");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Profile");
-      attr(img0, "class", "svelte-ea3pnc");
-      attr(div2, "class", "imageContainer svelte-ea3pnc");
+      set_style(
+        img0,
+        "border-radius",
+        /*$imgRadius*/
+        ctx[2] + "%"
+      );
+      attr(img0, "class", "svelte-2jmxpf");
+      attr(div2, "class", "imageContainer svelte-2jmxpf");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "svelte-ea3pnc");
-      attr(img1, "class", "socialImg svelte-ea3pnc");
+      attr(p0, "class", "text-white svelte-2jmxpf");
+      attr(p1, "class", "text-white");
+      attr(img1, "class", "socialImg svelte-2jmxpf");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-ea3pnc");
+      attr(img2, "class", "socialImg svelte-2jmxpf");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-ea3pnc");
-      attr(div4, "class", "infoBoxContainer svelte-ea3pnc");
-      attr(div5, "class", "fullscreenContainer svelte-ea3pnc");
+      attr(div3, "class", "footerContainer svelte-2jmxpf");
+      attr(div4, "class", "infoBoxContainer svelte-2jmxpf");
+      attr(div5, "class", "fullscreenContainer svelte-2jmxpf");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -292,12 +447,38 @@ function create_fragment(ctx) {
       append_hydration(div3, a1);
       append_hydration(a1, img2);
       if (!mounted) {
-        dispose = listen(window_1, "scroll", () => {
-          scrolling = true;
-          clearTimeout(scrolling_timeout);
-          scrolling_timeout = setTimeout(clear_scrolling, 100);
-          ctx[2]();
-        });
+        dispose = [
+          listen(window_1, "scroll", () => {
+            scrolling = true;
+            clearTimeout(scrolling_timeout);
+            scrolling_timeout = setTimeout(clear_scrolling, 100);
+            ctx[6]();
+          }),
+          listen(
+            div2,
+            "mouseover",
+            /*squareCorners*/
+            ctx[4]
+          ),
+          listen(
+            div2,
+            "focus",
+            /*squareCorners*/
+            ctx[4]
+          ),
+          listen(
+            div2,
+            "mouseleave",
+            /*roundCorners*/
+            ctx[5]
+          ),
+          listen(
+            div2,
+            "blur",
+            /*roundCorners*/
+            ctx[5]
+          )
+        ];
         mounted = true;
       }
     },
@@ -334,9 +515,18 @@ function create_fragment(ctx) {
         each_blocks.length = each_value.length;
       }
       if (dirty & /*scrollY*/
-      2 && div0_style_value !== (div0_style_value = `position: absolute; z-index: -1; background-color: #303041; top: ${/*scrollY*/
+      2 && div0_style_value !== (div0_style_value = `position: absolute; z-index: -1; top: ${/*scrollY*/
       ctx2[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`)) {
         attr(div0, "style", div0_style_value);
+      }
+      if (dirty & /*$imgRadius*/
+      4) {
+        set_style(
+          img0,
+          "border-radius",
+          /*$imgRadius*/
+          ctx2[2] + "%"
+        );
       }
     },
     i: noop,
@@ -350,12 +540,21 @@ function create_fragment(ctx) {
       if (detaching)
         detach(div5);
       mounted = false;
-      dispose();
+      run_all(dispose);
     }
   };
 }
 const animationDuration = 15;
 function instance($$self, $$props, $$invalidate) {
+  let $imgRadius;
+  const imgRadius = tweened(50, { duration: 1e3, easing: cubicOut });
+  component_subscribe($$self, imgRadius, (value) => $$invalidate(2, $imgRadius = value));
+  const squareCorners = () => {
+    set_store_value(imgRadius, $imgRadius = 5, $imgRadius);
+  };
+  const roundCorners = () => {
+    set_store_value(imgRadius, $imgRadius = 50, $imgRadius);
+  };
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -364,11 +563,11 @@ function instance($$self, $$props, $$invalidate) {
     }
     return color;
   };
-  let { balls = [...Array(10).keys()].map((i) => ({
+  let { balls = [...Array(8).keys()].map((i) => ({
     id: i,
     color: getRandomColor(),
-    size: 30 + Math.random() * 150,
-    location: { x: 0, y: 0 }
+    size: 50 + Math.random() * 200,
+    location: { x: -1, y: -1 }
   })) } = $$props;
   function randomizeBallLocationsAndColors() {
     for (var i = 0; i < balls.length; i++) {
@@ -395,7 +594,15 @@ function instance($$self, $$props, $$invalidate) {
     if ("balls" in $$props2)
       $$invalidate(0, balls = $$props2.balls);
   };
-  return [balls, scrollY, onwindowscroll];
+  return [
+    balls,
+    scrollY,
+    $imgRadius,
+    imgRadius,
+    squareCorners,
+    roundCorners,
+    onwindowscroll
+  ];
 }
 class Page extends SvelteComponent {
   constructor(options) {

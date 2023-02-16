@@ -1,4 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, O as append_hydration, u as set_data, C as noop, n as attr, W as src_url_equal, F as listen, Y as getContext, f as transition_in, d as check_outros, t as transition_out, X as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, g as group_outros } from "../../../chunks/index-046539a1.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, b as insert_hydration, O as append_hydration, u as set_data, C as noop, aa as src_url_equal, F as listen, a2 as getContext, f as transition_in, d as check_outros, t as transition_out, ab as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, g as group_outros } from "../../../chunks/index-129fd69a.js";
+const skillPopup_svelte_svelte_type_style_lang = "";
 function create_fragment$2(ctx) {
   let h1;
   let t0;
@@ -18,9 +19,10 @@ function create_fragment$2(ctx) {
         /*description*/
         ctx[1]
       );
+      this.h();
     },
     l(nodes) {
-      h1 = claim_element(nodes, "H1", {});
+      h1 = claim_element(nodes, "H1", { class: true });
       var h1_nodes = children(h1);
       t0 = claim_text(
         h1_nodes,
@@ -29,7 +31,7 @@ function create_fragment$2(ctx) {
       );
       h1_nodes.forEach(detach);
       t1 = claim_space(nodes);
-      p = claim_element(nodes, "P", {});
+      p = claim_element(nodes, "P", { class: true });
       var p_nodes = children(p);
       t2 = claim_text(
         p_nodes,
@@ -37,6 +39,11 @@ function create_fragment$2(ctx) {
         ctx[1]
       );
       p_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(h1, "class", "svelte-zqkr94");
+      attr(p, "class", "svelte-zqkr94");
     },
     m(target, anchor) {
       insert_hydration(target, h1, anchor);
@@ -90,7 +97,6 @@ class SkillPopup extends SvelteComponent {
     init(this, options, instance$2, create_fragment$2, safe_not_equal, { title: 0, description: 1 });
   }
 }
-const skillInfoContainer_svelte_svelte_type_style_lang = "";
 function create_fragment$1(ctx) {
   let div;
   let button;
@@ -121,10 +127,15 @@ function create_fragment$1(ctx) {
       var div_nodes = children(div);
       button = claim_element(div_nodes, "BUTTON", { class: true });
       var button_nodes = children(button);
-      img = claim_element(button_nodes, "IMG", { class: true, src: true, alt: true });
+      img = claim_element(button_nodes, "IMG", {
+        class: true,
+        draggable: true,
+        src: true,
+        alt: true
+      });
       button_nodes.forEach(detach);
       t0 = claim_space(div_nodes);
-      p = claim_element(div_nodes, "P", {});
+      p = claim_element(div_nodes, "P", { class: true });
       var p_nodes = children(p);
       t1 = claim_text(p_nodes, t1_value);
       p_nodes.forEach(detach);
@@ -132,14 +143,16 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h() {
-      attr(img, "class", "skillImgIcon svelte-ynjc5g");
+      attr(img, "class", "max-h-[100%] max-w-[100%] aspect-square object-contain drop-shadow-lg");
+      attr(img, "draggable", "false");
       if (!src_url_equal(img.src, img_src_value = /*skill*/
       ctx[0].img))
         attr(img, "src", img_src_value);
       attr(img, "alt", img_alt_value = /*skill*/
       ctx[0].alt);
-      attr(button, "class", "skillImgHolder svelte-ynjc5g");
-      attr(div, "class", "skillContainer svelte-ynjc5g");
+      attr(button, "class", "max-h-[15vh] max-w-[30vw] min-w-[40px] min-h-[40px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-600 dark:hover:border-green-400 hover:animate-wiggle bg-secondary/30 dark:bg-secondary/10 ");
+      attr(p, "class", "text-black dark:text-white p-3");
+      attr(div, "class", "flex flex-col items-center justify-center p-2");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -449,13 +462,13 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(h10, "class", "svelte-1q06u84");
-      attr(div0, "class", "skillTypeContainer svelte-1q06u84");
-      attr(h11, "class", "svelte-1q06u84");
-      attr(div1, "class", "skillTypeContainer svelte-1q06u84");
-      attr(h12, "class", "svelte-1q06u84");
-      attr(div2, "class", "skillTypeContainer svelte-1q06u84");
-      attr(div3, "class", "fullscreenContainer svelte-1q06u84");
+      attr(h10, "class", "text-black dark:text-white svelte-1sw0iz");
+      attr(div0, "class", "skillTypeContainer svelte-1sw0iz");
+      attr(h11, "class", "text-black dark:text-white svelte-1sw0iz");
+      attr(div1, "class", "skillTypeContainer svelte-1sw0iz");
+      attr(h12, "class", "text-black dark:text-white svelte-1sw0iz");
+      attr(div2, "class", "skillTypeContainer svelte-1sw0iz");
+      attr(div3, "class", "fullscreenContainer svelte-1sw0iz");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
