@@ -62,8 +62,8 @@
 <svelte:window bind:scrollY />
 
 <div
-	class="ballContainer"
-	style={`position: absolute; z-index: -1; background-color: #303041; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
+	class="bg-lightbg dark:bg-darkbg"
+	style={`position: absolute; z-index: -1; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
 >
 	{#each balls as ball}
 		{#if ball.location.x >= 0 && ball.location.y >= 0}
@@ -79,11 +79,17 @@
 <div class="fullscreenContainer">
 	<div class="infoBoxContainer">
 		<div class="nameContainer">
-			<h1>Matias Södersved</h1>
-			<h2>Student from Aalto University</h2>
+			<h1 class="text-white">Matias Södersved</h1>
+			<h2 class="text-white">Student from Aalto University</h2>
 		</div>
 
-		<div class="imageContainer" on:mouseover={squareCorners} on:mouseout={roundCorners}>
+		<div
+			class="imageContainer"
+			on:mouseover={squareCorners}
+			on:focus={squareCorners}
+			on:mouseleave={roundCorners}
+			on:blur={roundCorners}
+		>
 			<img
 				id="avatar"
 				src="/profile_avatar.jpg"
@@ -92,7 +98,7 @@
 			/>
 		</div>
 
-		<p id="contentText">
+		<p id="contentText" class="text-white">
 			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
 			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
@@ -117,7 +123,7 @@
 			to the world, and I hope to contribute to this through my work.
 		</p>
 		<div class="footerContainer">
-			<p>You can find me on:</p>
+			<p class="text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
 				<img class="socialImg" src="/github_logo.png" alt="Github logo" />
 			</a>
@@ -133,17 +139,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 95vh;
+		min-height: 90vh;
 		height: auto;
 		width: 100%;
-		background: none;
 	}
 	.infoBoxContainer {
 		display: grid;
 		width: 80vw;
 		margin: 2rem 0 2rem 0;
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
-		grid-template-rows: 10rem auto 50px;
+		grid-template-rows: 12rem auto 50px;
 		grid-template-areas:
 			'header avatar'
 			'content avatar'
@@ -178,7 +183,8 @@
 		align-items: center;
 	}
 	img.socialImg {
-		padding-left: 10px;
+		margin-left: 10px;
+		aspect-ratio: 1/1;
 		height: calc(30px + 1vw);
 		width: calc(30px + 1vw);
 	}
@@ -193,8 +199,8 @@
 	#contentText {
 		grid-area: content;
 	}
-	@media only screen and (max-width: 900px) {
-		/* To target mobile phones and allow content to use more */
+	@media only screen and (max-width: 850px) {
+		/* On mobile phones the profile picture is smaller and content can have full width of the infobox */
 		#contentText {
 			grid-column-end: 3;
 		}
@@ -204,11 +210,12 @@
 	}
 	h1 {
 		font-size: calc(16px + 3.5vw);
-		margin: 0px;
+		margin: 0;
+		padding: 0;
 	}
 	h2 {
 		font-size: calc(14px + 1.2vw);
-		margin: 0.5rem 0 1rem 0;
+		margin: 0.5rem 0 1.5rem 0;
 	}
 
 	@keyframes -global-up-down {

@@ -31,7 +31,7 @@
 			})}
 	>
 		<img
-			class="max-h-[100%] max-w-[100%] aspect-square object-contain drop-shadow-2xl"
+			class="max-h-[100%] max-w-[100%] aspect-square object-contain drop-shadow-lg"
 			src={skill.img}
 			alt={skill.alt}
 		/>
