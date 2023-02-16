@@ -172,5 +172,6 @@
 	}
 	h1 {
 		margin: 1rem 0 0 0;
+		font-size: calc(12px + 1vw);
 	}
 </style>

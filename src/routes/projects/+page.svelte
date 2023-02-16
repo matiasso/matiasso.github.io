@@ -1,2 +1,9 @@
-<h1 style="color: black">Projects</h1>
-<p style="color: black">TODO...</p>
+<script>
+	import { Alert } from 'flowbite-svelte';
+</script>
+
+<div class="p-8">
+	<Alert>
+		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+	</Alert>
+</div>

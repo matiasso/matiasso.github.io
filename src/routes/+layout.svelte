@@ -1,15 +1,27 @@
 <script lang="ts">
-	import Modal from 'svelte-simple-modal';
 	import '@fontsource/inter';
 	import '@fontsource/abril-fatface';
+	import Modal from 'svelte-simple-modal';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
 
-<nav>
-	<a href="/">Home</a>
-	<a href="/about">About me</a>
-	<a href="/skills">Skills</a>
-	<a href="/projects">Projects</a>
-</nav>
+<div class="relative px-8">
+	<Navbar
+		navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b"
+		let:hidden
+		let:toggle
+	>
+		<NavBrand href="/">
+			<img src="/home.svg" class="mr-3 h-6 sm:h-9" alt="Home icon" />
+		</NavBrand>
+		<NavHamburger on:click={toggle} />
+		<NavUl {hidden}>
+			<NavLi href="/about" active={true}>About me</NavLi>
+			<NavLi href="/skills">Skills</NavLi>
+			<NavLi href="/projects">Projects</NavLi>
+		</NavUl>
+	</Navbar>
+</div>
 
 <Modal
 	styleWindow={{
