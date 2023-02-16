@@ -1,5 +1,20 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
+
+	const imgRadius = tweened(50, {
+		duration: 1000,
+		easing: cubicOut
+	});
+
+	const squareCorners = () => {
+		$imgRadius = 5;
+	};
+
+	const roundCorners = () => {
+		$imgRadius = 50;
+	};
 
 	// A function that returns a random color in hex format
 	const getRandomColor = () => {
@@ -11,10 +26,10 @@
 		return color;
 	};
 
-	export var balls = [...Array(10).keys()].map((i) => ({
+	export var balls = [...Array(8).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
-		size: 30 + Math.random() * 150,
+		size: 50 + Math.random() * 200,
 		location: {
 			x: -1,
 			y: -1
@@ -68,17 +83,21 @@
 			<h2>Student from Aalto University</h2>
 		</div>
 
-		<div class="imageContainer">
-			<img id="avatar" src="/profile_avatar.jpg" alt="Profile" />
+		<div class="imageContainer" on:mouseover={squareCorners} on:mouseout={roundCorners}>
+			<img
+				id="avatar"
+				src="/profile_avatar.jpg"
+				alt="Profile"
+				style="border-radius: {$imgRadius}%"
+			/>
 		</div>
 
 		<p id="contentText">
 			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
 			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
-			understanding of programming languages such as Python, Scala, Typescript and C++, which has
-			enabled me to take on projects ranging from simple web applications to more-complex
-			algorithms.
+			understanding of programming languages such as Python, Scala and TypeScript, which has enabled
+			me to take on projects ranging from simple web applications to more-complex algorithms.
 			<br /><br />
 			As a part of my academic journey, I have had the opportunity to work on exciting projects such
 			as the implementation of a tool for calibration technicians at Beamex. The project involved using
@@ -164,7 +183,6 @@
 		width: calc(30px + 1vw);
 	}
 	img#avatar {
-		border-radius: 50%;
 		min-width: 100px;
 		min-height: 100px;
 		max-height: 100%;
@@ -175,7 +193,7 @@
 	#contentText {
 		grid-area: content;
 	}
-	@media only screen and (max-width: 1000px) {
+	@media only screen and (max-width: 900px) {
 		/* To target mobile phones and allow content to use more */
 		#contentText {
 			grid-column-end: 3;

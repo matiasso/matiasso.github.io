@@ -17,7 +17,7 @@
 		background: '#3D3A50'
 	}}
 	styleCloseButton={{
-		background: '#f008',
+		background: '#f00D',
 		cursor: 'pointer'
 	}}><slot /></Modal
 >
