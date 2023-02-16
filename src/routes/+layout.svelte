@@ -2,7 +2,6 @@
 	import '@fontsource/inter';
 	import '@fontsource/abril-fatface';
 	import '../app.css';
-	import Modal from 'svelte-simple-modal';
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import { DarkMode } from 'flowbite-svelte';
 </script>
@@ -59,23 +58,7 @@
 		<NavLi class="text-black dark:text-white text-lg" href="/projects">Projects</NavLi>
 	</NavUl>
 </Navbar>
-
-<Modal
-	styleWindow={{
-		maxWidth: '90%',
-		background: '#A5C9CA',
-		borderRadius: '16px',
-		boxShadow: '4px 4px 20px rgba(0, 0, 0, 0.5)',
-		border: '1px solid white',
-		padding: '1rem'
-	}}
-	styleCloseButton={{
-		background: '#f00D',
-		cursor: 'pointer'
-	}}
->
-	<slot />
-</Modal>
+<slot />
 
 <style>
 	:global(p) {
