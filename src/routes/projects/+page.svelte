@@ -11,7 +11,7 @@ But for desktops it could be better to show the projects in a horizontal wrappin
 			><div
 				class="containerGrid p-6 w-[90vw] rounded-lg border bg-white border-gray-200 hover:bg-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:hover:bg-slate-700"
 			>
-				<img class="techImage" {src} {alt} />
+				<img class="techImage" {src} {alt} height="512" width="512" />
 				<div class="informationContainer flex flex-col items-start justify-start">
 					<h3 class="flex items-center mb-1 text-2xl font-semibold text-gray-900 dark:text-white">
 						{title}

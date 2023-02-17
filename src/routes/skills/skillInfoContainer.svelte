@@ -23,6 +23,8 @@
 			draggable="false"
 			src={skill.img}
 			alt={skill.alt}
+			height="512"
+			width="512"
 		/>
 	</button>
 

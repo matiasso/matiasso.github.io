@@ -102,6 +102,8 @@
 		>
 			<img
 				id="avatar"
+				width="512"
+				height="512"
 				src="/profile_avatar.jpg"
 				alt="Profile"
 				style="border-radius: {$imgRadius}%"
@@ -135,10 +137,16 @@
 		<div class="footerContainer">
 			<p class="text-black dark:text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
-				<img class="socialIcon" src="/github_logo.png" alt="Github logo" />
+				<img class="socialIcon" src="/github_logo.png" alt="Github logo" height="512" width="512" />
 			</a>
 			<a href="https://www.linkedin.com/in/matias-sodersved/">
-				<img class="socialIcon" src="/linkedin_logo.png" alt="LinkedIn logo" />
+				<img
+					class="socialIcon"
+					src="/linkedin_logo.png"
+					alt="LinkedIn logo"
+					height="512"
+					width="512"
+				/>
 			</a>
 		</div>
 	</div>
