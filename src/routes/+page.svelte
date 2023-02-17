@@ -196,6 +196,9 @@
 		height: calc(30px + 1vw);
 		width: calc(30px + 1vw);
 	}
+	img.socialIcon:hover {
+		transform: scale(1.1);
+	}
 	img#avatar {
 		min-width: 100px;
 		min-height: 100px;

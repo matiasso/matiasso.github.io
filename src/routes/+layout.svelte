@@ -59,7 +59,6 @@
 	<!-- Hamburger menu automatically becomes visible on mobile devices-->
 	<NavHamburger on:click={toggle} class="text-black dark:text-white" />
 	<NavUl {hidden} slideParams={{ delay: 100, duration: 300, easing: quintOut }}>
-		<NavLi class="text-black dark:text-white text-lg" href="/about">About me</NavLi>
 		<NavLi class="text-black dark:text-white text-lg" href="/skills">Skills</NavLi>
 		<NavLi class="text-black dark:text-white text-lg" href="/projects">Projects</NavLi>
 	</NavUl>
