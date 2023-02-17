@@ -1,88 +1,40 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type Modal from 'svelte-simple-modal';
-	import SkillPopup from './skillPopup.svelte';
+	import { Button, Modal } from 'flowbite-svelte';
+	let defaultModal = false;
 
-	const { open }: Modal = getContext('simple-modal');
-	type popup_content = {
-		title: string;
-		description: string;
-	};
-	const openModal = (props: popup_content) => {
-		open(SkillPopup, props);
-	};
-
-	// These dummy values will be replaced by the +page.svelte file which imports this component
+	// These empty strings will be replaced by the +page.svelte file which imports and uses this component
 	export let skill = {
-		name: 'Skill name',
-		img: '/skills/skill_logo.png',
-		alt: 'Skill logo',
-		description: 'Skill description'
+		name: '',
+		img: '',
+		alt: '',
+		description: ''
 	};
 </script>
 
-<div class="skillContainer">
+<div class="flex flex-col items-center justify-center p-2">
 	<button
-		class="skillImgHolder"
-		on:click={() =>
-			openModal({
-				title: `About ${skill.name}`,
-				description: `${skill.description}`
-			})}
+		class="inline-flex items-center justify-center max-h-[15vh] max-w-[30vw] min-w-[50px] min-h-[50px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-600 dark:hover:border-green-400 hover:animate-wiggle bg-white/70 dark:bg-secondary/10"
+		on:click={() => {
+			defaultModal = true;
+		}}
 	>
-		<img class="skillImgIcon" src={skill.img} alt={skill.alt} />
+		<img
+			class="max-h-[100%] max-w-[100%] min-w-[30px] min-h-[30px] aspect-square object-contain drop-shadow-lg"
+			draggable="false"
+			src={skill.img}
+			alt={skill.alt}
+		/>
 	</button>
 
-	<p>{skill.name}</p>
+	<p class="text-black dark:text-white p-3">{skill.name}</p>
 </div>
 
-<style>
-	.skillContainer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 10px;
-	}
-	.skillImgHolder {
-		background: none;
-		max-height: 15vh;
-		max-width: 30vw;
-		padding: 15%;
-		aspect-ratio: 1/1;
-		cursor: pointer;
-		border: 2px solid #fff;
-		border-radius: 50%;
-		object-fit: contain;
-	}
-	.skillImgHolder:hover {
-		border: 2px solid rgb(173, 255, 126);
-		animation: wiggle 0.35s 1;
-	}
-	.skillImgIcon {
-		max-height: 100%;
-		max-width: 100%;
-		aspect-ratio: 1/1;
-		object-fit: contain;
-	}
-	@keyframes wiggle {
-		0% {
-			transform: rotate(0deg);
-		}
-		25% {
-			transform: rotate(5deg);
-			scale: calc(1.2);
-		}
-		50% {
-			transform: rotate(0deg);
-			scale: calc(1);
-		}
-		75% {
-			transform: rotate(-5deg);
-			scale: calc(1.2);
-		}
-		100% {
-			transform: rotate(0deg);
-		}
-	}
-</style>
+<!-- Show this fullscreen Modal with information about the current skill, if the image is clicked -->
+<Modal title={`About ${skill.name}`} bind:open={defaultModal} autoclose>
+	<p class="text-base text-lg leading-relaxed text-gray-500 dark:text-gray-400">
+		{skill.description}
+	</p>
+	<svelte:fragment slot="footer">
+		<Button class="mx-auto" gradient color="cyanToBlue">Close</Button>
+	</svelte:fragment>
+</Modal>

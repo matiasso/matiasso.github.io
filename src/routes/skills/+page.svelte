@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SkilltypeContainer from './skillInfoContainer.svelte';
 
+	// Define all the skills here, with their name, image, alt text and description
 	const skills = {
 		programming: [
 			{
@@ -18,13 +19,13 @@
 					I also used it in the "Machine learning" course at Aalto University, where we learned some basics of the scikit-learn library.`
 			},
 			{
-				name: 'Typescript',
+				name: 'TypeScript',
 				img: '/skills/typescript_logo.png',
-				alt: 'Typescript logo',
+				alt: 'TypeScript logo',
 				description: `TypeScript is quite new addition to my skills. I completed the "Web Software Development" course at Aalto University (2021-2022), 
 				where we learned some JavaScript. After that I learned the basics of TypeScript during a "Software project" course at Aalto University (2022-2023). 
 				During that course we worked as a 7 member team and built an application for Android-based glasses with React Native and TypeScript.
-				This website is also in-fact built with Typescript (and SvelteKit).`
+				This website is also in-fact built with TypeScript (and SvelteKit).`
 			},
 			{
 				name: 'React',
@@ -129,20 +130,21 @@
 	};
 </script>
 
+<!-- Return a full screen container with three sections for different types of skills -->
 <div class="fullscreenContainer">
-	<h1>Programming languages & frameworks</h1>
+	<h1 class="text-black dark:text-white">Programming languages & frameworks</h1>
 	<div class="skillTypeContainer">
 		{#each skills.programming as skill}
 			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
-	<h1>Useful skills</h1>
+	<h1 class="text-black dark:text-white">Useful skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.useful as skill}
 			<SkilltypeContainer {skill} />
 		{/each}
 	</div>
-	<h1>Other skills</h1>
+	<h1 class="text-black dark:text-white">Other skills</h1>
 	<div class="skillTypeContainer">
 		{#each skills.other as skill}
 			<SkilltypeContainer {skill} />
@@ -156,21 +158,21 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
-		min-height: 95vh;
+		min-height: 80vh;
 		height: auto;
 		width: 100%;
-		background: #303041; /* TODO: Add animated background later*/
 	}
 	.skillTypeContainer {
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		width: 80vw;
+		width: 90vw;
 		margin: 0.5rem;
 	}
 	h1 {
-		margin: 1rem 0 0 0;
+		margin: 1rem 0 0 0; /* only the top margin is 1rem */
+		font-size: calc(20px + 0.7vw);
+		text-align: center;
 	}
 </style>

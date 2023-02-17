@@ -3,15 +3,18 @@
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 
+	// Tweening for the profile picture avatar
 	const imgRadius = tweened(50, {
 		duration: 1000,
 		easing: cubicOut
 	});
 
+	// A function that sets the rounding to 5%
 	const squareCorners = () => {
 		$imgRadius = 5;
 	};
 
+	// A function that sets the rounding to 50%
 	const roundCorners = () => {
 		$imgRadius = 50;
 	};
@@ -26,6 +29,8 @@
 		return color;
 	};
 
+	// An array of balls, which will be rendered on z-index -1
+	// Just a nice dynamic background effect
 	export var balls = [...Array(8).keys()].map((i) => ({
 		id: i,
 		color: getRandomColor(),
@@ -36,7 +41,7 @@
 		}
 	}));
 
-	// A function that re-positions and re-colors the balls
+	// A function that re-positions and re-colors the balls, this is called at every animation interval
 	function randomizeBallLocationsAndColors() {
 		for (var i = 0; i < balls.length; i++) {
 			balls[i].color = getRandomColor();
@@ -45,27 +50,31 @@
 		}
 	}
 
-	const animationDuration = 15;
+	// Bind the scroll also so I can keep the background balls in place
 	let scrollY = 0;
+	const animationDuration = 15;
 	onMount(() => {
 		// Call the randomization after mounting
 		randomizeBallLocationsAndColors();
+
 		// Call the randomization during every animation interval
 		const interval = setInterval(() => {
 			randomizeBallLocationsAndColors();
 		}, animationDuration * 1000);
-		//If a function is returned from onMount, it will be called when the component is unmounted.
+		// When the component is unmounted, clear the interval
 		return () => clearInterval(interval);
 	});
 </script>
 
 <svelte:window bind:scrollY />
 
+<!-- A Div containing the balls, it will have z-index: -1 so that it is rendered "below" the main window -->
 <div
-	class="ballContainer"
-	style={`position: absolute; z-index: -1; background-color: #303041; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
+	class="bg-lightbg dark:bg-darkbg"
+	style={`position: absolute; z-index: -1; top: ${scrollY}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`}
 >
 	{#each balls as ball}
+		<!-- Only render the balls if they dont have the initial value -1 anymore -->
 		{#if ball.location.x >= 0 && ball.location.y >= 0}
 			<div
 				class="ball"
@@ -77,13 +86,20 @@
 	{/each}
 </div>
 <div class="fullscreenContainer">
-	<div class="infoBoxContainer">
+	<!-- All other properties are defined in CSS .infoBoxContainer, only bg color depends on dark mode-->
+	<div class="infoBoxContainer bg-white/70 dark:bg-darkwindow">
 		<div class="nameContainer">
-			<h1>Matias Södersved</h1>
-			<h2>Student from Aalto University</h2>
+			<h1 class="text-gray-700 dark:text-white">Matias Södersved</h1>
+			<h2 class="text-gray-600 dark:text-white">Student from Aalto University</h2>
 		</div>
 
-		<div class="imageContainer" on:mouseover={squareCorners} on:mouseout={roundCorners}>
+		<div
+			class="imageContainer"
+			on:mouseover={squareCorners}
+			on:focus={squareCorners}
+			on:mouseleave={roundCorners}
+			on:blur={roundCorners}
+		>
 			<img
 				id="avatar"
 				src="/profile_avatar.jpg"
@@ -92,7 +108,7 @@
 			/>
 		</div>
 
-		<p id="contentText">
+		<p id="contentText" class="text-black dark:text-white">
 			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
 			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
@@ -117,12 +133,12 @@
 			to the world, and I hope to contribute to this through my work.
 		</p>
 		<div class="footerContainer">
-			<p>You can find me on:</p>
+			<p class="text-black dark:text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
-				<img class="socialImg" src="/github_logo.png" alt="Github logo" />
+				<img class="socialIcon" src="/github_logo.png" alt="Github logo" />
 			</a>
 			<a href="https://www.linkedin.com/in/matias-sodersved/">
-				<img class="socialImg" src="/linkedin_logo.png" alt="LinkedIn logo" />
+				<img class="socialIcon" src="/linkedin_logo.png" alt="LinkedIn logo" />
 			</a>
 		</div>
 	</div>
@@ -133,32 +149,29 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 95vh;
+		min-height: 90vh;
 		height: auto;
 		width: 100%;
-		background: none;
 	}
 	.infoBoxContainer {
 		display: grid;
 		width: 80vw;
-		margin: 2rem 0 2rem 0;
+		margin: 2rem 0 2rem 0; /* top right bottom left */
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
-		grid-template-rows: 10rem auto 50px;
+		grid-template-rows: 12rem auto 50px;
 		grid-template-areas:
 			'header avatar'
 			'content avatar'
 			'footer footer';
-		background: rgba(61, 58, 80, 0.85);
 		border-radius: 16px;
 		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(30px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid white;
-		padding: 1rem;
+		-webkit-backdrop-filter: blur(30px);
+		padding: 1.2rem;
 	}
 	.imageContainer {
 		grid-area: avatar;
-		margin: 5px 5px 0px 10px;
+		margin: 5px 5px 0px 10px; /* top right bottom left */
 		justify-self: end;
 		max-height: 160px;
 		min-height: 80px;
@@ -177,10 +190,14 @@
 		flex-direction: row;
 		align-items: center;
 	}
-	img.socialImg {
-		padding-left: 10px;
+	img.socialIcon {
+		margin-left: 10px;
+		aspect-ratio: 1/1;
 		height: calc(30px + 1vw);
 		width: calc(30px + 1vw);
+	}
+	img.socialIcon:hover {
+		transform: scale(1.1);
 	}
 	img#avatar {
 		min-width: 100px;
@@ -193,8 +210,8 @@
 	#contentText {
 		grid-area: content;
 	}
-	@media only screen and (max-width: 900px) {
-		/* To target mobile phones and allow content to use more */
+	@media only screen and (max-width: 850px) {
+		/* On mobile phones the profile picture is smaller and content can have full width of the infobox */
 		#contentText {
 			grid-column-end: 3;
 		}
@@ -202,13 +219,15 @@
 			grid-row-end: 2;
 		}
 	}
+	/* I give some initial pixel values to h1 and h2, but scale them up as the width of the screen grows */
 	h1 {
 		font-size: calc(16px + 3.5vw);
-		margin: 0px;
+		margin: 0;
+		padding: 0;
 	}
 	h2 {
 		font-size: calc(14px + 1.2vw);
-		margin: 0.5rem 0 1rem 0;
+		margin: 0.5rem 0 1.5rem 0;
 	}
 
 	@keyframes -global-up-down {
