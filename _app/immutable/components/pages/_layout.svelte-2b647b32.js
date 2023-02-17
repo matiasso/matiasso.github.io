@@ -2230,7 +2230,7 @@ class NavUl extends SvelteComponent {
   }
 }
 const _layout_svelte_svelte_type_style_lang = "";
-function create_default_slot_6(ctx) {
+function create_default_slot_5(ctx) {
   let svg;
   let path;
   return {
@@ -2366,24 +2366,6 @@ function create_darkIcon_slot(ctx) {
     }
   };
 }
-function create_default_slot_4(ctx) {
-  let t;
-  return {
-    c() {
-      t = text("About me");
-    },
-    l(nodes) {
-      t = claim_text(nodes, "About me");
-    },
-    m(target, anchor) {
-      insert_hydration(target, t, anchor);
-    },
-    d(detaching) {
-      if (detaching)
-        detach(t);
-    }
-  };
-}
 function create_default_slot_3(ctx) {
   let t;
   return {
@@ -2422,20 +2404,10 @@ function create_default_slot_2(ctx) {
 }
 function create_default_slot_1(ctx) {
   let navli0;
-  let t0;
+  let t;
   let navli1;
-  let t1;
-  let navli2;
   let current;
   navli0 = new NavLi({
-    props: {
-      class: "text-black dark:text-white text-lg",
-      href: "/about",
-      $$slots: { default: [create_default_slot_4] },
-      $$scope: { ctx }
-    }
-  });
-  navli1 = new NavLi({
     props: {
       class: "text-black dark:text-white text-lg",
       href: "/skills",
@@ -2443,7 +2415,7 @@ function create_default_slot_1(ctx) {
       $$scope: { ctx }
     }
   });
-  navli2 = new NavLi({
+  navli1 = new NavLi({
     props: {
       class: "text-black dark:text-white text-lg",
       href: "/projects",
@@ -2454,24 +2426,18 @@ function create_default_slot_1(ctx) {
   return {
     c() {
       create_component(navli0.$$.fragment);
-      t0 = space();
+      t = space();
       create_component(navli1.$$.fragment);
-      t1 = space();
-      create_component(navli2.$$.fragment);
     },
     l(nodes) {
       claim_component(navli0.$$.fragment, nodes);
-      t0 = claim_space(nodes);
+      t = claim_space(nodes);
       claim_component(navli1.$$.fragment, nodes);
-      t1 = claim_space(nodes);
-      claim_component(navli2.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(navli0, target, anchor);
-      insert_hydration(target, t0, anchor);
+      insert_hydration(target, t, anchor);
       mount_component(navli1, target, anchor);
-      insert_hydration(target, t1, anchor);
-      mount_component(navli2, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
@@ -2487,35 +2453,24 @@ function create_default_slot_1(ctx) {
         navli1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       navli1.$set(navli1_changes);
-      const navli2_changes = {};
-      if (dirty & /*$$scope*/
-      2) {
-        navli2_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      navli2.$set(navli2_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(navli0.$$.fragment, local);
       transition_in(navli1.$$.fragment, local);
-      transition_in(navli2.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(navli0.$$.fragment, local);
       transition_out(navli1.$$.fragment, local);
-      transition_out(navli2.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       destroy_component(navli0, detaching);
       if (detaching)
-        detach(t0);
+        detach(t);
       destroy_component(navli1, detaching);
-      if (detaching)
-        detach(t1);
-      destroy_component(navli2, detaching);
     }
   };
 }
@@ -2531,7 +2486,7 @@ function create_default_slot(ctx) {
   navbrand = new NavBrand({
     props: {
       href: "/",
-      $$slots: { default: [create_default_slot_6] },
+      $$slots: { default: [create_default_slot_5] },
       $$scope: { ctx }
     }
   });

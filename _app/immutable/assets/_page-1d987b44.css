@@ -1,2 +1,0 @@
-.containerGrid.svelte-6zxr8p{display:grid;grid-template-columns:4vw auto;grid-template-rows:6rem auto;grid-template-areas:'picture info'
-			'content content'}.techImage.svelte-6zxr8p{grid-area:picture;min-width:40px;-o-object-fit:contain;object-fit:contain;aspect-ratio:1/1}.informationContainer.svelte-6zxr8p{margin-left:2rem;grid-area:info}.descriptionText.svelte-6zxr8p{grid-area:content}

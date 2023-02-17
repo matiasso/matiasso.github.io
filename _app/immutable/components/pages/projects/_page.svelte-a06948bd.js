@@ -95,12 +95,11 @@ function get_each_context(ctx, list, i) {
   return child_ctx;
 }
 function create_each_block(ctx) {
+  let a;
   let div1;
-  let a0;
   let img;
   let img_src_value;
   let t0;
-  let a1;
   let div0;
   let h3;
   let t1_value = (
@@ -116,20 +115,22 @@ function create_each_block(ctx) {
   );
   let t3;
   let t4;
-  let p;
+  let p0;
   let t5_value = (
     /*description*/
     ctx[3] + ""
   );
   let t5;
   let t6;
+  let p1;
+  let t7;
+  let t8;
   return {
     c() {
+      a = element("a");
       div1 = element("div");
-      a0 = element("a");
       img = element("img");
       t0 = space();
-      a1 = element("a");
       div0 = element("div");
       h3 = element("h3");
       t1 = text(t1_value);
@@ -137,22 +138,22 @@ function create_each_block(ctx) {
       time = element("time");
       t3 = text(t3_value);
       t4 = space();
-      p = element("p");
+      p0 = element("p");
       t5 = text(t5_value);
       t6 = space();
+      p1 = element("p");
+      t7 = text("Show more");
+      t8 = space();
       this.h();
     },
     l(nodes) {
-      div1 = claim_element(nodes, "DIV", { class: true });
+      a = claim_element(nodes, "A", { href: true });
+      var a_nodes = children(a);
+      div1 = claim_element(a_nodes, "DIV", { class: true });
       var div1_nodes = children(div1);
-      a0 = claim_element(div1_nodes, "A", { href: true });
-      var a0_nodes = children(a0);
-      img = claim_element(a0_nodes, "IMG", { class: true, src: true, alt: true });
-      a0_nodes.forEach(detach);
+      img = claim_element(div1_nodes, "IMG", { class: true, src: true, alt: true });
       t0 = claim_space(div1_nodes);
-      a1 = claim_element(div1_nodes, "A", { href: true, class: true });
-      var a1_nodes = children(a1);
-      div0 = claim_element(a1_nodes, "DIV", { class: true });
+      div0 = claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = children(div0);
       h3 = claim_element(div0_nodes, "H3", { class: true });
       var h3_nodes = children(h3);
@@ -164,18 +165,23 @@ function create_each_block(ctx) {
       t3 = claim_text(time_nodes, t3_value);
       time_nodes.forEach(detach);
       div0_nodes.forEach(detach);
-      a1_nodes.forEach(detach);
       t4 = claim_space(div1_nodes);
-      p = claim_element(div1_nodes, "P", { class: true });
-      var p_nodes = children(p);
-      t5 = claim_text(p_nodes, t5_value);
-      p_nodes.forEach(detach);
+      p0 = claim_element(div1_nodes, "P", { class: true });
+      var p0_nodes = children(p0);
+      t5 = claim_text(p0_nodes, t5_value);
+      p0_nodes.forEach(detach);
       t6 = claim_space(div1_nodes);
+      p1 = claim_element(div1_nodes, "P", { class: true });
+      var p1_nodes = children(p1);
+      t7 = claim_text(p1_nodes, "Show more");
+      p1_nodes.forEach(detach);
       div1_nodes.forEach(detach);
+      t8 = claim_space(a_nodes);
+      a_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(img, "class", "techImage svelte-6zxr8p");
+      attr(img, "class", "techImage svelte-1t5uk00");
       if (!src_url_equal(img.src, img_src_value = /*src*/
       ctx[4]))
         attr(img, "src", img_src_value);
@@ -185,46 +191,42 @@ function create_each_block(ctx) {
         /*alt*/
         ctx[5]
       );
-      attr(
-        a0,
-        "href",
-        /*href*/
-        ctx[2]
-      );
       attr(h3, "class", "flex items-center mb-1 text-2xl font-semibold text-gray-900 dark:text-white");
       attr(time, "class", "block mb-2 text-md font-normal leading-none text-gray-400 dark:text-gray-500");
-      attr(div0, "class", "informationContainer flex flex-col items-start justify-start svelte-6zxr8p");
+      attr(div0, "class", "informationContainer flex flex-col items-start justify-start svelte-1t5uk00");
+      attr(p0, "class", "descriptionText text-gray-900 dark:text-white svelte-1t5uk00");
+      attr(p1, "class", "footerText block mb-2 text-md font-normal leading-none text-gray-400 dark:text-gray-500 svelte-1t5uk00");
+      attr(div1, "class", "containerGrid p-6 w-[90vw] rounded-lg border bg-white border-gray-200 hover:bg-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:hover:bg-slate-700 svelte-1t5uk00");
       attr(
-        a1,
+        a,
         "href",
         /*href*/
         ctx[2]
       );
-      attr(a1, "class", "w-fit");
-      attr(p, "class", "descriptionText text-gray-900 dark:text-white svelte-6zxr8p");
-      attr(div1, "class", "containerGrid p-6 mb-6 bg-gray-50 w-[90vw] rounded-lg border border-gray-100 dark:bg-slate-900 dark:border-gray-700 svelte-6zxr8p");
     },
     m(target, anchor) {
-      insert_hydration(target, div1, anchor);
-      append_hydration(div1, a0);
-      append_hydration(a0, img);
+      insert_hydration(target, a, anchor);
+      append_hydration(a, div1);
+      append_hydration(div1, img);
       append_hydration(div1, t0);
-      append_hydration(div1, a1);
-      append_hydration(a1, div0);
+      append_hydration(div1, div0);
       append_hydration(div0, h3);
       append_hydration(h3, t1);
       append_hydration(div0, t2);
       append_hydration(div0, time);
       append_hydration(time, t3);
       append_hydration(div1, t4);
-      append_hydration(div1, p);
-      append_hydration(p, t5);
+      append_hydration(div1, p0);
+      append_hydration(p0, t5);
       append_hydration(div1, t6);
+      append_hydration(div1, p1);
+      append_hydration(p1, t7);
+      append_hydration(a, t8);
     },
     p: noop,
     d(detaching) {
       if (detaching)
-        detach(div1);
+        detach(a);
     }
   };
 }
@@ -253,7 +255,7 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "flex flex-col items-center w-full justify-center p-6");
+      attr(div, "class", "flex flex-col items-center w-full justify-center p-6 gap-6");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
