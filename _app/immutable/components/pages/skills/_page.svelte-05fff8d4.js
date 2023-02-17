@@ -1882,7 +1882,7 @@ function create_fragment$1(ctx) {
         attr(img, "src", img_src_value);
       attr(img, "alt", img_alt_value = /*skill*/
       ctx[0].alt);
-      attr(button, "class", "max-h-[15vh] max-w-[30vw] min-w-[40px] min-h-[40px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-600 dark:hover:border-green-400 hover:animate-wiggle bg-secondary/10 dark:bg-secondary/10 ");
+      attr(button, "class", "max-h-[15vh] max-w-[30vw] min-w-[40px] min-h-[40px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-600 dark:hover:border-green-400 hover:animate-wiggle bg-white/70 dark:bg-secondary/10");
       attr(p, "class", "text-black dark:text-white p-3");
       attr(div, "class", "flex flex-col items-center justify-center p-2");
     },
@@ -1963,10 +1963,10 @@ function create_fragment$1(ctx) {
 function instance$1($$self, $$props, $$invalidate) {
   let defaultModal = false;
   let { skill = {
-    name: "Skill name",
-    img: "/skills/skill_logo.png",
-    alt: "Skill logo",
-    description: "Skill description"
+    name: "",
+    img: "",
+    alt: "",
+    description: ""
   } } = $$props;
   const click_handler = () => {
     $$invalidate(1, defaultModal = true);
@@ -2225,13 +2225,13 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(h10, "class", "text-black dark:text-white svelte-6gcwmk");
-      attr(div0, "class", "skillTypeContainer svelte-6gcwmk");
-      attr(h11, "class", "text-black dark:text-white svelte-6gcwmk");
-      attr(div1, "class", "skillTypeContainer svelte-6gcwmk");
-      attr(h12, "class", "text-black dark:text-white svelte-6gcwmk");
-      attr(div2, "class", "skillTypeContainer svelte-6gcwmk");
-      attr(div3, "class", "fullscreenContainer svelte-6gcwmk");
+      attr(h10, "class", "text-black dark:text-white svelte-1x19hjh");
+      attr(div0, "class", "skillTypeContainer svelte-1x19hjh");
+      attr(h11, "class", "text-black dark:text-white svelte-1x19hjh");
+      attr(div1, "class", "skillTypeContainer svelte-1x19hjh");
+      attr(h12, "class", "text-black dark:text-white svelte-1x19hjh");
+      attr(div2, "class", "skillTypeContainer svelte-1x19hjh");
+      attr(div3, "class", "fullscreenContainer svelte-1x19hjh");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);

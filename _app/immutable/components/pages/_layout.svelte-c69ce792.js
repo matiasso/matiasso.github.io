@@ -2230,7 +2230,7 @@ class NavUl extends SvelteComponent {
   }
 }
 const _layout_svelte_svelte_type_style_lang = "";
-function create_default_slot_5(ctx) {
+function create_default_slot_6(ctx) {
   let svg;
   let path;
   return {
@@ -2370,10 +2370,10 @@ function create_default_slot_4(ctx) {
   let t;
   return {
     c() {
-      t = text("About");
+      t = text("About me");
     },
     l(nodes) {
-      t = claim_text(nodes, "About");
+      t = claim_text(nodes, "About me");
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
@@ -2531,7 +2531,7 @@ function create_default_slot(ctx) {
   navbrand = new NavBrand({
     props: {
       href: "/",
-      $$slots: { default: [create_default_slot_5] },
+      $$slots: { default: [create_default_slot_6] },
       $$scope: { ctx }
     }
   });
@@ -2561,6 +2561,11 @@ function create_default_slot(ctx) {
         /*hidden*/
         ctx[2]
       ),
+      slideParams: {
+        delay: 100,
+        duration: 300,
+        easing: quintOut
+      },
       $$slots: { default: [create_default_slot_1] },
       $$scope: { ctx }
     }

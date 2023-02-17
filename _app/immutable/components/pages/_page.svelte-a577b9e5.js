@@ -375,9 +375,9 @@ function create_fragment(ctx) {
       attr(div0, "class", "bg-lightbg dark:bg-darkbg");
       attr(div0, "style", div0_style_value = `position: absolute; z-index: -1; top: ${/*scrollY*/
       ctx[1]}px; left: 0px; width: 100%; height: 100vh; overflow: hidden; pointer-events: none`);
-      attr(h1, "class", "text-white svelte-2jmxpf");
-      attr(h2, "class", "text-white svelte-2jmxpf");
-      attr(div1, "class", "nameContainer svelte-2jmxpf");
+      attr(h1, "class", "text-gray-700 dark:text-white svelte-h91hx4");
+      attr(h2, "class", "text-gray-600 dark:text-white svelte-h91hx4");
+      attr(div1, "class", "nameContainer svelte-h91hx4");
       attr(img0, "id", "avatar");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
@@ -388,24 +388,24 @@ function create_fragment(ctx) {
         /*$imgRadius*/
         ctx[2] + "%"
       );
-      attr(img0, "class", "svelte-2jmxpf");
-      attr(div2, "class", "imageContainer svelte-2jmxpf");
+      attr(img0, "class", "svelte-h91hx4");
+      attr(div2, "class", "imageContainer svelte-h91hx4");
       attr(p0, "id", "contentText");
-      attr(p0, "class", "text-white svelte-2jmxpf");
-      attr(p1, "class", "text-white");
-      attr(img1, "class", "socialImg svelte-2jmxpf");
+      attr(p0, "class", "text-black dark:text-white svelte-h91hx4");
+      attr(p1, "class", "text-black dark:text-white");
+      attr(img1, "class", "socialIcon svelte-h91hx4");
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
       attr(a0, "href", "https://github.com/matiasso");
-      attr(img2, "class", "socialImg svelte-2jmxpf");
+      attr(img2, "class", "socialIcon svelte-h91hx4");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
-      attr(div3, "class", "footerContainer svelte-2jmxpf");
-      attr(div4, "class", "infoBoxContainer svelte-2jmxpf");
-      attr(div5, "class", "fullscreenContainer svelte-2jmxpf");
+      attr(div3, "class", "footerContainer svelte-h91hx4");
+      attr(div4, "class", "infoBoxContainer bg-white/70 dark:bg-darkwindow svelte-h91hx4");
+      attr(div5, "class", "fullscreenContainer svelte-h91hx4");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);

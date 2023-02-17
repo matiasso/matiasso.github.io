@@ -900,21 +900,23 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 };
 const matchers = {};
 const nodes = [
-  () => __vitePreload(() => import("./chunks/0-a2d38e9b.js"), true ? ["./chunks/0-a2d38e9b.js","./components/pages/_layout.svelte-a0806e48.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/index-1a7b297b.js","./assets/_layout-94d9b55a.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/0-59fa859c.js"), true ? ["./chunks/0-59fa859c.js","./components/pages/_layout.svelte-c69ce792.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/index-1a7b297b.js","./assets/_layout-08ab3ed5.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/1-57efcd4d.js"), true ? ["./chunks/1-57efcd4d.js","./components/error.svelte-c7a8c644.js","./chunks/index-81d22fb2.js","./chunks/stores-ec40dfac.js","./chunks/singletons-30470eea.js","./chunks/index-a62f8b0d.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-6923595c.js"), true ? ["./chunks/2-6923595c.js","./components/pages/_page.svelte-b8b10a91.js","./chunks/index-81d22fb2.js","./chunks/index-a62f8b0d.js","./chunks/index-1a7b297b.js","./assets/_page-f09ce21b.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-ba448e19.js"), true ? ["./chunks/2-ba448e19.js","./components/pages/_page.svelte-a577b9e5.js","./chunks/index-81d22fb2.js","./chunks/index-a62f8b0d.js","./chunks/index-1a7b297b.js","./assets/_page-4e04c84c.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/3-d4ced0d9.js"), true ? ["./chunks/3-d4ced0d9.js","./components/pages/about/_page.svelte-463b75bd.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/Alert-59c163cd.js","./chunks/CloseButton-3453f6ab.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/4-7289c9c7.js"), true ? ["./chunks/4-7289c9c7.js","./components/pages/projects/_page.svelte-ce102542.js","./chunks/index-81d22fb2.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/5-b587df66.js"), true ? ["./chunks/5-b587df66.js","./components/pages/projects/_project_/_page.svelte-fc90b3b6.js","./chunks/index-81d22fb2.js","./chunks/stores-ec40dfac.js","./chunks/singletons-30470eea.js","./chunks/index-a62f8b0d.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/Alert-59c163cd.js","./chunks/CloseButton-3453f6ab.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/6-d4b79228.js"), true ? ["./chunks/6-d4b79228.js","./components/pages/skills/_page.svelte-f6ee9956.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/CloseButton-3453f6ab.js","./assets/_page-0a52bf70.css"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/4-7882b756.js"), true ? ["./chunks/4-7882b756.js","./components/pages/projects/_page.svelte-1c7e44d5.js","./chunks/index-81d22fb2.js","./assets/_page-1d987b44.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/5-e93bd966.js"), true ? ["./chunks/5-e93bd966.js","./components/pages/projects/_project_/_page.svelte-86bf88b9.js","./chunks/index-81d22fb2.js","./chunks/stores-ec40dfac.js","./chunks/singletons-30470eea.js","./chunks/index-a62f8b0d.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/Alert-59c163cd.js","./chunks/CloseButton-3453f6ab.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/6-67fe2e47.js"), true ? ["./chunks/6-67fe2e47.js","./components/pages/projects/beamex/_page.svelte-f34da2d1.js","./chunks/index-81d22fb2.js","./assets/_page-7cbd5b33.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/7-0e2eeba6.js"), true ? ["./chunks/7-0e2eeba6.js","./components/pages/skills/_page.svelte-05fff8d4.js","./chunks/index-81d22fb2.js","./chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js","./assets/Indicator-587c320c.css","./chunks/CloseButton-3453f6ab.js","./assets/_page-44bf575d.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
   "/": [2],
   "/about": [3],
   "/projects": [4],
+  "/projects/beamex": [6],
   "/projects/[project]": [5],
-  "/skills": [6]
+  "/skills": [7]
 };
 const hooks = {
   handleError: ({ error }) => {
