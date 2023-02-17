@@ -9,7 +9,7 @@ But for desktops it could be better to show the projects in a horizontal wrappin
 	{#each projects as { title, date, href, description, src, alt }}
 		<a {href}
 			><div
-				class="containerGrid p-6 bg-gray-50 w-[90vw] rounded-lg border border-gray-100 dark:bg-slate-900 dark:border-gray-700"
+				class="containerGrid p-6 w-[90vw] rounded-lg border bg-white border-gray-200 hover:bg-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:hover:bg-slate-700"
 			>
 				<img class="techImage" {src} {alt} />
 				<div class="informationContainer flex flex-col items-start justify-start">
