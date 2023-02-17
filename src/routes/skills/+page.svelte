@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SkilltypeContainer from './skillInfoContainer.svelte';
 
+	// Define all the skills here, with their name, image, alt text and description
 	const skills = {
 		programming: [
 			{
@@ -129,6 +130,7 @@
 	};
 </script>
 
+<!-- Return a full screen container with three sections for different types of skills -->
 <div class="fullscreenContainer">
 	<h1 class="text-black dark:text-white">Programming languages & frameworks</h1>
 	<div class="skillTypeContainer">
@@ -162,16 +164,15 @@
 	}
 	.skillTypeContainer {
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		width: 80vw;
+		width: 90vw;
 		margin: 0.5rem;
 	}
 	h1 {
-		margin: 1rem 0 0 0;
-		font-size: calc(22px + 0.6vw);
+		margin: 1rem 0 0 0; /* only the top margin is 1rem */
+		font-size: calc(20px + 0.7vw);
 		text-align: center;
 	}
 </style>

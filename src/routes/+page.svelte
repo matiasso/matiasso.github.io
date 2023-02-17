@@ -50,7 +50,7 @@
 		}
 	}
 
-	// Bind the scroll also so we can keep the background balls in place
+	// Bind the scroll also so I can keep the background balls in place
 	let scrollY = 0;
 	const animationDuration = 15;
 	onMount(() => {
@@ -86,7 +86,8 @@
 	{/each}
 </div>
 <div class="fullscreenContainer">
-	<div class="infoBoxContainer bg-white/70 dark:bg-[#3d3a50d9]">
+	<!-- All other properties are defined in CSS .infoBoxContainer, only bg color depends on dark mode-->
+	<div class="infoBoxContainer bg-white/70 dark:bg-darkwindow">
 		<div class="nameContainer">
 			<h1 class="text-gray-700 dark:text-white">Matias Södersved</h1>
 			<h2 class="text-gray-600 dark:text-white">Student from Aalto University</h2>
@@ -134,10 +135,10 @@
 		<div class="footerContainer">
 			<p class="text-black dark:text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
-				<img class="socialImg" src="/github_logo.png" alt="Github logo" />
+				<img class="socialIcon" src="/github_logo.png" alt="Github logo" />
 			</a>
 			<a href="https://www.linkedin.com/in/matias-sodersved/">
-				<img class="socialImg" src="/linkedin_logo.png" alt="LinkedIn logo" />
+				<img class="socialIcon" src="/linkedin_logo.png" alt="LinkedIn logo" />
 			</a>
 		</div>
 	</div>
@@ -155,7 +156,7 @@
 	.infoBoxContainer {
 		display: grid;
 		width: 80vw;
-		margin: 2rem 0 2rem 0;
+		margin: 2rem 0 2rem 0; /* top right bottom left */
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
 		grid-template-rows: 12rem auto 50px;
 		grid-template-areas:
@@ -170,7 +171,7 @@
 	}
 	.imageContainer {
 		grid-area: avatar;
-		margin: 5px 5px 0px 10px;
+		margin: 5px 5px 0px 10px; /* top right bottom left */
 		justify-self: end;
 		max-height: 160px;
 		min-height: 80px;
@@ -189,7 +190,7 @@
 		flex-direction: row;
 		align-items: center;
 	}
-	img.socialImg {
+	img.socialIcon {
 		margin-left: 10px;
 		aspect-ratio: 1/1;
 		height: calc(30px + 1vw);
@@ -215,6 +216,7 @@
 			grid-row-end: 2;
 		}
 	}
+	/* I give some initial pixel values to h1 and h2, but scale them up as the width of the screen grows */
 	h1 {
 		font-size: calc(16px + 3.5vw);
 		margin: 0;

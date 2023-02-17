@@ -1,5 +1,6 @@
 <script>
 	import { Alert } from 'flowbite-svelte';
+	// TODO: Finish this page after projects page is done
 </script>
 
 <div class="p-8">

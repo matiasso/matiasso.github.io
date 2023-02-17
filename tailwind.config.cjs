@@ -15,6 +15,7 @@ const config = {
 				secondary: '#635985',
 				darkbg: '#303041',
 				lightbg: '#BFDCE5',
+				darkwindow: '#3d3a50d9',
 				darker: '#1E1E2F',
 				black: colors.black,
 				white: colors.white
