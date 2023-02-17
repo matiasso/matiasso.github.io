@@ -151,7 +151,13 @@ function create_each_block(ctx) {
       var a_nodes = children(a);
       div1 = claim_element(a_nodes, "DIV", { class: true });
       var div1_nodes = children(div1);
-      img = claim_element(div1_nodes, "IMG", { class: true, src: true, alt: true });
+      img = claim_element(div1_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        height: true,
+        width: true
+      });
       t0 = claim_space(div1_nodes);
       div0 = claim_element(div1_nodes, "DIV", { class: true });
       var div0_nodes = children(div0);
@@ -191,6 +197,8 @@ function create_each_block(ctx) {
         /*alt*/
         ctx[5]
       );
+      attr(img, "height", "512");
+      attr(img, "width", "512");
       attr(h3, "class", "flex items-center mb-1 text-2xl font-semibold text-gray-900 dark:text-white");
       attr(time, "class", "block mb-2 text-md font-normal leading-none text-gray-400 dark:text-gray-500");
       attr(div0, "class", "informationContainer flex flex-col items-start justify-start svelte-1t5uk00");

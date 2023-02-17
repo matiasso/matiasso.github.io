@@ -329,6 +329,8 @@ function create_fragment(ctx) {
       var div2_nodes = children(div2);
       img0 = claim_element(div2_nodes, "IMG", {
         id: true,
+        width: true,
+        height: true,
         src: true,
         alt: true,
         style: true,
@@ -359,12 +361,24 @@ function create_fragment(ctx) {
       t12 = claim_space(div3_nodes);
       a0 = claim_element(div3_nodes, "A", { href: true });
       var a0_nodes = children(a0);
-      img1 = claim_element(a0_nodes, "IMG", { class: true, src: true, alt: true });
+      img1 = claim_element(a0_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        height: true,
+        width: true
+      });
       a0_nodes.forEach(detach);
       t13 = claim_space(div3_nodes);
       a1 = claim_element(div3_nodes, "A", { href: true });
       var a1_nodes = children(a1);
-      img2 = claim_element(a1_nodes, "IMG", { class: true, src: true, alt: true });
+      img2 = claim_element(a1_nodes, "IMG", {
+        class: true,
+        src: true,
+        alt: true,
+        height: true,
+        width: true
+      });
       a1_nodes.forEach(detach);
       div3_nodes.forEach(detach);
       div4_nodes.forEach(detach);
@@ -379,6 +393,8 @@ function create_fragment(ctx) {
       attr(h2, "class", "text-gray-600 dark:text-white svelte-1n5b787");
       attr(div1, "class", "nameContainer svelte-1n5b787");
       attr(img0, "id", "avatar");
+      attr(img0, "width", "512");
+      attr(img0, "height", "512");
       if (!src_url_equal(img0.src, img0_src_value = "/profile_avatar.jpg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Profile");
@@ -397,11 +413,15 @@ function create_fragment(ctx) {
       if (!src_url_equal(img1.src, img1_src_value = "/github_logo.png"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Github logo");
+      attr(img1, "height", "512");
+      attr(img1, "width", "512");
       attr(a0, "href", "https://github.com/matiasso");
       attr(img2, "class", "socialIcon svelte-1n5b787");
       if (!src_url_equal(img2.src, img2_src_value = "/linkedin_logo.png"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "LinkedIn logo");
+      attr(img2, "height", "512");
+      attr(img2, "width", "512");
       attr(a1, "href", "https://www.linkedin.com/in/matias-sodersved/");
       attr(div3, "class", "footerContainer svelte-1n5b787");
       attr(div4, "class", "infoBoxContainer bg-white/70 dark:bg-darkwindow svelte-1n5b787");

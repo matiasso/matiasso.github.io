@@ -1861,7 +1861,9 @@ function create_fragment$1(ctx) {
         class: true,
         draggable: true,
         src: true,
-        alt: true
+        alt: true,
+        height: true,
+        width: true
       });
       button_nodes.forEach(detach);
       t0 = claim_space(div_nodes);
@@ -1882,6 +1884,8 @@ function create_fragment$1(ctx) {
         attr(img, "src", img_src_value);
       attr(img, "alt", img_alt_value = /*skill*/
       ctx[0].alt);
+      attr(img, "height", "512");
+      attr(img, "width", "512");
       attr(button, "class", "inline-flex items-center justify-center max-h-[15vh] max-w-[30vw] min-w-[50px] min-h-[50px] p-[15%] aspect-square cursor-pointer border-2 border-gray-800 dark:border-white rounded-full object-contain hover:border-green-600 dark:hover:border-green-400 hover:animate-wiggle bg-white/70 dark:bg-secondary/10");
       attr(p, "class", "text-black dark:text-white p-3");
       attr(div, "class", "flex flex-col items-center justify-center p-2");
