@@ -12,7 +12,7 @@ export const projects = [
 	{
 		title: 'Software project at Beamex',
 		description:
-			'I am currently working for Beamex with a group of 7 other students. Our task is to build an application for Android-based glasses with React Native and TypeScript.',
+			'Working in a group of 7 CS students, our task is to build a calibration helper application for Android-based glasses with React Native and TypeScript. (Still ongoing)',
 		date: '2022 September - 2023 April',
 		src: '/skills/react-native_logo.png',
 		alt: 'React Native logo',
@@ -22,7 +22,8 @@ export const projects = [
 	{
 		title: 'This website',
 		/* TODO: Update how many days this took when it is "ready" */
-		description: 'I built this website in 5 days using SvelteKit, TypeScript and TailwindCSS.',
+		description:
+			'This website was built in just 5 days using SvelteKit, TypeScript and TailwindCSS.',
 		date: '2023 February',
 		src: '/skills/svelte_logo.png',
 		alt: 'Svelte logo',
@@ -32,7 +33,7 @@ export const projects = [
 	{
 		title: 'Tower Defense game with C++',
 		description:
-			'I was in a team of 4 people and we built a Tower Defense game in C++ using the SFML library.',
+			'As a team of 4 people we built a Tower Defense game in C++ using the SFML library. There are different levels which vary in difficulty and the game has a highscore system.',
 		date: '2021 September - 2021 December',
 		src: '/skills/cpp_logo.png',
 		alt: 'C++ logo',
@@ -42,21 +43,41 @@ export const projects = [
 	{
 		title: 'Regression visualizer with Scala',
 		description:
-			'As a part of a programming course, I built an app with Scala that lets the user read data and plot linear or exponential regression.',
-		date: '???',
+			"A part of a programming course. The app was built with ScalaFX. It lets the user read data and plot linear or exponential regression. There's also a bunch of customization features for the plot. And most importantly there is a dark mode toggle.",
+		date: '2021 March - 2021 May',
 		src: '/skills/scala_logo.png',
 		alt: 'Scala logo',
 		href: '/projects/scala-regression',
 		isPrivate: false
 	},
 	{
-		title: 'A text-based adventure game with Scala',
+		title: 'Text-based adventure game with Scala',
 		description:
-			'I worked together with a friend to build a text-based adventure game in Scala. We used the ScalaFX library to build the GUI.',
-		date: '???',
+			"Worked as a pair with a friend from Aalto University. The game was text-based adventure game in Scala. We used the ScalaFX library to build the GUI, but wanted to keep the app UI as close to the terminal as possible. That's why we only used ASCII art. We ended up winning a prize for it since the teaching staff liked it so much.	",
+		date: '2020 November - 2020 December',
+		src: '/skills/scala_logo.png',
+		alt: 'Scala logo',
+		href: '/projects/text-adventure-game',
+		isPrivate: false
+	},
+	{
+		title: 'TicTacToe game with Scala',
+		description:
+			'A simple TicTacToe game written in Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.',
+		date: '2021 December',
 		src: '/skills/scala_logo.png',
 		alt: 'Scala logo',
 		href: '/projects/scala-regression',
+		isPrivate: false
+	},
+	{
+		title: 'Party game with Java (Android only)',
+		description:
+			'A party game built with Java and Android Studio. The game visualizes and simulates a regular deck of cards. All the card rules are customizable.',
+		date: '2017 - 2018',
+		src: '/skills/java_logo.png',
+		alt: 'Java logo',
+		href: '/projects/partygame-android',
 		isPrivate: false
 	},
 	{
@@ -67,6 +88,16 @@ export const projects = [
 		src: '/skills/python_logo.png',
 		alt: 'Python logo',
 		href: '/projects/discord-bot',
+		isPrivate: false
+	},
+	{
+		title: 'Image resizer for Windows',
+		description:
+			'Built a simple image resizer with a GUI. The app was built with C# using Visual Studio. The app lets you select multiple images at once, and choose the desired resolution in either absolute pixels or relative percentages. The GUI shows a realtime progressbar and thumbnails of the images that are currently being handled.',
+		date: '2017',
+		src: '/skills/csharp_logo.svg',
+		alt: 'CSharp logo',
+		href: '/projects/imageresizer',
 		isPrivate: false
 	}
 ];
