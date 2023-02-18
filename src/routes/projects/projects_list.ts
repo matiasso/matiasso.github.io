@@ -23,7 +23,7 @@ export const projects = [
 		title: 'This website',
 		/* TODO: Update how many days this took when it is "ready" */
 		description:
-			'This website was built in just 5 days using SvelteKit, TypeScript and TailwindCSS.',
+			'This website was built in just 6 days using SvelteKit, TypeScript and TailwindCSS. Note that I had no prior experience with Svelte or TailwindCSS before starting this project.',
 		date: '2023 February',
 		src: '/skills/svelte_logo.png',
 		alt: 'Svelte logo',

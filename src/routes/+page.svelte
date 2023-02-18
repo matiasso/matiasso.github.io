@@ -157,7 +157,7 @@
 	.infoContainer {
 		display: grid;
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
-		grid-template-rows: 12rem auto 50px;
+		grid-template-rows: 12rem auto 3rem;
 		grid-template-areas:
 			'header avatar'
 			'content avatar'

@@ -15,6 +15,9 @@
 	<div class="content">
 		<slot />
 	</div>
+	<div class="footer">
+		<p class="text-gray-500 dark:text-gray-300">Note: code repository is private</p>
+	</div>
 </div>
 
 <style>
@@ -26,7 +29,7 @@
 	.gridContainer {
 		display: grid;
 		grid-template-columns: auto 20%;
-		grid-template-rows: auto auto;
+		grid-template-rows: auto auto 3rem;
 		grid-template-areas:
 			'title logo'
 			'content content';
