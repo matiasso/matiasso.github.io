@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
+	import Dialog from '../components/dialog.svelte';
 
 	// Tweening for the profile picture avatar
 	const imgRadius = tweened(50, {
@@ -85,12 +86,12 @@
 		{/if}
 	{/each}
 </div>
-<div class="fullscreenContainer">
-	<!-- All other properties are defined in CSS .infoBoxContainer, only bg color depends on dark mode-->
-	<div class="infoBoxContainer bg-white/70 dark:bg-darkwindow">
+<!-- This Dialog component creates the blurred window -->
+<Dialog fullScreen={true}>
+	<div class="infoContainer">
 		<div class="nameContainer">
-			<h1 class="text-gray-700 dark:text-white">Matias Södersved</h1>
-			<h2 class="text-gray-600 dark:text-white">Student from Aalto University</h2>
+			<h1 class="text-gray-700 dark:text-gray-200">Matias Södersved</h1>
+			<h2 class="text-gray-600 dark:text-gray-300">Student from Aalto University</h2>
 		</div>
 
 		<div
@@ -150,32 +151,17 @@
 			</a>
 		</div>
 	</div>
-</div>
+</Dialog>
 
 <style>
-	.fullscreenContainer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 90vh;
-		height: auto;
-		width: 100%;
-	}
-	.infoBoxContainer {
+	.infoContainer {
 		display: grid;
-		width: 80vw;
-		margin: 2rem 0 2rem 0; /* top right bottom left */
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
 		grid-template-rows: 12rem auto 50px;
 		grid-template-areas:
 			'header avatar'
 			'content avatar'
 			'footer footer';
-		border-radius: 16px;
-		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
-		backdrop-filter: blur(30px);
-		-webkit-backdrop-filter: blur(30px);
-		padding: 1.2rem;
 	}
 	.imageContainer {
 		grid-area: avatar;

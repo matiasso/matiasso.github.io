@@ -1,4 +1,8 @@
-<div class="flex justify-center items-center min-h-[90%] w-full">
+<script lang="ts">
+	export let fullScreen = false;
+</script>
+
+<div class="flex justify-center items-center {fullScreen ? 'min-h-[90vh]' : ''} w-full">
 	<div class="dialogContainer bg-white/70 dark:bg-darkwindow">
 		<slot />
 	</div>

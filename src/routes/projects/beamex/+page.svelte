@@ -7,9 +7,11 @@
 <Dialog>
 	<h1 class="text-gray-700 dark:text-gray-200 text-4xl">Software project at Beamex</h1>
 	<h2 class="text-gray-600 dark:text-gray-300 text-2xl">Date: 2022-2023</h2>
-	<p class="text-gray-600 dark:text-gray-200 text-lg">
-		Description and images will be in this window
-	</p>
+	<Dialog>
+		<p class="text-gray-600 dark:text-gray-200 text-lg">
+			Description and images will be in this window
+		</p>
+	</Dialog>
 	<p class="text-gray-600 dark:text-gray-200 text-lg leading-relaxed">
 		Qui laboris sint reprehenderit quis enim ex duis nulla eu esse nulla laboris cupidatat
 		cupidatat. Occaecat incididunt minim eiusmod ipsum qui aliqua esse cupidatat aliqua sint
