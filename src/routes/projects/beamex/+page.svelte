@@ -5,7 +5,7 @@
 	const projectProps = {
 		title: 'Software project at Beamex',
 		date: '2022-2023',
-		logo: '/projects/beamex_logo.svg',
+		logo: '/projects/beamex/beamex_logo.svg',
 		alt: 'Beamex logo'
 	};
 </script>

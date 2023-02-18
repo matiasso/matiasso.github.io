@@ -28,7 +28,7 @@
 		<div class="flex flex-row flex-wrap justify-center">
 			{#each imgCount as imgIndex}
 				<img
-					src="/projects/tower_defense_ss{imgIndex}.png"
+					src="/projects/tower-defense/tower_defense_ss{imgIndex}.png"
 					alt="A screenshot of the tower defense game"
 					class="w-3/4 my-4 object-contain rounded-lg "
 					width="500"

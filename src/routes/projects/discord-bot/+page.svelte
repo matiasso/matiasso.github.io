@@ -5,7 +5,7 @@
 	const projectProps = {
 		title: 'Discord bot written in Python',
 		date: '2017-2018',
-		logo: '/projects/discordbot.jpeg',
+		logo: '/projects/discord-bot/discordbot.jpeg',
 		alt: 'A picture of a doge with sunglasses'
 	};
 	const imgCount = [1, 2, 3, 4];
@@ -43,7 +43,7 @@
 		<div class="flex flex-row flex-wrap justify-center">
 			{#each imgCount as imgIndex}
 				<img
-					src="/projects/discordbot_ss{imgIndex}.png"
+					src="/projects/discord-bot/discordbot_ss{imgIndex}.png"
 					alt="A screenshot of the discord bot commands"
 					class="w-3/4 my-4 object-contain rounded-lg "
 					width="500"
