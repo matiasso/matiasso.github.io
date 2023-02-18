@@ -27,13 +27,6 @@
 			which images are currently being processed. There is also a progress bar to show the progress of
 			the resizing.
 			<br /><br />
-			Laboris consectetur occaecat excepteur officia pariatur excepteur sint aliqua ea sunt. Anim Lorem
-			proident esse cupidatat. Ex magna aute est dolor aute. In id cillum non Lorem consequat do. Deserunt
-			labore irure enim ut cillum ut dolore non id. Officia eiusmod ipsum ut ipsum enim exercitation
-			aliquip cillum commodo. Elit tempor dolor consequat eu consectetur adipisicing minim adipisicing
-			proident laboris. Aute laborum id cillum consectetur labore occaecat nulla commodo ipsum est aliquip
-			eu. Anim duis occaecat ex irure laborum. Sint sint tempor aute eiusmod ut do ipsum voluptate et
-			veniam aliqua tempor. Proident ex sit culpa cillum adipisicing ut occaecat ut nostrud ex.
 		</p>
 	</ProjectGrid>
 </Dialog>
