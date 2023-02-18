@@ -6,17 +6,20 @@
 		<meta name="viewport" content="width=device-width" />
 
 		<meta http-equiv="content-security-policy" content="">
-		<link href="../_app/immutable/assets/_layout-59818439.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_layout-0aa19f2a.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/Indicator-587c320c.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_page-7cbd5b33.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-686e0c4e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-81d22fb2.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-30470eea.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-a62f8b0d.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-2b647b32.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Indicator.svelte_svelte_type_style_lang-efe892ff.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-1a7b297b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/projects/beamex/_page.svelte-f34da2d1.js"><!-- HEAD_svelte-16q53hu_START --><script>if (window) {
+		<link href="../_app/immutable/assets/dialog-66a757f8.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/projectgrid-5425f4d8.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-43fe977b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-91def11a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-d9e4fe65.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-17913fa1.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-893903b5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Indicator.svelte_svelte_type_style_lang-f1bed70f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-9243a1e2.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/projects/beamex/_page.svelte-5e47b8e9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/dialog-9b3b9764.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/projectgrid-06633ab8.js"><!-- HEAD_svelte-16q53hu_START --><script>if (window) {
       localStorage.getItem('color-theme') === 'dark' ||
       (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
         ? window.document.documentElement.classList.add('dark')
@@ -46,43 +49,51 @@
 		<li><a href="/projects" class="block py-2 pr-4 pl-3 md:p-0 rounded md:border-0 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-black dark:text-white text-lg">Projects</a></li></ul></div></div></nav>
 
 
-<div class="flex flex-col justify-center items-center my-6"><div class="p-5 border-black border-2 rounded-lg max-w-[90vw] bg-white/70 dark:bg-darkwindow"><h1 class="text-gray-700 dark:text-gray-200 text-4xl svelte-k7w9x">Software project at Beamex</h1>
-		<h2 class="text-gray-600 dark:text-gray-300 text-2xl svelte-k7w9x">Date: 2022-2023</h2>
-		<p class="text-gray-600 dark:text-gray-200 text-lg svelte-k7w9x">Description and images will be in this window
+<div class="flex justify-center items-center  w-full"><div class="dialogContainer bg-white/70 dark:bg-darkwindow svelte-1g25j4d"><div class="gridContainer svelte-3txohq"><div class="titleContent svelte-3txohq"><h1 class="text-gray-700 dark:text-gray-200 text-4xl  svelte-3txohq">Software project at Beamex</h1>
+		<h2 class="text-gray-600 dark:text-gray-300 text-2xl svelte-3txohq">Date: 2022-2023</h2></div>
+	<img class="imgContent svelte-3txohq" src="/projects/beamex/beamex_logo.svg" alt="Beamex logo" width="400" height="400">
+
+	<div class="content svelte-3txohq"><p class="text-black dark:text-white leading-relaxed">I got the chance to work with Beamex through a &quot;Software project&quot; course at Aalto University.
+			The course is taught in collaboration with multiple companies, and the students are divided
+			into groups of roughly 8 students. Each group is assigned a company to work with, and the
+			company provides a real-world problem for the students to work on. My group consists of 7
+			computer science students.
+			<br><br>
+			Beamex is a company that develops and sells calibration solutions and equipment for industrial
+			use. Calibration technicians are responsible for ensuring that equipment is calibrated correctly
+			and operates as intended. The calibration process can be complex and requires technicians to be
+			precise in their work. That&#39;s where our application comes in. It is an application that runs on
+			a Head Mounted Display (HMD) and provides the technician with instructions about the calibration
+			process. It also provides the technician with a way to record the results of the calibration process
+			via the camera module. The images are then processed with an AI model, which returns the output
+			values to the user who then checks that everything looks fine. There is no need to manually write
+			any values down, which reduces the risk of human error.
+			<br><br>
+			Our goal during this course is not to build a final product, but instead build a proof-of-concept
+			that demonstrates the feasibility of the idea. We are using React Native and TypeScript, because
+			the HMD is an android-based device. This way we can also enable the users to run the application
+			on other Android or even iOS devices.
+			<br><br>
+			The challenge in this project is probably the fact that we are developing a project primarily for
+			a HMD device. The interactions are very different from a regular mobile device, where you can tap
+			on the screen, because on this specific HMD you can only interact with the device by using voice
+			commands. The screen is also very small, which forces us to design the application in a way that
+			all the information is easily accessible and understandable.
 		</p>
-		<p class="text-gray-600 dark:text-gray-200 text-lg leading-relaxed svelte-k7w9x">Qui laboris sint reprehenderit quis enim ex duis nulla eu esse nulla laboris cupidatat
-			cupidatat. Occaecat incididunt minim eiusmod ipsum qui aliqua esse cupidatat aliqua sint
-			exercitation incididunt. Adipisicing est irure aliquip irure officia aliqua exercitation
-			occaecat dolore dolore. Est non aliquip in cillum nulla irure cillum enim. Enim adipisicing
-			non mollit dolor. Anim reprehenderit laboris sunt laboris ad do nostrud reprehenderit. Tempor
-			sunt mollit occaecat culpa eu pariatur cillum veniam consequat quis. Aute do et esse Lorem.
-			Amet ea magna incididunt in tempor officia veniam eu id. In sit esse commodo enim occaecat
-			commodo ad deserunt commodo commodo duis sunt cillum. Minim sit eiusmod adipisicing sit
-			ullamco. Nisi anim incididunt Lorem culpa reprehenderit fugiat deserunt occaecat commodo duis
-			nulla duis consequat duis. Laborum commodo et Lorem pariatur velit ea veniam proident
-			excepteur sit. Sit nulla anim labore anim nisi in officia. In id non occaecat pariatur laboris
-			et fugiat magna reprehenderit enim culpa. Labore qui elit laborum commodo nulla fugiat et id.
-			Non consequat fugiat sunt consequat minim qui ea. Voluptate qui non nostrud nulla tempor
-			cupidatat tempor amet incididunt est tempor irure. Qui laboris voluptate nulla nostrud aute
-			fugiat adipisicing consectetur ea laborum elit occaecat minim eiusmod. Consectetur qui velit
-			anim velit magna sint Lorem deserunt ea cillum magna pariatur. Pariatur et esse velit est.
-			Proident ad aliqua proident aliqua. Consectetur nisi occaecat aute et reprehenderit est do do.
-			Excepteur nostrud ut laboris cillum consequat minim occaecat et incididunt reprehenderit
-			excepteur aliqua est occaecat. Fugiat adipisicing magna sunt fugiat velit consequat culpa
-			nulla et aliquip non commodo minim ipsum. Lorem aliqua consectetur deserunt Lorem ex aliqua
-			ea.
-		</p></div>
+		<img src="/projects/beamex/ar_tech.jpg" alt="A user with Head mounted device" class="w-3/4 my-4 object-contain rounded-lg mx-auto" width="500" height="500"></div>
+	<div class="footer"><p class="text-gray-500 dark:text-gray-300">Note: code repository is private</p></div>
+</div></div>
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="uqy9tq">
-			import { start } from "../_app/immutable/start-686e0c4e.js";
+		<script type="module" data-sveltekit-hydrate="1k3bcx7">
+			import { start } from "../_app/immutable/start-43fe977b.js";
 
 			start({
 				assets: "",
 				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="uqy9tq"]').parentNode,
-				version: "1676658183741",
+				target: document.querySelector('[data-sveltekit-hydrate="1k3bcx7"]').parentNode,
+				version: "1676743624485",
 				hydrate: {
 					node_ids: [0, 5],
 					data: [{type:"data",data:null,uses:{}},null],

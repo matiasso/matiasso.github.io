@@ -1,0 +1,2 @@
+h1.svelte-3txohq,h2.svelte-3txohq{margin-bottom:1rem;margin-right:1rem}.gridContainer.svelte-3txohq{display:grid;grid-template-columns:auto 20%;grid-template-rows:auto auto 3rem;grid-template-areas:'title logo'
+			'content content'}.titleContent.svelte-3txohq{grid-area:title}.content.svelte-3txohq{grid-area:content}.imgContent.svelte-3txohq{grid-area:logo;max-width:100%;max-height:4rem;min-height:50px;min-width:50px;-o-object-fit:contain;object-fit:contain;-o-object-position:right;object-position:right}
