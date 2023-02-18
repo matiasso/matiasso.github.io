@@ -11,12 +11,17 @@
 <style>
 	.dialogContainer {
 		display: block;
-		width: 80%;
+		width: 90%;
 		margin: 2rem 0 2rem 0; /* top right bottom left */
 		border-radius: 16px;
 		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(30px);
 		-webkit-backdrop-filter: blur(30px);
 		padding: 1.2rem;
+	}
+	@media only screen and (min-width: 850px) {
+		.dialogContainer {
+			width: 70%;
+		}
 	}
 </style>
