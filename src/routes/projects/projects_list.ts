@@ -27,7 +27,17 @@ export const projects = [
 		date: '2023 February',
 		src: '/skills/svelte_logo.png',
 		alt: 'Svelte logo',
-		href: '/projects/website-portfolio',
+		href: 'https://github.com/matiasso/matiasso.github.io',
+		isPrivate: false
+	},
+	{
+		title: 'TicTacToe game with Scala',
+		description:
+			'A simple TicTacToe game written in Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.',
+		date: '2021 December',
+		src: '/skills/scala_logo.png',
+		alt: 'Scala logo',
+		href: 'https://github.com/matiasso/TicTacToe',
 		isPrivate: false
 	},
 	{
@@ -47,7 +57,7 @@ export const projects = [
 		date: '2021 March - 2021 May',
 		src: '/skills/scala_logo.png',
 		alt: 'Scala logo',
-		href: '/projects/scala-regression',
+		href: 'https://github.com/matiasso/regression_visualizer',
 		isPrivate: false
 	},
 	{
@@ -61,43 +71,33 @@ export const projects = [
 		isPrivate: false
 	},
 	{
-		title: 'TicTacToe game with Scala',
-		description:
-			'A simple TicTacToe game written in Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.',
-		date: '2021 December',
-		src: '/skills/scala_logo.png',
-		alt: 'Scala logo',
-		href: '/projects/scala-regression',
-		isPrivate: false
-	},
-	{
 		title: 'Party game with Java (Android only)',
 		description:
 			'A party game built with Java and Android Studio. The game visualizes and simulates a regular deck of cards. All the card rules are customizable.',
-		date: '2017 - 2018',
+		date: '2019 - 2020',
 		src: '/skills/java_logo.png',
 		alt: 'Java logo',
-		href: '/projects/partygame-android',
+		href: 'https://github.com/matiasso/juomapeli_android',
 		isPrivate: false
 	},
 	{
 		title: 'Discord bot with Python',
 		description:
-			'I built a simple Discord bot for moderation commands, but quickly it got more popular and I kept adding more features.',
+			'I built a simple Discord bot for moderation commands, but it quickly got more popular and I kept adding more features.',
 		date: '2017 - 2018',
 		src: '/skills/python_logo.png',
 		alt: 'Python logo',
 		href: '/projects/discord-bot',
-		isPrivate: false
+		isPrivate: true
 	},
 	{
 		title: 'Image resizer for Windows',
 		description:
-			'Built a simple image resizer with a GUI. The app was built with C# using Visual Studio. The app lets you select multiple images at once, and choose the desired resolution in either absolute pixels or relative percentages. The GUI shows a realtime progressbar and thumbnails of the images that are currently being handled.',
+			'Built a simple image resizer with a GUI. It was built with C# using Visual Studio. The app lets you select multiple images at once, and choose the desired resolution in either absolute pixels or relative percentages. The GUI shows a realtime progressbar and thumbnails of the images that are currently being handled.',
 		date: '2017',
 		src: '/skills/csharp_logo.svg',
 		alt: 'CSharp logo',
 		href: '/projects/imageresizer',
-		isPrivate: false
+		isPrivate: true
 	}
 ];
