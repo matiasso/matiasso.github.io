@@ -5,7 +5,7 @@
 	const projectProps = {
 		title: 'Software project at Beamex',
 		date: '2022-2023',
-		logo: '/projects/beamex/beamex_logo.svg',
+		logo: '/projects/beamex_logo.svg',
 		alt: 'Beamex logo'
 	};
 </script>
@@ -14,7 +14,7 @@
 
 <Dialog>
 	<ProjectGrid {...projectProps}>
-		<p class="text-black dark:text-white">
+		<p class="text-black dark:text-white leading-relaxed">
 			I got the change to work with Beamex through a "Software project" course at Aalto University.
 			The course is taught in collaboration with multiple companies, and the students are divided
 			into groups of roughly 8 students. Each group is assigned a company to work with, and the

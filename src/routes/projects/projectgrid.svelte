@@ -40,7 +40,7 @@
 	.imgContent {
 		grid-area: logo;
 		max-width: 100%;
-		max-height: 2rem;
+		max-height: 4rem;
 		min-height: 50px;
 		min-width: 50px;
 		object-fit: contain;
