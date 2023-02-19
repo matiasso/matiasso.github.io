@@ -3,7 +3,7 @@
 	import ProjectGrid from '../projectgrid.svelte';
 
 	const projectProps = {
-		title: 'Discord bot written in Python',
+		title: 'Discord bot written with Python',
 		date: '2017-2018',
 		logo: '/projects/discord-bot/discordbot.jpeg',
 		alt: 'A picture of a doge with sunglasses'
