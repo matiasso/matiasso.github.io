@@ -30,8 +30,8 @@ function create_each_block(ctx) {
         attr(img, "src", img_src_value);
       attr(img, "alt", "A screenshot of the tower defense game");
       attr(img, "class", "w-3/4 my-4 object-contain rounded-lg ");
-      attr(img, "width", "500");
-      attr(img, "height", "500");
+      attr(img, "width", "600");
+      attr(img, "height", "200");
     },
     m(target, anchor) {
       insert_hydration(target, img, anchor);
@@ -249,7 +249,7 @@ function create_fragment(ctx) {
 }
 function instance($$self) {
   const projectProps = {
-    title: "Tower Defense game written in C++",
+    title: "Tower Defense game written with C++",
     date: "2021 September - 2021 December",
     logo: "/skills/cpp_logo.png",
     alt: "A picture of C++ logo"
