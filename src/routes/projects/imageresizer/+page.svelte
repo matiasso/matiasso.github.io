@@ -21,12 +21,20 @@
 			a Windows Forms application.
 			<br /><br />
 			The program allows the user to select multiple images at once, and then choose a desired resolution
-			in pixels or percentages. The user can also select whether to overwrite the existing images, or
-			to save them in a different folder. After clicking on "start", the program will start a background
-			worker, which makes sure the UI is responsive. The program will then resize all images and show
-			which images are currently being processed. There is also a progress bar to show the progress of
-			the resizing.
+			in pixels or percentages. The user can also select whether to delete the original images, and if
+			the user wants to save the edited ones in a different folder. After clicking on "Aloita" ("Start"
+			in English), the program will start a background worker, which makes sure the UI is responsive.
+			The program will then resize all images and show which images are currently being processed. There
+			is also a progress bar to show the progress of the resizing.
 			<br /><br />
+			Here is a screenshot of the program, note that the UI is in Finnish:
 		</p>
+		<img
+			src="/projects/imageresizer/imgresizer_ss.jpeg"
+			alt="A screenshot of the imag resizer application"
+			class="w-3/4 my-4 object-contain rounded-lg mx-auto"
+			width="600"
+			height="200"
+		/>
 	</ProjectGrid>
 </Dialog>

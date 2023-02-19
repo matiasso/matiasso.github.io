@@ -31,8 +31,8 @@
 					src="/projects/tower-defense/tower_defense_ss{imgIndex}.png"
 					alt="A screenshot of the tower defense game"
 					class="w-3/4 my-4 object-contain rounded-lg "
-					width="500"
-					height="500"
+					width="600"
+					height="200"
 				/>
 			{/each}
 		</div>

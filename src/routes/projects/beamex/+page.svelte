@@ -46,8 +46,8 @@
 			src="/projects/beamex/ar_tech.jpg"
 			alt="A user with Head mounted device"
 			class="w-3/4 my-4 object-contain rounded-lg mx-auto"
-			width="500"
-			height="500"
+			width="600"
+			height="200"
 		/>
 	</ProjectGrid>
 </Dialog>
