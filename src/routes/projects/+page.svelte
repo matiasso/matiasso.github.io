@@ -43,7 +43,7 @@ But for desktops it could be better to show the projects in a horizontal wrappin
 								stroke-linejoin="round"
 							/>
 						</svg>
-						Show more
+						Private repo: Show more info
 					{:else}
 						<svg
 							class="h-5 aspect-square object-contain stroke-black dark:stroke-white"
@@ -66,7 +66,7 @@ But for desktops it could be better to show the projects in a horizontal wrappin
 								stroke-linejoin="round"
 							/>
 						</svg>
-						View on GitHub
+						Public repo: View on GitHub
 					{/if}
 				</p>
 			</div>
