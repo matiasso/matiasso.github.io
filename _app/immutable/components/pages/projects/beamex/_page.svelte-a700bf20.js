@@ -63,8 +63,8 @@ function create_default_slot_1(ctx) {
         attr(img, "src", img_src_value);
       attr(img, "alt", "A user with Head mounted device");
       attr(img, "class", "w-3/4 my-4 object-contain rounded-lg mx-auto");
-      attr(img, "width", "500");
-      attr(img, "height", "500");
+      attr(img, "width", "600");
+      attr(img, "height", "200");
     },
     m(target, anchor) {
       insert_hydration(target, p, anchor);
