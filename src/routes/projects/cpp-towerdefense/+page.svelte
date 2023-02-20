@@ -3,7 +3,7 @@
 	import ProjectGrid from '../projectgrid.svelte';
 
 	const projectProps = {
-		title: 'Tower Defense game written in C++',
+		title: 'Tower Defense game written with C++',
 		date: '2021 September - 2021 December',
 		logo: '/skills/cpp_logo.png',
 		alt: 'A picture of C++ logo'
@@ -31,8 +31,8 @@
 					src="/projects/tower-defense/tower_defense_ss{imgIndex}.png"
 					alt="A screenshot of the tower defense game"
 					class="w-3/4 my-4 object-contain rounded-lg "
-					width="500"
-					height="500"
+					width="600"
+					height="200"
 				/>
 			{/each}
 		</div>

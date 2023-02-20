@@ -33,7 +33,7 @@ export const projects = [
 	{
 		title: 'TicTacToe game with Scala',
 		description:
-			'A simple TicTacToe game written in Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.',
+			'A simple TicTacToe game written with Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.',
 		date: '2021 December',
 		src: '/skills/scala_logo.png',
 		alt: 'Scala logo',
