@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "TicTacToe game with Scala",
-    description: "A simple TicTacToe game written with Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.",
+    description: "A simple TicTacToe game written in Scala using the ScalaFX library. The game has an AI that uses the minimax algorithm with 3 unique difficulties. It also includes 2-player mode.",
     date: "2021 December",
     src: "/skills/scala_logo.png",
     alt: "Scala logo",
@@ -105,7 +105,7 @@ function create_else_block(ctx) {
       svg = svg_element("svg");
       path0 = svg_element("path");
       path1 = svg_element("path");
-      t = text("\n						View on GitHub");
+      t = text("\n						Public repo: View on GitHub");
       this.h();
     },
     l(nodes) {
@@ -133,7 +133,7 @@ function create_else_block(ctx) {
       });
       children(path1).forEach(detach);
       svg_nodes.forEach(detach);
-      t = claim_text(nodes, "\n						View on GitHub");
+      t = claim_text(nodes, "\n						Public repo: View on GitHub");
       this.h();
     },
     h() {
@@ -174,7 +174,7 @@ function create_if_block(ctx) {
     c() {
       svg = svg_element("svg");
       path = svg_element("path");
-      t = text("\n						Show more");
+      t = text("\n						Private repo: Show more info");
       this.h();
     },
     l(nodes) {
@@ -195,7 +195,7 @@ function create_if_block(ctx) {
       });
       children(path).forEach(detach);
       svg_nodes.forEach(detach);
-      t = claim_text(nodes, "\n						Show more");
+      t = claim_text(nodes, "\n						Private repo: Show more info");
       this.h();
     },
     h() {

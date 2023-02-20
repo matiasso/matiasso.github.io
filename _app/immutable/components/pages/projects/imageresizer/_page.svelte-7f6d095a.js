@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, y as claim_component, z as mount_component, f as transition_in, t as transition_out, A as destroy_component, E as assign, M as get_spread_update, R as get_spread_object, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, a7 as src_url_equal, b as insert_hydration, H as append_hydration, C as noop } from "../../../../chunks/index-91def11a.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, y as claim_component, z as mount_component, f as transition_in, t as transition_out, A as destroy_component, E as assign, M as get_spread_update, R as get_spread_object, k as element, q as text, l as claim_element, m as children, r as claim_text, h as detach, n as attr, b as insert_hydration, H as append_hydration, C as noop } from "../../../../chunks/index-91def11a.js";
 import { D as Dialog } from "../../../../chunks/dialog-9b3b9764.js";
 import { P as Projectgrid } from "../../../../chunks/projectgrid-06633ab8.js";
 function create_default_slot_1(ctx) {
@@ -9,22 +9,15 @@ function create_default_slot_1(ctx) {
   let t1;
   let br2;
   let br3;
-  let t2;
-  let t3;
-  let img;
-  let img_src_value;
   return {
     c() {
       p = element("p");
       t0 = text("After getting interested in photography, I needed a quick way to resize my images to specific\n			size so that I could upload smaller images to cloud storage and share them with friends. I\n			decided to write a small program to do this for me. I used C# and Visual Studio IDE to create\n			a Windows Forms application.\n			");
       br0 = element("br");
       br1 = element("br");
-      t1 = text('\n			The program allows the user to select multiple images at once, and then choose a desired resolution\n			in pixels or percentages. The user can also select whether to delete the original images, and if\n			the user wants to save the edited ones in a different folder. After clicking on "Aloita" ("Start"\n			in English), the program will start a background worker, which makes sure the UI is responsive.\n			The program will then resize all images and show which images are currently being processed. There\n			is also a progress bar to show the progress of the resizing.\n			');
+      t1 = text('\n			The program allows the user to select multiple images at once, and then choose a desired resolution\n			in pixels or percentages. The user can also select whether to overwrite the existing images, or\n			to save them in a different folder. After clicking on "start", the program will start a background\n			worker, which makes sure the UI is responsive. The program will then resize all images and show\n			which images are currently being processed. There is also a progress bar to show the progress of\n			the resizing.\n			');
       br2 = element("br");
       br3 = element("br");
-      t2 = text("\n			Here is a screenshot of the program, note that the UI is in Finnish:");
-      t3 = space();
-      img = element("img");
       this.h();
     },
     l(nodes) {
@@ -33,29 +26,14 @@ function create_default_slot_1(ctx) {
       t0 = claim_text(p_nodes, "After getting interested in photography, I needed a quick way to resize my images to specific\n			size so that I could upload smaller images to cloud storage and share them with friends. I\n			decided to write a small program to do this for me. I used C# and Visual Studio IDE to create\n			a Windows Forms application.\n			");
       br0 = claim_element(p_nodes, "BR", {});
       br1 = claim_element(p_nodes, "BR", {});
-      t1 = claim_text(p_nodes, '\n			The program allows the user to select multiple images at once, and then choose a desired resolution\n			in pixels or percentages. The user can also select whether to delete the original images, and if\n			the user wants to save the edited ones in a different folder. After clicking on "Aloita" ("Start"\n			in English), the program will start a background worker, which makes sure the UI is responsive.\n			The program will then resize all images and show which images are currently being processed. There\n			is also a progress bar to show the progress of the resizing.\n			');
+      t1 = claim_text(p_nodes, '\n			The program allows the user to select multiple images at once, and then choose a desired resolution\n			in pixels or percentages. The user can also select whether to overwrite the existing images, or\n			to save them in a different folder. After clicking on "start", the program will start a background\n			worker, which makes sure the UI is responsive. The program will then resize all images and show\n			which images are currently being processed. There is also a progress bar to show the progress of\n			the resizing.\n			');
       br2 = claim_element(p_nodes, "BR", {});
       br3 = claim_element(p_nodes, "BR", {});
-      t2 = claim_text(p_nodes, "\n			Here is a screenshot of the program, note that the UI is in Finnish:");
       p_nodes.forEach(detach);
-      t3 = claim_space(nodes);
-      img = claim_element(nodes, "IMG", {
-        src: true,
-        alt: true,
-        class: true,
-        width: true,
-        height: true
-      });
       this.h();
     },
     h() {
       attr(p, "class", "text-black dark:text-white leading-relaxed");
-      if (!src_url_equal(img.src, img_src_value = "/projects/imageresizer/imgresizer_ss.jpeg"))
-        attr(img, "src", img_src_value);
-      attr(img, "alt", "A screenshot of the imag resizer application");
-      attr(img, "class", "w-3/4 my-4 object-contain rounded-lg mx-auto");
-      attr(img, "width", "600");
-      attr(img, "height", "200");
     },
     m(target, anchor) {
       insert_hydration(target, p, anchor);
@@ -65,18 +43,11 @@ function create_default_slot_1(ctx) {
       append_hydration(p, t1);
       append_hydration(p, br2);
       append_hydration(p, br3);
-      append_hydration(p, t2);
-      insert_hydration(target, t3, anchor);
-      insert_hydration(target, img, anchor);
     },
     p: noop,
     d(detaching) {
       if (detaching)
         detach(p);
-      if (detaching)
-        detach(t3);
-      if (detaching)
-        detach(img);
     }
   };
 }
