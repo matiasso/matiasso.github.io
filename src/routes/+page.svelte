@@ -91,7 +91,7 @@
 	<div class="infoContainer">
 		<div class="nameContainer">
 			<h1 class="text-gray-700 dark:text-gray-200">Matias Södersved</h1>
-			<h2 class="text-gray-600 dark:text-gray-300">Student from Aalto University</h2>
+			<h2 class="text-gray-600 dark:text-gray-300">Master level computer science student</h2>
 		</div>
 
 		<div
@@ -112,20 +112,21 @@
 		</div>
 
 		<p id="contentText" class="text-black dark:text-white">
-			I'm a 3rd year computer science student at Aalto University, with minors in Data Science and
-			Mathematics. I'm a highly motivated individual who is passionate about exploring the limitless
+			I am a computer science student from Aalto University, currently working on my master's thesis. 
+			My major subjects are machine learning, data science and artificial intelligence.
+			I'm a highly motivated individual who is passionate about exploring the limitless
 			possibilities that technology has to offer. During my studies, I have developed a good
-			understanding of programming languages such as Python, Scala and TypeScript, which has enabled
+			understanding of mathematics and a variety of programming languages such as Python, Scala and TypeScript, which has enabled
 			me to take on projects ranging from simple web applications to more-complex algorithms.
 			<br /><br />
 			As a part of my academic journey, I have had the opportunity to work on exciting projects such
 			as the implementation of a tool for calibration technicians at Beamex. The project involved using
 			React Native to develop an android-based application for calibration technicians to perform their
 			work more efficiently. The experience allowed me to understand the significance of solving real-world
-			problems and the importance of collaboration in the process. I learned how to work as a team and
-			contribute towards a common goal.
+			problems and the importance of collaboration in the process. I have learned how to work as a team 
+			with scrum methodology, which has helped me to develop my communication and teamwork skills.
 			<br /><br />
-			One of my core strengths is my ability to work with Git and collaborate effectively with team members.
+			One of my core strengths is my ability to collaborate effectively with team members.
 			I understand that each team member brings their unique skill set and perspective to the table,
 			and it is crucial to consider everyone's input while working on a project. I believe that being
 			transparent, communicating effectively, and ensuring equal participation from all members of the

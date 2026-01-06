@@ -62,7 +62,7 @@
 				img: '/skills/git_logo.png',
 				alt: 'Git logo',
 				description: `I have used Git for version control in most of my personal projects. 
-				I have also used Git during all the group projects at Aalto University.`
+				I have also used Git during all the group projects at Aalto University, and now been using it at work for a few years too`
 			},
 			{
 				name: 'Figma',
@@ -83,7 +83,8 @@
 				img: '/skills/regex_logo.png',
 				alt: 'RegEx logo',
 				description: `I learned RegEx originally in 2019, when I was writing some Python scripts for personal use and I needed to parse some text files.
-				I found that RegEx is a very powerful tool for parsing text files, and I have been using it ever since for many everyday string operations.`
+				I found that RegEx is a very powerful tool for parsing text files, and I have been using it ever since for many everyday string operations.
+				I also really enjoy doing RegEx crosswords and challenges online.`
 			},
 			{
 				name: 'SQL',
@@ -100,7 +101,8 @@
 				description: `I had been using Windows as a daily-driver until 2021, but then I decided to try Linux, because in many cases
 				it seemed to be simpler than Windows to setup for different programming environments. Ever since the switch I have been using Linux as my daily-driver. 
 				I started with Ubuntu 20.04, updated it to the new LTS version 22.04, and enjoyed using it till the end of 2022. After that I got interested in other 
-				Linux distributions, and decided to switch to Fedora Linux (KDE spin). Apart from a few minor issues and bugs, I have been loving both Ubuntu and Fedora.`
+				Linux distributions, and decided to switch to Fedora Linux (KDE spin). 
+				Nowadays I rarely need Windows and use different Linux distros for different purposes (Fedora for daily use, Ubuntu for more stable programming environment).`
 			}
 		],
 		other: [
