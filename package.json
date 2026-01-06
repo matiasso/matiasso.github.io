@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"mobile": "vite dev --host",
 		"build": "vite build",
-		"deploy": "touch build/.nojekyll && gh-pages -d build -t true",
+		"deploy": "touch build/.nojekyll && gh-pages -d build --dotfiles",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
