@@ -81,8 +81,8 @@
 				class="ball"
 				style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
-			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}
-			/>
+			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}>
+			</div>
 		{/if}
 	{/each}
 </div>
@@ -96,10 +96,14 @@
 
 		<div
 			class="imageContainer"
+			role="button"
+			tabindex="0"
 			on:mouseover={squareCorners}
 			on:focus={squareCorners}
 			on:mouseleave={roundCorners}
 			on:blur={roundCorners}
+			on:keydown={(e) => e.key === 'Enter' && squareCorners()}
+			on:keyup={(e) => e.key === 'Enter' && roundCorners()}
 		>
 			<img
 				id="avatar"
