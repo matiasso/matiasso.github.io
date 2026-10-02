@@ -19,9 +19,9 @@
 			Ut sunt consequat do qui ipsum aliquip ipsum nostrud in nostrud do id. Ipsum tempor ullamco
 			veniam occaecat esse esse culpa aliqua mollit eu. Magna minim ad aliqua ullamco occaecat.
 			<br /><br />
-			Consequat anim consectetur nisi do minim est eu. Nulla nisi anim consequat in eu cillum mollit
-			occaecat aliqua amet ea. Lorem sit quis tempor Lorem ut esse id pariatur veniam. Quis dolore voluptate
-			ea occaecat esse. Ipsum consequat commodo veniam aute.
+			Consequat anim consectetur nisi do minim est eu. Nulla nisi anim consequat in eu cillum mollit occaecat
+			aliqua amet ea. Lorem sit quis tempor Lorem ut esse id pariatur veniam. Quis dolore voluptate ea
+			occaecat esse. Ipsum consequat commodo veniam aute.
 			<br /><br />
 			Here are some screenshots of the game:
 		</p>
@@ -30,7 +30,7 @@
 				<img
 					src="/projects/tower-defense/tower_defense_ss{imgIndex}.png"
 					alt="A screenshot of the tower defense game"
-					class="w-3/4 my-4 object-contain rounded-lg "
+					class="w-3/4 my-4 object-contain rounded-lg"
 					width="600"
 					height="200"
 				/>

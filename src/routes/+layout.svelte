@@ -8,7 +8,7 @@
 </script>
 
 <!-- Create the navigation bar -->
-<Navbar let:hidden let:toggle color="navbar" navClass="px-2 sm:px-4 w-full'">
+<Navbar let:hidden let:toggle color="navbar">
 	<NavBrand href="/">
 		<!-- The home icon SVG -->
 		<svg

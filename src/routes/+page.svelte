@@ -81,8 +81,8 @@
 				class="ball"
 				style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
-			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}>
-			</div>
+			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}
+			></div>
 		{/if}
 	{/each}
 </div>
@@ -116,25 +116,26 @@
 		</div>
 
 		<p id="contentText" class="text-black dark:text-white">
-			I am a computer science student from Aalto University, currently working on my master's thesis. 
-			My major subjects are machine learning, data science and artificial intelligence.
-			I'm a highly motivated individual who is passionate about exploring the limitless
-			possibilities that technology has to offer. During my studies, I have developed a good
-			understanding of mathematics and a variety of programming languages such as Python, Scala and TypeScript, which has enabled
-			me to take on projects ranging from simple web applications to more-complex algorithms.
+			I am a computer science student from Aalto University, currently working on my master's
+			thesis. My major subjects are machine learning, data science and artificial intelligence. I'm
+			a highly motivated individual who is passionate about exploring the limitless possibilities
+			that technology has to offer. During my studies, I have developed a good understanding of
+			mathematics and a variety of programming languages such as Python, Scala and TypeScript, which
+			has enabled me to take on projects ranging from simple web applications to more-complex
+			algorithms.
 			<br /><br />
-			As a part of my academic journey, I have had the opportunity to work on exciting projects such
-			as the implementation of a tool for calibration technicians at Beamex. The project involved using
-			React Native to develop an android-based application for calibration technicians to perform their
-			work more efficiently. The experience allowed me to understand the significance of solving real-world
-			problems and the importance of collaboration in the process. I have learned how to work as a team 
+			As a part of my academic journey, I have had the opportunity to work on exciting projects such as
+			the implementation of a tool for calibration technicians at Beamex. The project involved using React
+			Native to develop an android-based application for calibration technicians to perform their work
+			more efficiently. The experience allowed me to understand the significance of solving real-world
+			problems and the importance of collaboration in the process. I have learned how to work as a team
 			with scrum methodology, which has helped me to develop my communication and teamwork skills.
 			<br /><br />
-			One of my core strengths is my ability to collaborate effectively with team members.
-			I understand that each team member brings their unique skill set and perspective to the table,
-			and it is crucial to consider everyone's input while working on a project. I believe that being
-			transparent, communicating effectively, and ensuring equal participation from all members of the
-			team is the key to successful collaboration.
+			One of my core strengths is my ability to collaborate effectively with team members. I understand
+			that each team member brings their unique skill set and perspective to the table, and it is crucial
+			to consider everyone's input while working on a project. I believe that being transparent, communicating
+			effectively, and ensuring equal participation from all members of the team is the key to successful
+			collaboration.
 			<br /><br />
 			I'm interested in exploring new frameworks and technologies and continuously strive to expand my
 			knowledge in the field. I strongly believe that technology has the power to bring positive change

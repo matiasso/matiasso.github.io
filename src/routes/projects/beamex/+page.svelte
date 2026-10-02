@@ -21,15 +21,15 @@
 			company provides a real-world problem for the students to work on. My group consists of 7
 			computer science students.
 			<br /><br />
-			Beamex is a company that develops and sells calibration solutions and equipment for industrial
-			use. Calibration technicians are responsible for ensuring that equipment is calibrated correctly
-			and operates as intended. The calibration process can be complex and requires technicians to be
-			precise in their work. That's where our application comes in. It is an application that runs on
-			a Head Mounted Display (HMD) and provides the technician with instructions about the calibration
-			process. It also provides the technician with a way to record the results of the calibration process
-			via the camera module. The images are then processed with an AI model, which returns the output
-			values to the user who then checks that everything looks fine. There is no need to manually write
-			any values down, which reduces the risk of human error.
+			Beamex is a company that develops and sells calibration solutions and equipment for industrial use.
+			Calibration technicians are responsible for ensuring that equipment is calibrated correctly and
+			operates as intended. The calibration process can be complex and requires technicians to be precise
+			in their work. That's where our application comes in. It is an application that runs on a Head Mounted
+			Display (HMD) and provides the technician with instructions about the calibration process. It also
+			provides the technician with a way to record the results of the calibration process via the camera
+			module. The images are then processed with an AI model, which returns the output values to the user
+			who then checks that everything looks fine. There is no need to manually write any values down,
+			which reduces the risk of human error.
 			<br /><br />
 			Our goal during this course is not to build a final product, but instead build a proof-of-concept
 			that demonstrates the feasibility of the idea. We are using React Native and TypeScript, because

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal } from 'flowbite-svelte';
+	import { GradientButton, Modal } from 'flowbite-svelte';
 	let defaultModal = false;
 
 	// These empty strings will be replaced by the +page.svelte file which imports and uses this component
@@ -37,6 +37,6 @@
 		{skill.description}
 	</p>
 	<svelte:fragment slot="footer">
-		<Button class="mx-auto" gradient color="cyanToBlue">Close</Button>
+		<GradientButton class="mx-auto" color="cyanToBlue">Close</GradientButton>
 	</svelte:fragment>
 </Modal>

@@ -7,7 +7,7 @@
 
 <div class="gridContainer">
 	<div class="titleContent">
-		<h1 class="text-gray-700 dark:text-gray-200 text-4xl ">{title}</h1>
+		<h1 class="text-gray-700 dark:text-gray-200 text-4xl">{title}</h1>
 		<h2 class="text-gray-600 dark:text-gray-300 text-2xl">Date: {date}</h2>
 	</div>
 	<img class="imgContent" src={logo} {alt} width="400" height="400" />

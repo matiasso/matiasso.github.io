@@ -29,14 +29,14 @@
 			After months the bot had dozens of commands, and some minigames that people could play. Some examples
 			of the minigames include TicTacToe, Connect-Four, Typeracer (where you type a given text as fast
 			as you can, and compete against others) and different kind of trivia games where the bot pulled
-			trivia questions from a free online API and the users could answer by typing the option number
-			in the chat. The bot got added into more than 30k servers, and it had over 1.1 mil unique users
-			across all the servers. At the end I also got an online friend to join the project and help me
-			with the development.
+			trivia questions from a free online API and the users could answer by typing the option number in
+			the chat. The bot got added into more than 30k servers, and it had over 1.1 mil unique users across
+			all the servers. At the end I also got an online friend to join the project and help me with the
+			development.
 			<br /><br />
-			The project ended when Discord changed their developer terms, so that all developers who had a
-			bot in over 100 servers had to verify their account and identity. I was not willing to do this,
-			so I decided to shut the bot down and focus on different projects.
+			The project ended when Discord changed their developer terms, so that all developers who had a bot
+			in over 100 servers had to verify their account and identity. I was not willing to do this, so I
+			decided to shut the bot down and focus on different projects.
 			<br /><br />
 			Here are some screenshots of the bot:
 		</p>
@@ -45,7 +45,7 @@
 				<img
 					src="/projects/discord-bot/discordbot_ss{imgIndex}.png"
 					alt="A screenshot of the discord bot commands"
-					class="w-3/4 my-4 object-contain rounded-lg "
+					class="w-3/4 my-4 object-contain rounded-lg"
 					width="600"
 					height="200"
 				/>
