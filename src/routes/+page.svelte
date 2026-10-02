@@ -51,6 +51,20 @@
 		}
 	}
 
+	// Skills shown in the info container, grouped by category
+	const skillGroups = [
+		{ category: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'R'] },
+		{
+			category: 'Computer vision',
+			items: ['PyTorch', 'YOLO', 'D-FINE', 'OpenCV', 'Weights & Biases', 'FiftyOne', 'CVAT']
+		},
+		{
+			category: 'AI tooling',
+			items: ['Claude Code', 'Cursor', 'Hermes Agent', 'Ollama', 'LiteLLM', 'ComfyUI', 'MCP+Skills']
+		},
+		{ category: 'App development', items: ['React Native', 'Expo', 'Svelte / SvelteKit'] }
+	];
+
 	// Bind the scroll also so I can keep the background balls in place
 	let scrollY = 0;
 	const animationDuration = 15;
@@ -79,7 +93,7 @@
 		{#if ball.location.x >= 0 && ball.location.y >= 0}
 			<div
 				class="ball"
-				style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px; 
+				style={`background: ${ball.color}; width: ${ball.size}px; height: ${ball.size}px;
 			position: absolute; top: ${ball.location.y}px; left: ${ball.location.x}px;
 			border-radius:50%; filter: blur(0.7vmax); animation: up-down ${animationDuration}s infinite;`}
 			></div>
@@ -91,7 +105,7 @@
 	<div class="infoContainer">
 		<div class="nameContainer">
 			<h1 class="text-gray-700 dark:text-gray-200">Matias Södersved</h1>
-			<h2 class="text-gray-600 dark:text-gray-300">Master level computer science student</h2>
+			<h2 class="text-gray-600 dark:text-gray-300">M.Sc. (Tech.), Aalto University</h2>
 		</div>
 
 		<div
@@ -116,31 +130,45 @@
 		</div>
 
 		<p id="contentText" class="text-black dark:text-white">
-			I am a computer science student from Aalto University, currently working on my master's
-			thesis. My major subjects are machine learning, data science and artificial intelligence. I'm
-			a highly motivated individual who is passionate about exploring the limitless possibilities
-			that technology has to offer. During my studies, I have developed a good understanding of
-			mathematics and a variety of programming languages such as Python, Scala and TypeScript, which
-			has enabled me to take on projects ranging from simple web applications to more-complex
-			algorithms.
+			I studied machine learning, data science and AI at Aalto University. In my master's thesis,
+			<a
+				class="underline underline-offset-2 hover:text-green-700 dark:hover:text-green-400"
+				href="https://aaltodoc.aalto.fi/items/5ec5b8c6-9e9d-4f64-a6da-c4953ac32a45"
+				>Reading analog gauges with the help of AI</a
+			>, I solved a real-world problem: reading analog gauges automatically, a task that is still
+			largely done manually and is slow and easy to get wrong.
 			<br /><br />
-			As a part of my academic journey, I have had the opportunity to work on exciting projects such as
-			the implementation of a tool for calibration technicians at Beamex. The project involved using React
-			Native to develop an android-based application for calibration technicians to perform their work
-			more efficiently. The experience allowed me to understand the significance of solving real-world
-			problems and the importance of collaboration in the process. I have learned how to work as a team
-			with scrum methodology, which has helped me to develop my communication and teamwork skills.
+			In the thesis I gathered the dataset partly from my own photos and partly from public datasets,
+			annotated them in FiftyOne, and used CVAT to visualize the data and to evaluate where the models
+			went wrong. I trained and compared YOLO, <span class="nowrap">D-FINE</span> and other
+			<span class="nowrap">DETR-based</span> models, and ended up with a pipeline of small detection
+			and segmentation models that is light enough to run entirely on phones, with no connection
+			needed. The entire pipeline runs in less than a second on a mobile device CPU.
 			<br /><br />
-			One of my core strengths is my ability to collaborate effectively with team members. I understand
-			that each team member brings their unique skill set and perspective to the table, and it is crucial
-			to consider everyone's input while working on a project. I believe that being transparent, communicating
-			effectively, and ensuring equal participation from all members of the team is the key to successful
-			collaboration.
-			<br /><br />
-			I'm interested in exploring new frameworks and technologies and continuously strive to expand my
-			knowledge in the field. I strongly believe that technology has the power to bring positive change
-			to the world, and I hope to contribute to this through my work.
+			I like making everyday work run smoother: automating away the repetitive chores and building tools
+			that help people make better decisions with less effort. I believe in open source, and I'm curious
+			to see where AI is heading and how it will shape the industry.
 		</p>
+		<div class="skillsContainer">
+			<h3 class="text-gray-700 dark:text-gray-200">Skills</h3>
+			<dl>
+				{#each skillGroups as { category, items }}
+					<div
+						class="skillRow border-t border-gray-300/70 dark:border-gray-600/70 first:border-t-0"
+					>
+						<dt class="text-gray-600 dark:text-gray-300">{category}</dt>
+						<dd class="flex flex-wrap gap-2">
+							{#each items as item}
+								<span
+									class="skillChip rounded-full border border-gray-400 dark:border-gray-500 hover:border-green-600 dark:hover:border-green-400 px-3 py-1 text-sm text-black dark:text-white bg-white/50 dark:bg-white/5"
+									>{item}</span
+								>
+							{/each}
+						</dd>
+					</div>
+				{/each}
+			</dl>
+		</div>
 		<div class="footerContainer">
 			<p class="text-black dark:text-white">You can find me on:</p>
 			<a href="https://github.com/matiasso">
@@ -163,10 +191,11 @@
 	.infoContainer {
 		display: grid;
 		grid-template-columns: 3fr 1fr; /* two columns, first with 75% width and second with 25% width (for profile picture and socials)*/
-		grid-template-rows: 12rem auto 3rem;
+		grid-template-rows: 12rem auto auto 3rem;
 		grid-template-areas:
 			'header avatar'
 			'content avatar'
+			'skills .'
 			'footer footer';
 	}
 	.imageContainer {
@@ -210,6 +239,61 @@
 	#contentText {
 		grid-area: content;
 	}
+	/* Keep hyphenated model names (D-FINE, DETR-based) from breaking across lines */
+	.nowrap {
+		white-space: nowrap;
+	}
+	.skillsContainer {
+		grid-area: skills;
+		margin-top: 1.5rem;
+	}
+	.skillsContainer h3 {
+		font-size: calc(14px + 0.8vw);
+		margin-bottom: 0.75rem;
+	}
+	/* One shared grid for all rows, so the labels line up and take only the width they need */
+	.skillsContainer dl {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		column-gap: 1.25rem;
+	}
+	/* Each category is its own row (via subgrid), separated by a divider.
+	Baseline alignment keeps the label level with the first line of its skills */
+	.skillRow {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: subgrid;
+		align-items: baseline;
+		padding: 0.75rem 0;
+	}
+	.skillRow:first-child {
+		padding-top: 0;
+	}
+	.skillRow dt {
+		font-family: 'Inter', sans-serif;
+		font-weight: 600;
+	}
+	.skillChip {
+		display: inline-block;
+		transition:
+			transform 150ms ease-out,
+			border-color 150ms ease-out;
+	}
+	/* Tilt every other skill the opposite way, so hovering along a row feels playful */
+	.skillChip:hover {
+		transform: scale(1.1) rotate(-3deg);
+	}
+	.skillChip:nth-child(even):hover {
+		transform: scale(1.1) rotate(3deg);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.skillChip,
+		.skillChip:hover,
+		.skillChip:nth-child(even):hover {
+			transition: none;
+			transform: none;
+		}
+	}
 	@media only screen and (max-width: 850px) {
 		/* On mobile phones the profile picture is smaller and content can have full width of the infobox */
 		#contentText {
@@ -217,6 +301,16 @@
 		}
 		.imageContainer {
 			grid-row-end: 2;
+		}
+		.skillsContainer {
+			grid-column-end: 3;
+		}
+		/* Stack the category label above its skills on narrow screens */
+		.skillsContainer dl {
+			grid-template-columns: 1fr;
+		}
+		.skillRow {
+			row-gap: 0.4rem;
 		}
 	}
 	/* I give some initial pixel values to h1 and h2, but scale them up as the width of the screen grows */

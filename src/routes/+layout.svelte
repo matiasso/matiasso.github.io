@@ -2,31 +2,14 @@
 	import '@fontsource/inter';
 	import '@fontsource/abril-fatface';
 	import '../app.postcss';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+	import { Navbar } from 'flowbite-svelte';
 	import { DarkMode } from 'flowbite-svelte';
-	import { quintOut } from 'svelte/easing';
 </script>
 
 <!-- Create the navigation bar -->
-<Navbar let:hidden let:toggle color="navbar">
-	<NavBrand href="/">
-		<!-- The home icon SVG -->
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="1.5"
-			class="w-7 h-7 stroke-black dark:stroke-white"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M5.77778 10.2222V18C5.77778 19.1046 6.67321 20 7.77778 20H12M5.77778 10.2222L11.2929 4.70711C11.6834 4.31658 12.3166 4.31658 12.7071 4.70711L17.5 9.5M5.77778 10.2222L4 12M18.2222 10.2222V18C18.2222 19.1046 17.3268 20 16.2222 20H12M18.2222 10.2222L20 12M18.2222 10.2222L17.5 9.5M17.5 9.5V6M12 20V15"
-			/>
-		</svg>
-	</NavBrand>
+<Navbar color="navbar">
 	<!-- Dark mode toggle -->
-	<DarkMode class="text-lg hover:bg-transparent dark:hover:bg-transparent">
+	<DarkMode class="ms-auto text-lg hover:bg-transparent dark:hover:bg-transparent">
 		<!-- Custom SVG for both, so its easy to customize their shape and size-->
 		<svelte:fragment slot="lightIcon">
 			<svg
@@ -56,12 +39,6 @@
 			>
 		</svelte:fragment>
 	</DarkMode>
-	<!-- Hamburger menu automatically becomes visible on mobile devices-->
-	<NavHamburger on:click={toggle} class="text-black dark:text-white" />
-	<NavUl {hidden} slideParams={{ delay: 100, duration: 300, easing: quintOut }}>
-		<NavLi class="text-black dark:text-white text-lg" href="/skills">Skills</NavLi>
-		<NavLi class="text-black dark:text-white text-lg" href="/projects">Projects</NavLi>
-	</NavUl>
 </Navbar>
 <slot />
 
